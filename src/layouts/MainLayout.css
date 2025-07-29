@@ -1,0 +1,22 @@
+.main-layout {
+    min-height: 100vh;
+    background-color: #fff;
+}
+
+.fixed-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    /* Đảm bảo header luôn nằm trên cùng */
+    background-color: #fff;
+    padding: 0 !important;
+    /* Reset padding mặc định của Antd Header */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.main-content {
+    margin-top: 64px;
+    /* Bằng chiều cao của header */
+}

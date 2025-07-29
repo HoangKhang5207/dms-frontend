@@ -1,0 +1,130 @@
+.dashboard-layout {
+    min-height: 100vh;
+}
+
+/* Cố định Sider */
+.dashboard-sider {
+    overflow: auto;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    box-shadow: 2px 0 6px rgba(0, 21, 41, 0.05);
+    /* Thêm đổ bóng nhẹ */
+    z-index: 10;
+}
+
+.logo-dashboard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-dashboard-img {
+    height: 40px;
+    margin: 16px;
+    /* Bạn có thể thay bằng logo thật */
+}
+
+.logo-dashboard-text {
+    color: #033f8f;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+/* Chỉnh sửa layout chính để có khoảng trống cho Sider */
+.site-layout {
+    /* Thay đổi margin-left từ 200px thành 240px */
+    margin-left: 240px;
+    transition: margin-left 0.2s;
+}
+
+/* Khi Sider thu gọn lại (rộng 80px), giảm margin-left của layout chính */
+.ant-layout-sider-collapsed+.site-layout {
+    margin-left: 80px;
+}
+
+.site-layout-header {
+    padding: 0 24px;
+    background: #fff;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+/* Cho phép vùng nội dung cuộn */
+.site-layout-content-wrapper {
+    margin: 16px;
+    overflow: initial;
+}
+
+/* .site-layout .site-layout-background {
+    background: #fff;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+} */
+
+.site-layout-content {
+    border-radius: 33px;
+    padding: 24px;
+    background: #fff;
+    min-height: calc(100vh - 64px - 32px);
+    /* Full height trừ header và margin */
+}
+
+.header-right {
+    cursor: pointer;
+}
+
+.site-layout-header {
+    padding: 0 24px;
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    /* Thay đổi để đẩy 2 item ra 2 phía */
+    align-items: center;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    /* Khoảng cách giữa 2 tag */
+}
+
+/* Style cho tag tên tổ chức */
+.org-name-tag {
+    background-color: #e6f7ff;
+    border: 1px solid #91d5ff;
+    color: #096dd9;
+    padding: 0 12px;
+    border-radius: 16px;
+    /* Bo tròn mềm mại */
+    font-weight: 500;
+    font-size: 14px;
+}
+
+/* Style cho vai trò người dùng */
+.user-role-text {
+    font-size: 14px;
+    color: #000;
+    position: relative;
+    padding-left: 12px;
+}
+
+/* Dấu gạch đứng phân cách */
+.user-role-text::before {
+    content: '|';
+    position: absolute;
+    left: 0;
+    color: #999797;
+}
+
+.header-right {
+    cursor: pointer;
+}

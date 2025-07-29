@@ -1,0 +1,27 @@
+.main-dashboard .dashboard-header {
+    gap: 16px;
+}
+
+.file-card {
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+.file-card .ant-card-body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.file-card-icon {
+    margin-bottom: 16px;
+}
+
+.file-card-name {
+    margin-bottom: 8px !important;
+}
+
+.file-card-owner {
+    font-size: 12px;
+}

@@ -1,0 +1,19 @@
+.create-org-page-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    background-color: #f0f5ff;
+    padding: 24px;
+    border-radius: 8px;
+}
+
+.create-org-form-wrapper {
+    width: 100%;
+    /* Tăng chiều rộng tối đa của form */
+    max-width: 800px;
+    background: #fff;
+    padding: 32px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}

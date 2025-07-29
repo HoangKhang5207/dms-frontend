@@ -1,0 +1,39 @@
+/* ... các CSS rules khác (nếu có) */
+/* Import font Be Vietnam Pro từ Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap');
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Áp dụng font cho toàn bộ ứng dụng */
+body {
+    margin: 0;
+    font-family: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Thêm hiệu ứng xuất hiện khi cuộn */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-up {
+    opacity: 0;
+    /* Mặc định ẩn đi */
+}
+
+.fade-in-up.is-visible {
+    animation: fadeInUp 0.8s ease-out forwards;
+}

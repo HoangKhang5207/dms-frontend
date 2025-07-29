@@ -1,0 +1,191 @@
+.homepage-container section {
+    padding: 80px 50px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.hero-section {
+    text-align: left;
+}
+
+.highlight-title {
+    border: 1px solid #0d5bb5;
+    padding: 8px 16px;
+    display: inline-block;
+    border-radius: 8px;
+    margin-bottom: 24px !important;
+}
+
+.feature-section,
+.hero-section {
+    background-color: #fff;
+}
+
+.feature-section-alt {
+    background-color: #f7faff;
+}
+
+.image-col {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-features-section {
+    background-color: #001529;
+    /* Dark blue background */
+    color: white;
+}
+
+.main-features-section .ant-typography {
+    color: white;
+}
+
+.feature-card {
+    text-align: center;
+    border: 1px solid #e8e8e8;
+    border-radius: 8px;
+}
+
+.feature-card .ant-typography {
+    color: #333;
+}
+
+.feature-icon {
+    font-size: 48px;
+    color: #0d5bb5;
+    margin-bottom: 20px;
+}
+
+.contact-section {
+    background-color: #f7faff;
+}
+
+@media (max-width: 768px) {
+    .homepage-container section {
+        padding: 40px 20px;
+    }
+
+    .hero-section,
+    .feature-section .ant-row,
+    .feature-section-alt .ant-row {
+        flex-direction: column-reverse;
+    }
+}
+
+/* Hero Carousel Section */
+.hero-carousel .slick-slide {
+    text-align: center;
+    overflow: hidden;
+}
+
+.hero-carousel .slick-dots li button {
+    background: #0d5bb5 !important;
+}
+
+.carousel-slide {
+    padding: 80px 50px;
+    max-width: 1200px;
+    margin: auto;
+    text-align: left;
+    background-color: #fff;
+}
+
+/* Logic đảo ngược vị trí cho slide chẵn */
+@media (min-width: 768px) {
+    .text-col-order-2 {
+        order: 2;
+    }
+
+    .image-col-order-1 {
+        order: 1;
+    }
+}
+
+
+.highlight-title {
+    border: 1px solid #0d5bb5;
+    padding: 8px 16px;
+    display: inline-block;
+    border-radius: 8px;
+    margin-bottom: 24px !important;
+}
+
+/* Main Features Section */
+.main-features-section {
+    background-color: #001529;
+    /* Dark blue background */
+    color: white;
+    padding: 80px 50px;
+}
+
+.main-features-section .ant-typography {
+    color: white;
+}
+
+.feature-card {
+    text-align: center;
+    border: 1px solid #e8e8e8;
+    border-radius: 8px;
+    height: 100%;
+}
+
+.feature-card .ant-typography {
+    color: #333;
+}
+
+.feature-icon {
+    font-size: 48px;
+    color: #0d5bb5;
+    margin-bottom: 20px;
+}
+
+/* Contact Section */
+.contact-section {
+    background-color: #f7faff;
+    padding: 80px 50px;
+}
+
+.contact-info-card {
+    padding: 24px;
+    background-color: #fff;
+    border: 1px solid #e8e8e8;
+    border-radius: 8px;
+    height: 100%;
+}
+
+.contact-info-card .ant-typography {
+    color: #333;
+}
+
+.contact-image {
+    max-width: 100%;
+    margin-top: 20px;
+    border-radius: 8px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+
+    .carousel-slide,
+    .main-features-section,
+    .contact-section {
+        padding: 40px 20px;
+    }
+}
+
+/* ... (các CSS rules khác giữ nguyên) */
+
+/* Ghi đè lại tên class gốc để hook có thể dùng chung */
+.main-features-section,
+.contact-section {
+    padding: 80px 50px;
+    opacity: 0;
+    /* Thêm opacity để ẩn đi ban đầu */
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.main-features-section.is-visible,
+.contact-section.is-visible {
+    animation: fadeInUp 0.8s ease-out forwards;
+}

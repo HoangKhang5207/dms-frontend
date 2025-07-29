@@ -1,0 +1,33 @@
+.app-header {
+    background-color: #fff !important;
+    border-bottom: 1px solid #f0f0f0;
+    padding: 0 50px !important;
+    height: 64px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.logo img {
+    height: 32px;
+    margin-right: 8px;
+}
+
+.logo span {
+    font-size: 20px;
+    font-weight: 600;
+    color: #0d5bb5;
+}
+
+.header-link {
+    color: rgba(0, 0, 0, 0.85);
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.header-link:hover {
+    color: #0d5bb5;
+}
