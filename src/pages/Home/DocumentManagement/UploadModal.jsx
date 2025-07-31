@@ -1,95 +1,101 @@
 import React, { useState } from 'react';
-import '@ant-design/v5-patch-for-react-19';
-import { Modal, Form, Input, Button, Select, Upload, message, Space, Typography } from 'antd';
-import { InboxOutlined } from '@ant-design/icons';
-import { getFileIcon } from '../../../utils/fileIcons';
+import { Upload, Button, Form, Input, Modal } from 'antd';
+import { UploadOutlined } from '@ant-design/icons';
+import { useAuth } from '../../../contexts/AuthContext'; // Adjusted
+import { showSuccessToast, showErrorToast } from '../../../utils/toast'; // Adjusted
 
-const { Dragger } = Upload;
-const { Option } = Select;
+const UploadModal = ({ open, onCancel, onSuccess }) => {
+  const { token } = useAuth(); // Adjusted
+  const [form] = Form.useForm();
+  const [fileList, setFileList] = useState([]);
+  const [uploading, setUploading] = useState(false);
 
-const UploadModal = ({ visible, onCancel, onFinish }) => {
-    const [form] = Form.useForm();
-    const [fileList, setFileList] = useState([]);
-    const [loading, setLoading] = useState(false);
+  const handleUpload = async () => {
+    const formData = new FormData();
+    fileList.forEach((file) => {
+      formData.append('files', file.originFileObj);
+    });
+    const password = form.getFieldValue('password');
+    formData.append('password', password);
 
-    const draggerProps = {
-        name: 'file',
-        multiple: false,
-        fileList,
-        beforeUpload: (file) => {
-            setFileList([file]);
-            // Tự động điền tiêu đề bằng tên file (không có đuôi)
-            const title = file.name.substring(0, file.name.lastIndexOf('.'));
-            form.setFieldsValue({ title: title });
-            return false;
+    setUploading(true);
+    if (!token) {
+      showErrorToast('Bạn chưa đăng nhập hoặc phiên làm việc đã hết hạn. Vui lòng đăng nhập lại.');
+      setUploading(false);
+      return;
+    }
+    try {
+      const response = await fetch('http://localhost:8080/api/v1/documents/upload-multiple', {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${token}`,
         },
-        onRemove: () => {
-            setFileList([]);
-        },
-        // Tùy chỉnh hiển thị file đã chọn
-        itemRender: (originNode, file) => (
-             <div style={{ display: 'flex', alignItems: 'center', marginTop: '8px' }}>
-                <Space>
-                    {getFileIcon(file.name)}
-                    <Typography.Text>{file.name}</Typography.Text>
-                </Space>
-            </div>
-        )
-    };
+        body: formData,
+      });
 
-    const handleFinish = async (values) => {
-        if (fileList.length === 0) {
-            message.error('Vui lòng chọn một file để tải lên!');
-            return;
-        }
-        setLoading(true);
-        // onFinish giờ đây sẽ trả về một promise
-        const success = await onFinish(values, fileList[0]);
-        setLoading(false);
-        if (success) {
-            // Reset form và file list nếu thành công
-            form.resetFields();
-            setFileList([]);
-        }
-    };
-
-    const handleCancel = () => {
-        // Reset thủ công khi người dùng nhấn Hủy
-        form.resetFields();
+      if (response.ok) {
         setFileList([]);
-        onCancel();
-    };
+        form.resetFields();
+        showSuccessToast('Tệp đã được tải lên thành công!');
+        onSuccess();
+      } else {
+        const errorText = await response.text();
+        showErrorToast(`Tải lên thất bại: ${errorText}`);
+      }
+    } catch (error) {
+      showErrorToast('Lỗi khi tải lên tệp.');
+      console.error('Lỗi khi tải lên tệp:', error);
+    } finally {
+      setUploading(false);
+    }
+  };
 
-    return (
-        <Modal 
-            title="Thêm tệp mới" 
-            open={visible} 
-            onCancel={handleCancel} 
-            footer={null}
-            destroyOnClose 
-        >
-            <Form form={form} layout="vertical" onFinish={handleFinish} initialValues={{ access_type: 2 }}>
-                <Dragger {...draggerProps}><p className="ant-upload-drag-icon"><InboxOutlined /></p><p>Nhấp hoặc kéo tệp vào khu vực này</p></Dragger>
-                <Form.Item name="access_type" style={{ marginTop: 16 }} label="Phạm vi chia sẻ" rules={[{ required: true }]}>
-                    <Select>
-                        <Option value={2}>Toàn bộ tổ chức</Option>
-                        <Option value={3}>Chỉ phòng ban</Option>
-                        <Option value={4}>Riêng tư</Option>
-                    </Select>
-                </Form.Item>
-                <Form.Item name="title" label="Tiêu đề tài liệu" rules={[{ required: true, message: 'Vui lòng nhập tiêu đề!'}]} style={{ marginTop: 16 }}>
-                    <Input />
-                </Form.Item>
-                <Form.Item name="description" label="Mô tả">
-                    <Input.TextArea />
-                </Form.Item>
-                <Form.Item style={{ textAlign: 'right' }}>
-                    <Button onClick={handleCancel} style={{ marginRight: 8 }}>Hủy</Button>
-                    <Button type="primary" htmlType="submit" loading={loading}>Tải lên</Button>
-                </Form.Item>
-            </Form>
-        </Modal>
-    );
+  const props = {
+    onRemove: (file) => {
+      const index = fileList.indexOf(file);
+      const newFileList = fileList.slice();
+      newFileList.splice(index, 1);
+      setFileList(newFileList);
+    },
+    onChange: ({ fileList: newFileList }) => {
+      setFileList(newFileList);
+    },
+    beforeUpload: () => false,
+    fileList,
+    multiple: true,
+  };
+
+  return (
+    <Modal
+      title="Tải lên tài liệu"
+      open={open}
+      onOk={handleUpload}
+      onCancel={onCancel}
+      confirmLoading={uploading}
+      okText={uploading ? 'Đang tải lên' : 'Tải lên'}
+      cancelText="Hủy"
+    >
+      <Form form={form} layout="vertical">
+        <Form.Item label="Chọn tệp">
+          <Upload.Dragger {...props}>
+            <p className="ant-upload-drag-icon">
+              <UploadOutlined />
+            </p>
+            <p className="ant-upload-text">Kéo và thả tệp vào đây hoặc nhấp để chọn tệp</p>
+            <p className="ant-upload-hint">
+              Hỗ trợ tải lên một hoặc nhiều tệp.
+            </p>
+          </Upload.Dragger>
+        </Form.Item>
+        <Form.Item 
+          label="Mật khẩu"
+          name="password"
+          rules={[{ required: true, message: 'Vui lòng nhập mật khẩu!' }]}>
+          <Input.Password placeholder="Nhập mật khẩu" />
+        </Form.Item>
+      </Form>
+    </Modal>
+  );
 };
 
 export default UploadModal;

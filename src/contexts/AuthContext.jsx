@@ -140,6 +140,7 @@ export const AuthProvider = ({ children }) => {
         register,
         requestPasswordReset,
         resetPassword,
+        token: tokenService.getAccessToken(), // Expose the access token
     };
 
     // Chỉ render children khi đã kiểm tra xong token
