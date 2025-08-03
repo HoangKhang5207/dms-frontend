@@ -30,6 +30,7 @@ import CategoryView from '../pages/Home/DocumentManagement/CategoryView';
 import DocumentView from '../pages/Home/DocumentManagement/DocumentView';
 import SearchResultsPage from '../pages/Home/DocumentManagement/SearchResultsPage';
 import HomeDispatcher from '../pages/Home/HomeDispatcher';
+import SharedDocumentsPage from '../pages/SharedDocumentsPage/SharedDocumentsPage';
 
 // Placeholders for pages to be implemented
 
@@ -72,6 +73,7 @@ const AppRouter = () => {
                         <Route path="document-management/search" element={<AnimatedPage><SearchResultsPage /></AnimatedPage>} />
                         <Route path="document-management/:departmentId" element={<AnimatedPage><CategoryView /></AnimatedPage>} />
                         <Route path="document-management/:departmentId/:categoryId" element={<AnimatedPage><DocumentView /></AnimatedPage>} />
+                        <Route path="shared" element={<AnimatedPage><SharedDocumentsPage /></AnimatedPage>} />
                     </Route>
                 </Route>
             </Routes>

@@ -1,0 +1,83 @@
+/* ShareModal.css - Styling for the Share Modal */
+
+.abac-share-modal .ant-modal-content {
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.abac-share-modal .ant-modal-header {
+  border-bottom: 1px solid #f0f0f0;
+  padding: 16px 24px;
+}
+
+.abac-share-modal .ant-modal-body {
+  padding: 24px;
+}
+
+.abac-share-modal .ant-form-item-label > label {
+  font-weight: 500;
+  color: #262626;
+}
+
+.abac-share-modal .ant-select-multiple .ant-select-selection-item {
+  background-color: #e6f7ff;
+  border-color: #91d5ff;
+}
+
+.abac-share-modal .ant-tag {
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.abac-share-modal .ant-card {
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.abac-share-modal .ant-space {
+  width: 100%;
+}
+
+.abac-share-modal .ant-btn {
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+.abac-share-modal .ant-input-textarea {
+  border-radius: 6px;
+}
+
+.abac-share-modal .ant-picker {
+  border-radius: 6px;
+}
+
+/* Custom scrollbar for modal content */
+.abac-share-modal .ant-modal-body::-webkit-scrollbar {
+  width: 6px;
+}
+
+.abac-share-modal .ant-modal-body::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.abac-share-modal .ant-modal-body::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+.abac-share-modal .ant-modal-body::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .abac-share-modal .ant-modal {
+    margin: 10px;
+    max-width: calc(100vw - 20px);
+  }
+  
+  .abac-share-modal .ant-modal-body {
+    padding: 16px;
+  }
+}

@@ -51,6 +51,9 @@ const DashboardLayout = () => {
         if (path.startsWith('/home/document-management')) { // Thêm điều kiện này
             return { selectedKey: '5', openKey: null };
         }
+        if (path.startsWith('/home/shared')) {
+            return { selectedKey: '7', openKey: null };
+        }
         // Các trường hợp khác
         switch (path) {
             case '/home':
@@ -164,7 +167,7 @@ const DashboardLayout = () => {
                     </Menu.SubMenu>
                     <Menu.Item key="5" icon={<FileOutlined />} onClick={() => navigate('/home/document-management')}>Quản lý tài liệu</Menu.Item>
                     <Menu.Item key="6" icon={<StarOutlined />}>Được đánh dấu</Menu.Item>
-                    <Menu.Item key="7" icon={<ShareAltOutlined />}>Được chia sẻ với tôi</Menu.Item>
+                    <Menu.Item key="7" icon={<ShareAltOutlined />} onClick={() => navigate('/home/shared')}>Được chia sẻ với tôi</Menu.Item>
                 </Menu>
             </Sider>
             <Layout className="site-layout">

@@ -1,20 +1,44 @@
-import React, { useEffect, useState } from 'react';
-import { Table, Button, Space, Popconfirm, Modal, Form, Input, Dropdown, Menu } from 'antd';
-import { DownloadOutlined, EyeOutlined, DeleteOutlined, PlusOutlined, DownOutlined, CheckCircleOutlined, ScanOutlined } from '@ant-design/icons';
-import { useAuth } from '../../../contexts/AuthContext'; // Adjusted import
-import { showSuccessToast, showErrorToast } from '../../../utils/toast'; // Adjusted import
-import UploadDocumentModal from './UploadModal'; // Adjusted import - using existing UploadModal
-import FileViewerModal from './FilePreviewModal'; // Adjusted import - using existing FilePreviewModal
-import DownloadMultipleModal from '../../../components/DownloadMultipleModal'; // Placeholder import
-import CheckWatermarkModal from '../../../components/CheckWatermarkModal'; // Placeholder import
+import React, { useEffect, useState } from "react";
+import {
+  Table,
+  Button,
+  Space,
+  Popconfirm,
+  Modal,
+  Form,
+  Input,
+  Dropdown,
+  Menu,
+  message,
+} from "antd";
+import {
+  DownloadOutlined,
+  EyeOutlined,
+  DeleteOutlined,
+  PlusOutlined,
+  DownOutlined,
+  CheckCircleOutlined,
+  ScanOutlined,
+  ShareAltOutlined,
+} from "@ant-design/icons";
+import { useAuth } from "../../../contexts/AuthContext";
+import UploadDocumentModal from "./UploadModal";
+import FileViewerModal from "./FilePreviewModal";
+import DownloadMultipleModal from "../../../components/DownloadMultipleModal";
+import CheckWatermarkModal from "../../../components/CheckWatermarkModal";
+import AccessTypeTag from "../../../components/AccessTypeTag";
+import ShareModal from "../../../components/ABACShareModal/ShareModal";
+import axiosInstance from "../../../api/axiosInstance";
 
 const DocumentManagementPage = () => {
-  const { token } = useAuth(); // Adjusted to use AuthContext
+  const { token } = useAuth();
   const [documents, setDocuments] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [categories, setCategories] = useState([]);
   const [isUploadModalVisible, setIsUploadModalVisible] = useState(false);
   const [isPasswordModalVisible, setIsPasswordModalVisible] = useState(false);
-  const [isCheckLocalModalVisible, setIsCheckLocalModalVisible] = useState(false);
+  const [isCheckLocalModalVisible, setIsCheckLocalModalVisible] =
+    useState(false);
   const [currentFileId, setCurrentFileId] = useState(null);
   const [currentFileName, setCurrentFileName] = useState(null);
   const [currentAction, setCurrentAction] = useState(null);
@@ -22,40 +46,57 @@ const DocumentManagementPage = () => {
   const [filePassword, setFilePassword] = useState(undefined);
   const [passwordForm] = Form.useForm();
   const [selectedRowKeys, setSelectedRowKeys] = useState([]);
-  const [isDownloadMultipleModalVisible, setIsDownloadMultipleModalVisible] = useState(false);
+  const [isDownloadMultipleModalVisible, setIsDownloadMultipleModalVisible] =
+    useState(false);
+  const [showABACShareModal, setShowABACShareModal] = useState(false);
+  const [documentToShare, setDocumentToShare] = useState(null);
 
   const fetchDocuments = async () => {
     setLoading(true);
     try {
-      const response = await fetch('http://localhost:8080/api/v1/documents/all', {
-        headers: {
-          'Authorization': `Bearer ${token}`,
-        },
-      });
+      const response = await fetch(
+        "http://localhost:8080/api/v1/documents/all",
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
       if (response.ok) {
         const data = await response.json();
+
         setDocuments(data);
       } else {
-        showErrorToast('Không thể lấy danh sách tài liệu.');
+        message.error("Không thể lấy danh sách tài liệu.");
       }
     } catch (error) {
-      showErrorToast('Lỗi khi lấy danh sách tài liệu.');
-      console.error('Lỗi khi lấy danh sách tài liệu:', error);
+      message.error("Lỗi khi lấy danh sách tài liệu.");
+      console.error("Lỗi khi lấy danh sách tài liệu:", error);
     } finally {
       setLoading(false);
+    }
+  };
+
+  const fetchCategories = async () => {
+    try {
+      const response = await axiosInstance.get("/categories");
+      setCategories(response.data);
+    } catch (error) {
+      console.error("Lỗi khi lấy danh sách categories:", error);
     }
   };
 
   useEffect(() => {
     if (token) {
       fetchDocuments();
+      fetchCategories();
     }
   }, [token]);
 
   const handleDownloadRequest = (fileId, fileName, withWatermark) => {
     setCurrentFileId(fileId);
     setCurrentFileName(fileName);
-    setCurrentAction('download');
+    setCurrentAction("download");
     setDownloadWithWatermark(withWatermark);
     setIsPasswordModalVisible(true);
   };
@@ -63,56 +104,64 @@ const DocumentManagementPage = () => {
   const handleView = (fileId, fileName) => {
     setCurrentFileId(fileId);
     setCurrentFileName(fileName);
-    setCurrentAction('view');
+    setCurrentAction("view");
     setIsPasswordModalVisible(true);
   };
 
   const handleDelete = async (fileId, fileName) => {
     try {
-      const response = await fetch(`http://localhost:8080/api/v1/documents/${fileId}`, {
-        method: 'DELETE',
-        headers: {
-          'Authorization': `Bearer ${token}`,
-        },
-      });
+      const response = await fetch(
+        `http://localhost:8080/api/v1/documents/${fileId}`,
+        {
+          method: "DELETE",
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
       if (response.ok) {
-        showSuccessToast(`${fileName} đã được xóa thành công!`);
+        message.success(`${fileName} đã được xóa thành công!`);
         fetchDocuments(); // Refresh the list
       } else {
-        showErrorToast(`Không thể xóa ${fileName}.`);
+        message.error(`Không thể xóa ${fileName}.`);
       }
     } catch (error) {
-      showErrorToast(`Lỗi khi xóa ${fileName}.`);
-      console.error('Lỗi khi xóa tài liệu:', error);
+      message.error(`Lỗi khi xóa ${fileName}.`);
+      console.error("Lỗi khi xóa tài liệu:", error);
     }
   };
 
   const handleDeleteMultiple = async () => {
     if (selectedRowKeys.length === 0) {
-      showErrorToast('Vui lòng chọn ít nhất một tài liệu để xóa.');
+      message.error("Vui lòng chọn ít nhất một tài liệu để xóa.");
       return;
     }
 
     try {
-      const response = await fetch('http://localhost:8080/api/v1/documents/delete-multiple', {
-        method: 'DELETE',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${token}`,
-        },
-        body: JSON.stringify(selectedRowKeys),
-      });
+      const response = await fetch(
+        "http://localhost:8080/api/v1/documents/delete-multiple",
+        {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+          body: JSON.stringify(selectedRowKeys),
+        }
+      );
 
       if (response.ok) {
-        showSuccessToast(`${selectedRowKeys.length} tài liệu đã được xóa thành công!`);
+        message.success(
+          `${selectedRowKeys.length} tài liệu đã được xóa thành công!`
+        );
         setSelectedRowKeys([]); // Clear selection
         fetchDocuments(); // Refresh the list
       } else {
-        showErrorToast('Không thể xóa các tài liệu đã chọn.');
+        message.error("Không thể xóa các tài liệu đã chọn.");
       }
     } catch (error) {
-      showErrorToast('Lỗi khi xóa nhiều tài liệu.');
-      console.error('Lỗi khi xóa nhiều tài liệu:', error);
+      message.error("Lỗi khi xóa nhiều tài liệu.");
+      console.error("Lỗi khi xóa nhiều tài liệu:", error);
     }
   };
 
@@ -121,46 +170,56 @@ const DocumentManagementPage = () => {
       const values = await passwordForm.validateFields();
       const password = values.password;
 
-      if (currentAction === 'download') {
+      if (currentAction === "download") {
         const url = `http://localhost:8080/api/v1/documents/${currentFileId}/retrieve?password=${password}&withWatermark=${downloadWithWatermark}`;
+
         try {
           const response = await fetch(url, {
             headers: {
-              'Authorization': `Bearer ${token}`,
+              Authorization: `Bearer ${token}`,
             },
           });
 
           if (response.ok) {
             const blob = await response.blob();
-            const contentDisposition = response.headers.get('Content-Disposition');
+            const contentDisposition = response.headers.get(
+              "Content-Disposition"
+            );
             let filename = currentFileName;
-            if (contentDisposition && contentDisposition.indexOf('filename=') !== -1) {
-              filename = contentDisposition.split('filename=')[1].replace(/"/g, '');
+            if (
+              contentDisposition &&
+              contentDisposition.indexOf("filename=") !== -1
+            ) {
+              filename = contentDisposition
+                .split("filename=")[1]
+                .replace(/"/g, "");
             }
-            const a = document.createElement('a');
+            const a = document.createElement("a");
             a.href = window.URL.createObjectURL(blob);
             a.download = filename;
             document.body.appendChild(a);
             a.click();
             a.remove();
             window.URL.revokeObjectURL(a.href);
-            showSuccessToast(`Đang tải xuống tài liệu...`);
+            message.success(`Đang tải xuống tài liệu...`);
           } else {
-            showErrorToast('Không thể tải xuống tài liệu. Vui lòng kiểm tra mật khẩu hoặc thử lại sau.');
+            message.error(
+              "Không thể tải xuống tài liệu. Vui lòng kiểm tra mật khẩu hoặc thử lại sau."
+            );
           }
         } catch (error) {
-          showErrorToast('Lỗi khi tải xuống tài liệu.');
-          console.error('Lỗi khi tải xuống tài liệu:', error);
+          message.error("Lỗi khi tải xuống tài liệu.");
+          console.error("Lỗi khi tải xuống tài liệu:", error);
         }
         setIsPasswordModalVisible(false);
         passwordForm.resetFields();
-      } else if (currentAction === 'view') {
+      } else if (currentAction === "view") {
         setFilePassword(password);
         setIsPasswordModalVisible(false);
         passwordForm.resetFields();
       }
-    } catch (errorInfo) {
-      showErrorToast('Vui lòng nhập mật khẩu.');
+    } catch {
+      message.error("Vui lòng nhập mật khẩu.");
     }
   };
 
@@ -173,34 +232,58 @@ const DocumentManagementPage = () => {
     onChange: onSelectChange,
   };
 
+  const getCategoryName = (categoryId) => {
+    const category = categories.find((cat) => cat.id === categoryId);
+    return category ? category.name : "Không xác định";
+  };
+
   const columns = [
     {
-      title: 'Tiêu đề',
-      dataIndex: 'title',
-      key: 'title',
+      title: "Tiêu đề",
+      dataIndex: "title",
+      key: "title",
     },
     {
-      title: 'Loại',
-      dataIndex: 'type',
-      key: 'type',
+      title: "Loại tài liệu",
+      key: "category",
+      render: (_, record) => getCategoryName(record.category_id),
     },
     {
-      title: 'Kích thước (bytes)',
-      dataIndex: 'storageCapacity',
-      key: 'storageCapacity',
+      title: "Truy cập",
+      key: "access",
+      render: (_, record) => <AccessTypeTag accessType={record.access_type} />,
     },
     {
-      title: 'Thời gian tải lên',
-      dataIndex: 'createdAt',
-      key: 'createdAt',
-      render: (text) => new Date(text).toLocaleString(),
+      title: "Loại",
+      dataIndex: "type",
+      key: "type",
     },
     {
-      title: 'Hành động',
-      key: 'action',
+      title: "Kích thước",
+      dataIndex: "storage_unit",
+      key: "storage_unit",
+      render: (text) => text || "N/A",
+    },
+    {
+      title: "Thời gian tải lên",
+      dataIndex: "created_at",
+      key: "created_at",
+      render: (text) => (text ? new Date(text).toLocaleString("vi-VN") : "N/A"),
+    },
+    {
+      title: "Hành động",
+      key: "action",
       render: (_, record) => {
         const downloadMenu = (
-          <Menu onClick={({ key }) => handleDownloadRequest(record.fileId, record.title, key === 'with-wm')}>
+          <Menu
+            onClick={({ key }) =>
+              handleDownloadRequest(
+                record.file_id,
+                record.title,
+                key === "with-wm"
+              )
+            }
+          >
             <Menu.Item key="with-wm">Có Watermark</Menu.Item>
             <Menu.Item key="without-wm">Không có Watermark</Menu.Item>
           </Menu>
@@ -213,12 +296,21 @@ const DocumentManagementPage = () => {
                 Tải xuống <DownOutlined />
               </Button>
             </Dropdown>
-            <Button icon={<EyeOutlined />} onClick={() => handleView(record.fileId, record.title)}>
+            <Button
+              icon={<EyeOutlined />}
+              onClick={() => handleView(record.file_id, record.title)}
+            >
               Xem
+            </Button>
+            <Button
+              icon={<ShareAltOutlined />}
+              onClick={() => handleShareDocument(record)}
+            >
+              Chia sẻ
             </Button>
             <Popconfirm
               title="Bạn có chắc chắn muốn xóa tài liệu này không?"
-              onConfirm={() => handleDelete(record.fileId, record.title)}
+              onConfirm={() => handleDelete(record.file_id, record.title)}
               okText="Có"
               cancelText="Không"
             >
@@ -232,15 +324,39 @@ const DocumentManagementPage = () => {
     },
   ];
 
+  const handleShareDocument = (record) => {
+    setDocumentToShare(record);
+    setShowABACShareModal(true);
+  };
+
+  const handleCloseABACShareModal = () => {
+    setShowABACShareModal(false);
+    setDocumentToShare(null);
+  };
+
   return (
     <div>
-      <Space style={{ marginBottom: 16, justifyContent: 'space-between', width: '100%' }}>
+      <Space
+        style={{
+          marginBottom: 16,
+          justifyContent: "space-between",
+          width: "100%",
+        }}
+      >
         <h1>Danh sách tài liệu</h1>
         <Space>
-          <Button type="primary" icon={<PlusOutlined />} onClick={() => setIsUploadModalVisible(true)}>
+          <Button
+            type="primary"
+            icon={<PlusOutlined />}
+            onClick={() => setIsUploadModalVisible(true)}
+          >
             Thêm tài liệu
           </Button>
-          <Button type="default" icon={<ScanOutlined />} onClick={() => setIsCheckLocalModalVisible(true)}>
+          <Button
+            type="default"
+            icon={<ScanOutlined />}
+            onClick={() => setIsCheckLocalModalVisible(true)}
+          >
             Kiểm tra File Local
           </Button>
           <Popconfirm
@@ -250,13 +366,17 @@ const DocumentManagementPage = () => {
             cancelText="Không"
             disabled={selectedRowKeys.length === 0}
           >
-            <Button type="default" danger disabled={selectedRowKeys.length === 0}>
+            <Button
+              type="default"
+              danger
+              disabled={selectedRowKeys.length === 0}
+            >
               Xóa đã chọn ({selectedRowKeys.length})
             </Button>
           </Popconfirm>
-          <Button 
-            type="primary" 
-            icon={<DownloadOutlined />} 
+          <Button
+            type="primary"
+            icon={<DownloadOutlined />}
             onClick={() => {
               setIsDownloadMultipleModalVisible(true);
             }}
@@ -266,12 +386,12 @@ const DocumentManagementPage = () => {
           </Button>
         </Space>
       </Space>
-      <Table 
+      <Table
         rowSelection={rowSelection}
-        columns={columns} 
-        dataSource={documents} 
-        rowKey="fileId" 
-        loading={loading} 
+        columns={columns}
+        dataSource={documents}
+        rowKey="file_id"
+        loading={loading}
       />
 
       <UploadDocumentModal
@@ -283,7 +403,7 @@ const DocumentManagementPage = () => {
         }}
       />
 
-      <CheckWatermarkModal 
+      <CheckWatermarkModal
         open={isCheckLocalModalVisible}
         onCancel={() => setIsCheckLocalModalVisible(false)}
       />
@@ -306,14 +426,14 @@ const DocumentManagementPage = () => {
           <Form.Item
             label="Mật khẩu"
             name="password"
-            rules={[{ required: true, message: 'Vui lòng nhập mật khẩu!' }]}
+            rules={[{ required: true, message: "Vui lòng nhập mật khẩu!" }]}
           >
             <Input.Password />
           </Form.Item>
         </Form>
       </Modal>
 
-      {currentAction === 'view' && currentFileId && currentFileName && (
+      {currentAction === "view" && currentFileId && currentFileName && (
         <FileViewerModal
           open={!isPasswordModalVisible && !!currentFileId}
           onCancel={() => {
@@ -337,6 +457,15 @@ const DocumentManagementPage = () => {
         selectedFileIds={selectedRowKeys}
         documents={documents}
       />
+
+      {documentToShare && (
+        <ShareModal
+          visible={showABACShareModal}
+          onCancel={handleCloseABACShareModal}
+          documentId={documentToShare.file_id}
+          documentInfo={documentToShare}
+        />
+      )}
     </div>
   );
 };

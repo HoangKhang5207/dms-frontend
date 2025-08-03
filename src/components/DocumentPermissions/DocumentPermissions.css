@@ -1,0 +1,256 @@
+.document-permissions {
+  margin-bottom: 16px;
+}
+
+.document-permissions .ant-card {
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.document-permissions .ant-card-head {
+  background-color: #fafafa;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.document-permissions .ant-card-head-title {
+  font-weight: 600;
+  color: #262626;
+}
+
+.document-permissions .ant-card-body {
+  padding: 24px;
+}
+
+/* Document Info Section */
+.document-info {
+  background-color: #f8f9fa;
+  border-radius: 6px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.document-info .ant-typography {
+  margin-bottom: 8px;
+}
+
+/* Permissions Section */
+.permissions-section {
+  margin-bottom: 16px;
+}
+
+.permissions-section .ant-typography {
+  margin-bottom: 12px;
+  color: #262626;
+  font-weight: 500;
+}
+
+.permissions-section .ant-space {
+  flex-wrap: wrap;
+}
+
+.permissions-section .ant-tag {
+  margin-bottom: 8px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+/* Access Rights Section */
+.access-rights-section {
+  margin-bottom: 16px;
+}
+
+.access-rights-section .ant-typography {
+  margin-bottom: 12px;
+  color: #262626;
+  font-weight: 500;
+}
+
+.access-rights-section .ant-list-item {
+  padding: 8px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.access-rights-section .ant-list-item:last-child {
+  border-bottom: none;
+}
+
+.access-rights-section .ant-badge {
+  font-size: 12px;
+}
+
+/* Modal Styling */
+.document-permissions .ant-modal-content {
+  border-radius: 8px;
+}
+
+.document-permissions .ant-modal-header {
+  border-bottom: 1px solid #f0f0f0;
+  padding: 16px 24px;
+}
+
+.document-permissions .ant-modal-body {
+  padding: 24px;
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+.document-permissions .ant-modal-footer {
+  border-top: 1px solid #f0f0f0;
+  padding: 16px 24px;
+}
+
+/* Descriptions Styling */
+.document-permissions .ant-descriptions {
+  margin-bottom: 24px;
+}
+
+.document-permissions .ant-descriptions-title {
+  font-weight: 600;
+  color: #262626;
+  margin-bottom: 16px;
+}
+
+.document-permissions .ant-descriptions-item-label {
+  font-weight: 500;
+  color: #595959;
+}
+
+.document-permissions .ant-descriptions-item-content {
+  color: #262626;
+}
+
+/* Tag Styling */
+.document-permissions .ant-tag {
+  border-radius: 4px;
+  font-size: 12px;
+  padding: 2px 8px;
+}
+
+/* Badge Styling */
+.document-permissions .ant-badge-status-text {
+  font-size: 12px;
+  color: #595959;
+}
+
+/* Divider Styling */
+.document-permissions .ant-divider {
+  margin: 16px 0;
+  border-color: #f0f0f0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .document-permissions .ant-card-body {
+    padding: 16px;
+  }
+
+  .document-permissions .ant-modal {
+    width: 95% !important;
+    margin: 10px;
+  }
+
+  .document-permissions .ant-modal-body {
+    padding: 16px;
+  }
+
+  .document-permissions .ant-descriptions {
+    font-size: 12px;
+  }
+
+  .document-permissions .ant-tag {
+    font-size: 11px;
+    padding: 1px 6px;
+  }
+}
+
+/* Loading State */
+.document-permissions .ant-card-loading {
+  pointer-events: none;
+}
+
+/* Animation */
+.document-permissions .ant-card {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Custom scrollbar for modal body */
+.document-permissions .ant-modal-body::-webkit-scrollbar {
+  width: 6px;
+}
+
+.document-permissions .ant-modal-body::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.document-permissions .ant-modal-body::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+.document-permissions .ant-modal-body::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Button Styling */
+.document-permissions .ant-btn-link {
+  color: #1890ff;
+  padding: 0;
+  height: auto;
+  border: none;
+  box-shadow: none;
+}
+
+.document-permissions .ant-btn-link:hover {
+  color: #40a9ff;
+  background: transparent;
+}
+
+.document-permissions .ant-btn-link:focus {
+  color: #40a9ff;
+  background: transparent;
+}
+
+/* Space Component */
+.document-permissions .ant-space {
+  width: 100%;
+}
+
+.document-permissions .ant-space-vertical {
+  width: 100%;
+}
+
+/* Typography */
+.document-permissions .ant-typography {
+  margin-bottom: 0;
+}
+
+.document-permissions .ant-typography.ant-typography-secondary {
+  color: #8c8c8c;
+}
+
+/* List Styling */
+.document-permissions .ant-list {
+  background: transparent;
+}
+
+.document-permissions .ant-list-item {
+  background: transparent;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.document-permissions .ant-list-item:last-child {
+  border-bottom: none;
+}
