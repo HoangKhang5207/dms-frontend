@@ -18,13 +18,13 @@ const CategoryModal = ({ visible, onCancel, onFinish, initialValues }) => {
 
     return (
         <Modal
-            title={isEditing ? 'Cập nhật thư mục' : 'Thêm thư mục mới'}
+            title={isEditing ? 'Cập nhật loại tài liệu' : 'Thêm loại tài liệu mới'}
             open={visible}
             onCancel={onCancel}
             footer={null}
         >
             <Form form={form} layout="vertical" onFinish={onFinish}>
-                <Form.Item name="name" label="Tên thư mục" rules={[{ required: true, message: 'Vui lòng nhập tên thư mục!' }]}>
+                <Form.Item name="name" label="Tên loại tài liệu" rules={[{ required: true, message: 'Vui lòng nhập tên loại tài liệu!' }]}>
                     <Input />
                 </Form.Item>
                 <Form.Item name="description" label="Mô tả" rules={[{ required: true, message: 'Vui lòng nhập mô tả!' }]}>

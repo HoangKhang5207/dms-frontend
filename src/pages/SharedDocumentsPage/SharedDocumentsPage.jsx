@@ -41,8 +41,23 @@ const SharedDocumentsPage = () => {
 
   const fetchCategories = async () => {
     try {
-      const response = await axiosInstance.get("/categories");
-      setCategories(response.data);
+      const me = await axiosInstance.get("/users/me");
+      const orgId = me?.data?.organization?.id || me?.data?.organizationId;
+      if (!orgId) {
+        console.warn("Không tìm thấy organizationId trong /users/me");
+        setCategories([]);
+        return;
+      }
+      const deptsRes = await axiosInstance.get(`/departments/organization/${orgId}`);
+      const departments = deptsRes?.data || [];
+      if (!departments.length) {
+        setCategories([]);
+        return;
+      }
+      const deptId = departments[0]?.id;
+      const catsPage = await axiosInstance.get(`/departments/${deptId}/categories`, { params: { page: 0, size: 1000 } });
+      const cats = catsPage?.data?.content || catsPage?.data || [];
+      setCategories(cats);
     } catch (error) {
       console.error("Lỗi khi lấy danh sách categories:", error);
     }
@@ -126,8 +141,13 @@ const SharedDocumentsPage = () => {
     {
       title: "Loại tài liệu",
       key: "category",
-      render: (_, record) =>
-        getCategoryName(record.categoryId, record.categoryName),
+      render: (_, record) => {
+        // Hỗ trợ cả object category và trường rời rạc
+        const catName = record?.category?.name || record?.categoryName;
+        if (catName) return catName;
+        const catId = record?.category?.id || record?.categoryId || record?.category_id;
+        return getCategoryName(catId, undefined);
+      },
     },
     {
       title: "Phòng ban",

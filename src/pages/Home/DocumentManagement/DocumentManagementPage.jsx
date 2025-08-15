@@ -50,6 +50,8 @@ const DocumentManagementPage = () => {
     useState(false);
   const [showABACShareModal, setShowABACShareModal] = useState(false);
   const [documentToShare, setDocumentToShare] = useState(null);
+  const [rejectingDoc, setRejectingDoc] = useState(null);
+  const [rejectReason, setRejectReason] = useState("");
 
   const fetchDocuments = async () => {
     setLoading(true);
@@ -63,9 +65,42 @@ const DocumentManagementPage = () => {
         }
       );
       if (response.ok) {
-        const data = await response.json();
-
-        setDocuments(data);
+        // Đọc text thô để chẩn đoán khi backend trả về JSON lẫn tạp (HTML/logs/NDJSON)
+        const raw = await response.text();
+        let data;
+        try {
+          data = JSON.parse(raw);
+        } catch (e) {
+          // Thử trích mảng JSON đầu tiên trong chuỗi (từ '[' ... cặp ']' tương ứng)
+          try {
+            const start = raw.indexOf("[");
+            const end = raw.lastIndexOf("]");
+            if (start !== -1 && end !== -1 && end > start) {
+              const jsonArray = raw.substring(start, end + 1);
+              data = JSON.parse(jsonArray);
+              // Log ngắn gọn để theo dõi lỗi backend, cắt bớt để tránh console quá dài
+              console.warn("/documents/all trả về kèm tạp, đã trích mảng JSON đầu tiên. Preview:", raw.slice(0, 1024));
+            } else {
+              throw e;
+            }
+          } catch (e2) {
+            console.error("Parse JSON thất bại. Preview response (2KB):", raw.slice(0, 2048));
+            throw e2;
+          }
+        }
+        // Chuẩn hóa trường để UI hiện tại dùng được cả camelCase & snake_case
+        const normalized = (Array.isArray(data) ? data : []).map((d) => ({
+          ...d,
+          // map snake_case aliases used across UI
+          file_id: d.file_id ?? d.fileId ?? d.id,
+          created_at: d.created_at ?? d.createdAt,
+          updated_at: d.updated_at ?? d.updatedAt,
+          access_type: d.access_type ?? d.accessType,
+          category_id: d.category_id ?? d.category?.id,
+          storage_unit: d.storage_unit ?? d.storageUnit,
+          original_filename: d.original_filename ?? d.originalFilename,
+        }));
+        setDocuments(normalized);
       } else {
         message.error("Không thể lấy danh sách tài liệu.");
       }
@@ -77,12 +112,104 @@ const DocumentManagementPage = () => {
     }
   };
 
+  const handleSubmitDoc = async (doc) => {
+    try {
+      const res = await fetch(
+        `http://localhost:8080/api/v1/documents/${doc.id || doc.file_id}/submit`,
+        {
+          method: "POST",
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      );
+      if (res.ok) {
+        message.success("Đã trình duyệt tài liệu");
+        fetchDocuments();
+      } else {
+        message.error("Trình duyệt thất bại");
+      }
+    } catch (e) {
+      console.error(e);
+      message.error("Lỗi khi trình duyệt");
+    }
+  };
+
+  const handleApproveDoc = async (doc) => {
+    try {
+      const res = await fetch(
+        `http://localhost:8080/api/v1/documents/${doc.id || doc.file_id}/approve`,
+        {
+          method: "POST",
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      );
+      if (res.ok) {
+        message.success("Đã phê duyệt tài liệu");
+        fetchDocuments();
+      } else {
+        message.error("Phê duyệt thất bại");
+      }
+    } catch (e) {
+      console.error(e);
+      message.error("Lỗi khi phê duyệt");
+    }
+  };
+
+  const openRejectModal = (doc) => {
+    setRejectingDoc(doc);
+    setRejectReason("");
+  };
+
+  const confirmReject = async () => {
+    if (!rejectingDoc) return;
+    try {
+      const res = await fetch(
+        `http://localhost:8080/api/v1/documents/${rejectingDoc.id || rejectingDoc.file_id}/reject?reason=${encodeURIComponent(
+          rejectReason || ""
+        )}`,
+        {
+          method: "POST",
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      );
+      if (res.ok) {
+        message.success("Đã từ chối tài liệu");
+        setRejectingDoc(null);
+        setRejectReason("");
+        fetchDocuments();
+      } else {
+        message.error("Từ chối thất bại");
+      }
+    } catch (e) {
+      console.error(e);
+      message.error("Lỗi khi từ chối");
+    }
+  };
+
   const fetchCategories = async () => {
     try {
-      const response = await axiosInstance.get("/categories");
-      setCategories(response.data);
+      // Lấy org của user
+      const me = await axiosInstance.get("/users/me");
+      const orgId = me?.data?.organization?.id || me?.data?.organizationId;
+      if (!orgId) {
+        console.warn("Không tìm thấy organizationId trong /users/me");
+        setCategories([]);
+        return;
+      }
+      // Lấy danh sách phòng ban theo org, chọn phòng ban đầu tiên
+      const deptsRes = await axiosInstance.get(`/departments/organization/${orgId}`);
+      const departments = deptsRes?.data || [];
+      if (!departments.length) {
+        setCategories([]);
+        return;
+      }
+      const deptId = departments[0]?.id;
+      // Lấy categories theo phòng ban (lấy số lượng lớn)
+      const catsPage = await axiosInstance.get(`/departments/${deptId}/categories`, { params: { page: 0, size: 1000 } });
+      const cats = catsPage?.data?.content || catsPage?.data || [];
+      setCategories(cats);
     } catch (error) {
       console.error("Lỗi khi lấy danh sách categories:", error);
+      setCategories([]);
     }
   };
 
@@ -108,10 +235,10 @@ const DocumentManagementPage = () => {
     setIsPasswordModalVisible(true);
   };
 
-  const handleDelete = async (fileId, fileName) => {
+  const handleDelete = async (docId, fileName) => {
     try {
       const response = await fetch(
-        `http://localhost:8080/api/v1/documents/${fileId}`,
+        `http://localhost:8080/api/v1/documents/${docId}`,
         {
           method: "DELETE",
           headers: {
@@ -138,6 +265,18 @@ const DocumentManagementPage = () => {
     }
 
     try {
+      // selectedRowKeys hiện đang chứa file_id (UUID) do rowKey="file_id"
+      // Cần ánh xạ sang danh sách id (số) để xóa theo yêu cầu mới
+      const ids = documents
+        .filter((d) => selectedRowKeys.includes(d.file_id))
+        .map((d) => d.id)
+        .filter((id) => id != null);
+
+      if (!ids.length) {
+        message.error("Không tìm thấy ID tương ứng để xóa.");
+        return;
+      }
+
       const response = await fetch(
         "http://localhost:8080/api/v1/documents/delete-multiple",
         {
@@ -146,13 +285,13 @@ const DocumentManagementPage = () => {
             "Content-Type": "application/json",
             Authorization: `Bearer ${token}`,
           },
-          body: JSON.stringify(selectedRowKeys),
+          body: JSON.stringify(ids),
         }
       );
 
       if (response.ok) {
         message.success(
-          `${selectedRowKeys.length} tài liệu đã được xóa thành công!`
+          `${ids.length} tài liệu đã được xóa thành công!`
         );
         setSelectedRowKeys([]); // Clear selection
         fetchDocuments(); // Refresh the list
@@ -233,6 +372,7 @@ const DocumentManagementPage = () => {
   };
 
   const getCategoryName = (categoryId) => {
+    if (!categoryId) return "Không xác định";
     const category = categories.find((cat) => cat.id === categoryId);
     return category ? category.name : "Không xác định";
   };
@@ -246,12 +386,20 @@ const DocumentManagementPage = () => {
     {
       title: "Loại tài liệu",
       key: "category",
-      render: (_, record) => getCategoryName(record.category_id),
+      render: (_, record) => {
+        // Hỗ trợ cả dạng có object category và dạng category_id
+        const catName = record?.category?.name;
+        if (catName) return catName;
+        const catId = record?.category?.id || record?.category_id;
+        return getCategoryName(catId);
+      },
     },
     {
       title: "Truy cập",
       key: "access",
-      render: (_, record) => <AccessTypeTag accessType={record.access_type} />,
+      render: (_, record) => (
+        <AccessTypeTag accessType={record.accessType ?? record.access_type} />
+      ),
     },
     {
       title: "Loại",
@@ -266,9 +414,11 @@ const DocumentManagementPage = () => {
     },
     {
       title: "Thời gian tải lên",
-      dataIndex: "created_at",
-      key: "created_at",
-      render: (text) => (text ? new Date(text).toLocaleString("vi-VN") : "N/A"),
+      key: "createdAt",
+      render: (_, record) => {
+        const ts = record.createdAt ?? record.created_at;
+        return ts ? new Date(ts).toLocaleString("vi-VN") : "N/A";
+      },
     },
     {
       title: "Hành động",
@@ -302,6 +452,23 @@ const DocumentManagementPage = () => {
             >
               Xem
             </Button>
+            <Dropdown
+              overlay={
+                <Menu>
+                  <Menu.Item key="submit" onClick={() => handleSubmitDoc(record)}>
+                    Trình duyệt
+                  </Menu.Item>
+                  <Menu.Item key="approve" onClick={() => handleApproveDoc(record)}>
+                    Phê duyệt
+                  </Menu.Item>
+                  <Menu.Item key="reject" onClick={() => openRejectModal(record)}>
+                    Từ chối
+                  </Menu.Item>
+                </Menu>
+              }
+            >
+              <Button icon={<CheckCircleOutlined />}>Duyệt</Button>
+            </Dropdown>
             <Button
               icon={<ShareAltOutlined />}
               onClick={() => handleShareDocument(record)}
@@ -310,7 +477,7 @@ const DocumentManagementPage = () => {
             </Button>
             <Popconfirm
               title="Bạn có chắc chắn muốn xóa tài liệu này không?"
-              onConfirm={() => handleDelete(record.file_id, record.title)}
+              onConfirm={() => handleDelete(record.id, record.title)}
               okText="Có"
               cancelText="Không"
             >
@@ -431,6 +598,22 @@ const DocumentManagementPage = () => {
             <Input.Password />
           </Form.Item>
         </Form>
+      </Modal>
+
+      <Modal
+        title="Lý do từ chối"
+        open={!!rejectingDoc}
+        onOk={confirmReject}
+        onCancel={() => setRejectingDoc(null)}
+        okText="Xác nhận"
+        cancelText="Hủy"
+      >
+        <Input.TextArea
+          value={rejectReason}
+          onChange={(e) => setRejectReason(e.target.value)}
+          rows={4}
+          placeholder="Nhập lý do từ chối"
+        />
       </Modal>
 
       {currentAction === "view" && currentFileId && currentFileName && (

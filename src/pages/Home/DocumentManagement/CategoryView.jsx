@@ -47,7 +47,7 @@ const CategoryView = () => {
     
     const columns = [
         { 
-            title: 'Tên thư mục', 
+            title: 'Tên loại tài liệu', 
             dataIndex: 'name', 
             key: 'name',
             render: (text, record) => (
@@ -91,7 +91,7 @@ const CategoryView = () => {
             render: (_, record) => (
                 <Space size="middle">
                     <Button icon={<EditOutlined />} onClick={() => { setEditingCategory(record); setIsModalVisible(true); }} />
-                    <Popconfirm title="Xóa thư mục này?" 
+                    <Popconfirm title="Xóa loại tài liệu này?" 
                                 okText="Xóa"
                                 cancelText="Hủy" 
                                 onConfirm={() => deleteCategory(record.id, departmentId)}>
@@ -118,13 +118,13 @@ const CategoryView = () => {
             <Row justify="space-between" align="middle" style={{ marginBottom: 16 }}>
                 <Col>
                     <Typography.Title level={4} style={{ margin: 0 }}>
-                        Thư mục trong {currentDepartment?.name}
+                        Loại tài liệu trong {currentDepartment?.name}
                     </Typography.Title>
                 </Col>
                 <Col flex="auto" style={{ marginLeft: 24, marginRight: 24 }}>
                     {/* Thêm ô tìm kiếm */}
                     <Input
-                        placeholder="Tìm kiếm thư mục theo tên..."
+                        placeholder="Tìm kiếm loại tài liệu theo tên..."
                         prefix={<SearchOutlined />}
                         allowClear
                         value={searchTerm}
@@ -134,7 +134,7 @@ const CategoryView = () => {
                 <Col>
                     {canManage && (
                         <Button type="primary" icon={<PlusOutlined />} onClick={() => { setEditingCategory(null); setIsModalVisible(true); }}>
-                            Thêm thư mục
+                            Thêm loại tài liệu
                         </Button>
                     )}
                 </Col>

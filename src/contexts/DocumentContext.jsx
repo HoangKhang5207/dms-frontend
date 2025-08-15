@@ -28,8 +28,8 @@ export const DocumentProvider = ({ children }) => {
                 response = await axiosInstance.get(`/departments/${deptId}/categories`);
                 setCategories(response.data.content);
             }
-        } catch (error) {
-            message.error('Không thể tải danh sách thư mục.');
+        } catch {
+            message.error('Không thể tải danh sách loại tài liệu.');
         } finally {
             setLoading(false);
         }
@@ -42,8 +42,8 @@ export const DocumentProvider = ({ children }) => {
             // Gọi API lấy thông tin category theo ID
             const response = await axiosInstance.get(`/categories/${categoryId}`);
             return response.data;
-        } catch (error) {
-            message.error('Không thể tải thông tin thư mục.');
+        } catch {
+            message.error('Không thể tải thông tin loại tài liệu.');
             return null;
         } finally {
             setLoading(false);
@@ -65,7 +65,7 @@ export const DocumentProvider = ({ children }) => {
                 total: response.data.totalElements,
             });
 
-        } catch (error) {
+        } catch {
             message.error('Không thể tải danh sách tài liệu.');
         } finally {
             setLoading(false);
@@ -75,11 +75,11 @@ export const DocumentProvider = ({ children }) => {
     const createCategory = useCallback(async (deptId, values) => {
         try {
             await axiosInstance.post('/categories', { ...values, department_id: deptId });
-            message.success('Tạo thư mục thành công!');
+            message.success('Tạo loại tài liệu thành công!');
             await fetchCategoriesByDept(deptId);
             return true;
         } catch (error) {
-            message.error(error.response?.data?.message || 'Tạo thư mục thất bại.');
+            message.error(error.response?.data?.message || 'Tạo loại tài liệu thất bại.');
             return false;
         }
     }, [fetchCategoriesByDept]);
@@ -87,11 +87,11 @@ export const DocumentProvider = ({ children }) => {
     const updateCategory = useCallback(async (categoryId, deptId, values) => {
         try {
             await axiosInstance.patch(`/categories/${categoryId}`, values);
-            message.success('Cập nhật thư mục thành công!');
+            message.success('Cập nhật loại tài liệu thành công!');
             await fetchCategoriesByDept(deptId);
             return true;
         } catch (error) {
-            message.error(error.response?.data?.message || 'Cập nhật thư mục thất bại.');
+            message.error(error.response?.data?.message || 'Cập nhật loại tài liệu thất bại.');
             return false;
         }
     }, [fetchCategoriesByDept]);
@@ -99,11 +99,11 @@ export const DocumentProvider = ({ children }) => {
     const deleteCategory = useCallback(async (categoryId, deptId) => {
         try {
             await axiosInstance.patch(`/categories/${categoryId}/status`, { status: 2 }); // 2 = Inactive
-            message.success('Xóa thư mục thành công!');
+            message.success('Xóa loại tài liệu thành công!');
             await fetchCategoriesByDept(deptId);
             return true;
-        } catch (error) {
-            message.error('Xóa thư mục thất bại.');
+        } catch {
+            message.error('Xóa loại tài liệu thất bại.');
             return false;
         }
     }, [fetchCategoriesByDept]);
@@ -115,7 +115,7 @@ export const DocumentProvider = ({ children }) => {
                 headers: { 'Content-Type': 'multipart/form-data' }
             });
             message.success('Tải lên tài liệu thành công!');
-            // Tải lại danh sách thư mục để cập nhật (có thể có tài liệu mới)
+            // Tải lại danh sách loại tài liệu để cập nhật (có thể có tài liệu mới)
             await fetchCategoriesByDept(deptId); 
             return true;
         } catch (error) {

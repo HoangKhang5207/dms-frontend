@@ -33,6 +33,9 @@ import HomeDispatcher from '../pages/Home/HomeDispatcher';
 import SharedDocumentsPage from '../pages/SharedDocumentsPage/SharedDocumentsPage';
 
 // Placeholders for pages to be implemented
+import AuditLogsPage from '../pages/Home/Audit/AuditLogsPage';
+import DelegationsPage from '../pages/Home/Delegations/DelegationsPage';
+import PublicViewer from '../pages/Public/PublicViewer';
 
 const AppRouter = () => {
     const location = useLocation();
@@ -47,6 +50,8 @@ const AppRouter = () => {
                     <Route path="register" element={<AnimatedPage><RegisterPage /></AnimatedPage>} />
                     <Route path="forgot-password" element={<AnimatedPage><ForgotPasswordPage /></AnimatedPage>} />
                 </Route>
+                {/* Public viewer for shared documents */}
+                <Route path="/public/share/:token" element={<AnimatedPage><PublicViewer /></AnimatedPage>} />
                 <Route path="/verify-email-message" element={<AnimatedPage><VerifyEmailMessagePage /></AnimatedPage>} />
                 <Route path="/verifired" element={<AnimatedPage><VerifyEmailPage /></AnimatedPage>} />
                 <Route path="/reset-password" element={<AnimatedPage><ResetPasswordPage /></AnimatedPage>} />
@@ -74,6 +79,9 @@ const AppRouter = () => {
                         <Route path="document-management/:departmentId" element={<AnimatedPage><CategoryView /></AnimatedPage>} />
                         <Route path="document-management/:departmentId/:categoryId" element={<AnimatedPage><DocumentView /></AnimatedPage>} />
                         <Route path="shared" element={<AnimatedPage><SharedDocumentsPage /></AnimatedPage>} />
+                        {/* Audit logs and Delegations */}
+                        <Route path="audit/logs" element={<AnimatedPage><AuditLogsPage /></AnimatedPage>} />
+                        <Route path="delegations" element={<AnimatedPage><DelegationsPage /></AnimatedPage>} />
                     </Route>
                 </Route>
             </Routes>
