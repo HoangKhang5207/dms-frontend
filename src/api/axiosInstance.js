@@ -1,8 +1,11 @@
 import axios from 'axios';
 import { tokenService } from '../services/tokenService';
 
+// Determine API base URL from Vite env at build time or fallback to localhost for dev
+const API_BASE_URL = import.meta?.env?.VITE_API_BASE_URL || 'http://localhost:8080/api/v1';
+
 const axiosInstance = axios.create({
-    baseURL: 'http://localhost:8080/api/v1', // URL backend của bạn
+    baseURL: API_BASE_URL, // URL backend
 });
 
 // Interceptor để thêm token vào header của mỗi request
@@ -40,7 +43,7 @@ axiosInstance.interceptors.response.use(
                         return Promise.reject("Refresh token not found.");
                     }
 
-                    const rs = await axios.post('http://localhost:8080/api/v1/auth/refresh-token', {
+                    const rs = await axios.post(`${API_BASE_URL}/auth/refresh-token`, {
                         refresh_token: refreshToken,
                     });
 
