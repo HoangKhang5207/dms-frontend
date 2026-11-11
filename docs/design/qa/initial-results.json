@@ -1,0 +1,172 @@
+{
+  "viewports": [
+    {
+      "width": 1672,
+      "height": 941,
+      "top": 64,
+      "naturalWidth": 1672,
+      "naturalHeight": 941,
+      "overflow": false,
+      "fontLoaded": true
+    },
+    {
+      "width": 1440,
+      "height": 810.421875,
+      "top": 64,
+      "naturalWidth": 1672,
+      "naturalHeight": 941,
+      "overflow": false,
+      "fontLoaded": true
+    },
+    {
+      "width": 768,
+      "height": 432.21875,
+      "top": 64,
+      "naturalWidth": 1672,
+      "naturalHeight": 941,
+      "overflow": false,
+      "fontLoaded": true
+    },
+    {
+      "width": 390,
+      "height": 219.484375,
+      "top": 64,
+      "naturalWidth": 1672,
+      "naturalHeight": 941,
+      "overflow": true,
+      "fontLoaded": true
+    }
+  ],
+  "checks": [
+    {
+      "name": "No overflow 1672",
+      "pass": true
+    },
+    {
+      "name": "No overflow 1440",
+      "pass": true
+    },
+    {
+      "name": "No overflow 768",
+      "pass": true
+    },
+    {
+      "name": "No overflow 390",
+      "pass": false
+    },
+    {
+      "name": "Guest CTA opens login",
+      "pass": true
+    },
+    {
+      "name": "Feature anchor from login",
+      "pass": false
+    },
+    {
+      "name": "Contact anchor visible",
+      "pass": true
+    },
+    {
+      "name": "Contact required validation",
+      "pass": false
+    },
+    {
+      "name": "Contact email validation",
+      "pass": true
+    },
+    {
+      "name": "Logo returns home",
+      "pass": true
+    },
+    {
+      "name": "Keyboard focus reaches link",
+      "pass": true
+    },
+    {
+      "name": "Protected documents redirects guest",
+      "pass": true
+    },
+    {
+      "name": "Register route renders",
+      "pass": true
+    },
+    {
+      "name": "Forgot password route renders",
+      "pass": true
+    },
+    {
+      "name": "No uncaught browser errors",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "errors": [],
+  "failedRequests": [
+    {
+      "url": "https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap",
+      "failure": {
+        "errorText": "net::ERR_NETWORK_ACCESS_DENIED"
+      }
+    },
+    {
+      "url": "https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap",
+      "failure": {
+        "errorText": "net::ERR_NETWORK_ACCESS_DENIED"
+      }
+    },
+    {
+      "url": "https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap",
+      "failure": {
+        "errorText": "net::ERR_NETWORK_ACCESS_DENIED"
+      }
+    },
+    {
+      "url": "https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap",
+      "failure": {
+        "errorText": "net::ERR_NETWORK_ACCESS_DENIED"
+      }
+    },
+    {
+      "url": "https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap",
+      "failure": {
+        "errorText": "net::ERR_NETWORK_ACCESS_DENIED"
+      }
+    },
+    {
+      "url": "https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap",
+      "failure": {
+        "errorText": "net::ERR_NETWORK_ACCESS_DENIED"
+      }
+    },
+    {
+      "url": "https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap",
+      "failure": {
+        "errorText": "net::ERR_NETWORK_ACCESS_DENIED"
+      }
+    },
+    {
+      "url": "http://127.0.0.1:5173/vite.svg",
+      "failure": {
+        "errorText": "net::ERR_ABORTED"
+      }
+    },
+    {
+      "url": "http://127.0.0.1:5173/src/assets/search-illustration-1.png",
+      "failure": {
+        "errorText": "net::ERR_ABORTED"
+      }
+    },
+    {
+      "url": "https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap",
+      "failure": {
+        "errorText": "net::ERR_NETWORK_ACCESS_DENIED"
+      }
+    },
+    {
+      "url": "https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap",
+      "failure": {
+        "errorText": "net::ERR_NETWORK_ACCESS_DENIED"
+      }
+    }
+  ]
+}

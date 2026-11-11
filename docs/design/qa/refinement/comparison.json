@@ -1,0 +1,11 @@
+{
+  "scope": "banner image region only; excludes retained header and HTML below",
+  "dimensions": [
+    1672,
+    941
+  ],
+  "mean_absolute_channel_error": 0.033880318369104094,
+  "different_pixels": 15046,
+  "total_pixels": 1573352,
+  "metric": "RGB absolute difference, no tolerance, no alignment or resizing"
+}

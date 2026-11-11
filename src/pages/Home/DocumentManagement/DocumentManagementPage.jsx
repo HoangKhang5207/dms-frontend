@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Table, Button, Space, Popconfirm, Modal, Form, Input, Dropdown, Menu } from 'antd';
+import { Table, Button, Space, Popconfirm, Modal, Form, Input, Dropdown, Menu, Tooltip } from 'antd';
 import { DownloadOutlined, EyeOutlined, DeleteOutlined, PlusOutlined, DownOutlined, CheckCircleOutlined, ScanOutlined } from '@ant-design/icons';
 import { useAuth } from '../../../contexts/AuthContext'; // Adjusted import
 import { showSuccessToast, showErrorToast } from '../../../utils/toast'; // Adjusted import
@@ -23,6 +23,10 @@ const DocumentManagementPage = () => {
   const [passwordForm] = Form.useForm();
   const [selectedRowKeys, setSelectedRowKeys] = useState([]);
   const [isDownloadMultipleModalVisible, setIsDownloadMultipleModalVisible] = useState(false);
+  const rowId = record => record.id ?? record.fileId;
+  const selectedDocuments = documents.filter(document => selectedRowKeys.includes(rowId(document)));
+  const canDownloadSelection = selectedDocuments.length > 0 && selectedDocuments.every(document => document.fileId != null);
+  const missingFileIdMessage = 'API chưa cung cấp mã tệp để xem hoặc tải bản mã hóa.';
 
   const fetchDocuments = async () => {
     setLoading(true);
@@ -77,6 +81,7 @@ const DocumentManagementPage = () => {
       });
       if (response.ok) {
         showSuccessToast(`${fileName} đã được xóa thành công!`);
+        setSelectedRowKeys([]);
         fetchDocuments(); // Refresh the list
       } else {
         showErrorToast(`Không thể xóa ${fileName}.`);
@@ -159,7 +164,7 @@ const DocumentManagementPage = () => {
         setIsPasswordModalVisible(false);
         passwordForm.resetFields();
       }
-    } catch (errorInfo) {
+    } catch {
       showErrorToast('Vui lòng nhập mật khẩu.');
     }
   };
@@ -188,6 +193,7 @@ const DocumentManagementPage = () => {
       title: 'Kích thước (bytes)',
       dataIndex: 'storageCapacity',
       key: 'storageCapacity',
+      render: value => value ?? '—',
     },
     {
       title: 'Thời gian tải lên',
@@ -208,17 +214,21 @@ const DocumentManagementPage = () => {
 
         return (
           <Space size="middle">
-            <Dropdown overlay={downloadMenu}>
-              <Button>
+            <Tooltip title={record.fileId == null ? missingFileIdMessage : undefined}>
+            <Dropdown overlay={downloadMenu} disabled={record.fileId == null}>
+              <Button disabled={record.fileId == null}>
                 Tải xuống <DownOutlined />
               </Button>
             </Dropdown>
-            <Button icon={<EyeOutlined />} onClick={() => handleView(record.fileId, record.title)}>
+            </Tooltip>
+            <Tooltip title={record.fileId == null ? missingFileIdMessage : undefined}>
+            <Button disabled={record.fileId == null} icon={<EyeOutlined />} onClick={() => handleView(record.fileId, record.originalFilename || record.title)}>
               Xem
             </Button>
+            </Tooltip>
             <Popconfirm
               title="Bạn có chắc chắn muốn xóa tài liệu này không?"
-              onConfirm={() => handleDelete(record.fileId, record.title)}
+              onConfirm={() => handleDelete(rowId(record), record.title)}
               okText="Có"
               cancelText="Không"
             >
@@ -234,9 +244,9 @@ const DocumentManagementPage = () => {
 
   return (
     <div>
-      <Space style={{ marginBottom: 16, justifyContent: 'space-between', width: '100%' }}>
+      <div className="aqua-toolbar">
         <h1>Danh sách tài liệu</h1>
-        <Space>
+        <div className="aqua-toolbar-actions">
           <Button type="primary" icon={<PlusOutlined />} onClick={() => setIsUploadModalVisible(true)}>
             Thêm tài liệu
           </Button>
@@ -260,17 +270,18 @@ const DocumentManagementPage = () => {
             onClick={() => {
               setIsDownloadMultipleModalVisible(true);
             }}
-            disabled={selectedRowKeys.length === 0}
+            disabled={!canDownloadSelection}
           >
             Tải xuống đã chọn ({selectedRowKeys.length})
           </Button>
-        </Space>
-      </Space>
+        </div>
+      </div>
       <Table 
         rowSelection={rowSelection}
         columns={columns} 
         dataSource={documents} 
-        rowKey="fileId" 
+        scroll={{ x: 'max-content' }}
+        rowKey={rowId}
         loading={loading} 
       />
 
@@ -334,7 +345,7 @@ const DocumentManagementPage = () => {
           setIsDownloadMultipleModalVisible(false);
           setSelectedRowKeys([]);
         }}
-        selectedFileIds={selectedRowKeys}
+        selectedFileIds={selectedDocuments.map(document => document.fileId).filter(id => id != null)}
         documents={documents}
       />
     </div>

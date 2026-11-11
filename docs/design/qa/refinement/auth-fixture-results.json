@@ -1,0 +1,62 @@
+{
+  "mode": "MOCKED_BACKEND_CONTRACTS_NOT_LIVE_INTEGRATION",
+  "checks": [
+    {
+      "name": "Loading: CTA withheld until user data resolves",
+      "pass": true
+    },
+    {
+      "name": "authenticated: landing CTA follows auth state",
+      "pass": true
+    },
+    {
+      "name": "authenticated: users/me request retains Bearer header",
+      "pass": true
+    },
+    {
+      "name": "refresh: landing CTA follows auth state",
+      "pass": true
+    },
+    {
+      "name": "Refresh: snake_case request and response handled",
+      "pass": true
+    },
+    {
+      "name": "Refresh: rotated tokens stored",
+      "pass": true
+    },
+    {
+      "name": "refresh: users/me request retains Bearer header",
+      "pass": true
+    },
+    {
+      "name": "Expired session: existing interceptor redirects to login",
+      "pass": true
+    },
+    {
+      "name": "Expired session: stored tokens removed",
+      "pass": true
+    },
+    {
+      "name": "expired: users/me request retains Bearer header",
+      "pass": true
+    },
+    {
+      "name": "service-error: landing CTA follows auth state",
+      "pass": true
+    },
+    {
+      "name": "Service error: existing logout fallback clears tokens",
+      "pass": true
+    },
+    {
+      "name": "service-error: users/me request retains Bearer header",
+      "pass": true
+    },
+    {
+      "name": "Fixtures: no uncaught browser errors",
+      "pass": true
+    }
+  ],
+  "pageErrors": []
+}

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '@ant-design/v5-patch-for-react-19';
-import { Layout, Menu, Avatar, Dropdown, Space, Typography } from 'antd';
+import { Layout, Menu, Avatar, Dropdown, Space, Typography, Grid, Drawer, Button } from 'antd';
 import {
     HomeOutlined,
     TeamOutlined,
@@ -11,11 +11,16 @@ import {
     UserOutlined,
     LogoutOutlined,
     SettingOutlined,
-    SwapOutlined
+    MenuOutlined,
+    MenuFoldOutlined,
+    MenuUnfoldOutlined,
+    SwapOutlined,
+    FolderOutlined
 } from '@ant-design/icons';
-import { Outlet, useNavigate, useLocation } from 'react-router-dom';
+import { Outlet, Link, useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
 import { useOrganization } from '../../contexts/OrganizationContext';
+import AquaDocsBrand from '../../components/AquaDocsBrand/AquaDocsBrand';
 import './DashboardLayout.css';
 
 const { Header, Content, Sider } = Layout;
@@ -26,11 +31,14 @@ const DashboardLayout = () => {
     const location = useLocation();
     const { fullUser, logout } = useAuth();
     const [collapsed, setCollapsed] = useState(false);
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const screens = Grid.useBreakpoint();
+    const isMobile = screens.lg === false;
     const { fetchOrganizationDetails } = useOrganization();
 
     const [orgName, setOrgName] = useState('Chưa tham gia tổ chức');
     const [userRole, setUserRole] = useState('Người dùng');
-    
+
     const [openKeys, setOpenKeys] = useState([]);
 
     // Xác định key của menu item và submenu dựa trên URL
@@ -117,77 +125,116 @@ const DashboardLayout = () => {
     const getLastInitials = (fullName, count = 2) => {
         // 1. Tách chuỗi và loại bỏ khoảng trắng thừa
         const parts = fullName.trim().split(/\s+/);
-        
+
         // 2. Lấy n phần tử cuối
         //    Nếu tổng số từ < n thì lấy hết
         const lastParts = parts.slice(-count);
-        
+
         // 3. Lấy ký tự đầu mỗi từ
         return lastParts.map(word => word.charAt(0));
     }
 
-    const words = getLastInitials(fullUser.last_name + ' ' + fullUser.first_name);
+    const words = getLastInitials(`${fullUser?.last_name || ''} ${fullUser?.first_name || ''}`);
 
-    const userMenu = <Menu items={menuItems} />;
-    
+
     // Tên viết tắt của user cho Avatar
     const userInitials = fullUser ? `${words[words.length - 1]}${words[0]}` : 'G';
 
-    return (
-        <Layout className="dashboard-layout">
-            <Sider 
-                theme="light" 
-                collapsible 
-                collapsed={collapsed} 
-                onCollapse={(value) => setCollapsed(value)}
-                className="dashboard-sider"
-                width={240}
-            >
-                <div className="logo-dashboard">
-                    <img src='/src/assets/logo.png' className="logo-dashboard-img" />
-                    <span className="logo-dashboard-text">Genadata</span>
-                </div>
-                <Menu 
+    const navigateTo = (destination) => {
+        navigate(destination);
+        setMobileMenuOpen(false);
+    };
+
+    const navigation = (
+                <Menu
                     mode="inline"
+                    theme="dark"
                     // Sử dụng key động
-                    selectedKeys={[selectedKey]} 
+                    selectedKeys={[selectedKey]}
                     openKeys={openKeys}
                     onOpenChange={onOpenChange}
                 >
-                    <Menu.Item key="1" icon={<HomeOutlined />} onClick={() => navigate('/home')}>
+                    <Menu.Item key="1" icon={<HomeOutlined />} onClick={() => navigateTo('/home')}>
                         Trang chủ
                     </Menu.Item>
                     <Menu.SubMenu key="sub1" icon={<TeamOutlined />} title="Tổ chức của tôi">
-                        <Menu.Item key="2" onClick={() => navigate('/home/organization/info')}>Thông tin chung</Menu.Item>
-                        <Menu.Item key="3" onClick={() => navigate('/home/organization/departments')}>Phòng ban</Menu.Item>
-                        <Menu.Item key="4" onClick={() => navigate('/home/organization/members')}>Thành viên</Menu.Item>
+                        <Menu.Item key="2" onClick={() => navigateTo('/home/organization/info')}>Thông tin chung</Menu.Item>
+                        <Menu.Item key="3" onClick={() => navigateTo('/home/organization/departments')}>Phòng ban</Menu.Item>
+                        <Menu.Item key="4" onClick={() => navigateTo('/home/organization/members')}>Thành viên</Menu.Item>
                     </Menu.SubMenu>
-                    <Menu.Item key="5" icon={<FileOutlined />} onClick={() => navigate('/home/document-management')}>Quản lý tài liệu</Menu.Item>
-                    <Menu.Item key="6" icon={<StarOutlined />}>Được đánh dấu</Menu.Item>
-                    <Menu.Item key="7" icon={<ShareAltOutlined />}>Được chia sẻ với tôi</Menu.Item>
+                    <Menu.Item key="5" icon={<FolderOutlined />} onClick={() => navigateTo(`/home/document-management/${fullUser?.department_id || ''}`)}>Quản lý thư mục</Menu.Item>
+                    <Menu.Item key="6" icon={<FileOutlined />} onClick={() => navigateTo('/home/document-management')}>Quản lý tài liệu</Menu.Item>
+                    <Menu.Item key="7" icon={<StarOutlined />}>Được đánh dấu</Menu.Item>
+                    <Menu.Item key="8" icon={<ShareAltOutlined />}>Được chia sẻ với tôi</Menu.Item>
                 </Menu>
-            </Sider>
+    );
+
+    return (
+        <Layout className={`dashboard-layout${isMobile ? ' dashboard-mobile' : ''}`}>
+            {!isMobile && (
+                <Sider
+                    theme="dark"
+                    collapsible
+                    trigger={null}
+                    collapsed={collapsed}
+                    onCollapse={setCollapsed}
+                    className="dashboard-sider"
+                    width={240}
+                >
+                    <Link to="/home" className="logo-dashboard" aria-label="AquaDocs AI — Không gian làm việc">
+                        <AquaDocsBrand compact={collapsed} />
+                    </Link>
+                    {navigation}
+                    <Button
+                        type="text"
+                        className="sidebar-collapse"
+                        icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
+                        aria-label={collapsed ? 'Mở rộng điều hướng' : 'Thu gọn điều hướng'}
+                        onClick={() => setCollapsed(value => !value)}
+                    />
+                </Sider>
+            )}
+            <Drawer
+                title={<Link to="/home" onClick={() => setMobileMenuOpen(false)} aria-label="AquaDocs AI — Không gian làm việc"><AquaDocsBrand /></Link>}
+                placement="left"
+                width={280}
+                open={isMobile && mobileMenuOpen}
+                onClose={() => setMobileMenuOpen(false)}
+                className="aquadocs-navigation-drawer"
+                styles={{ body: { background: '#081e4b', padding: '16px 8px' } }}
+            >
+                {navigation}
+            </Drawer>
             <Layout className="site-layout">
                 <Header className="site-layout-header">
                     <div className="header-left">
-                        <span className="org-name-tag">{orgName}</span>
-                        <span className="user-role-text">{userRole}</span>
+                        {isMobile && (
+                            <Button
+                                type="text"
+                                icon={<MenuOutlined />}
+                                aria-label="Mở điều hướng"
+                                aria-expanded={mobileMenuOpen}
+                                onClick={() => setMobileMenuOpen(true)}
+                            />
+                        )}
+                        <div className="workspace-identity">
+                            <span className="org-name-tag" title={orgName}>{orgName}</span>
+                            <span className="user-role-text">{userRole}</span>
+                        </div>
                     </div>
-                    <div className="header-right">
-                        <Dropdown overlay={userMenu} trigger={['click']}>
-                            <a onClick={(e) => e.preventDefault()}>
-                                <Space>
-                                    <Avatar style={{ backgroundColor: '#f56a00' }}>{userInitials}</Avatar>
-                                    <Text>{fullUser ? `${fullUser.last_name} ${fullUser.first_name}` : 'Guest'}</Text>
-                                </Space>
-                            </a>
-                        </Dropdown>
-                    </div>
+                    <Dropdown menu={{ items: menuItems }} trigger={['click']}>
+                        <Button type="text" className="account-trigger" aria-label="Tài khoản người dùng">
+                            <Space>
+                                <Avatar style={{ backgroundColor: '#0068ff' }}>{userInitials}</Avatar>
+                                <Text className="account-name">{fullUser ? `${fullUser.last_name} ${fullUser.first_name}` : 'Khách'}</Text>
+                            </Space>
+                        </Button>
+                    </Dropdown>
                 </Header>
                 <Content className="site-layout-content-wrapper">
-                    <div className="site-layout-content">
+                    <main className="site-layout-content">
                         <Outlet />
-                    </div>
+                    </main>
                 </Content>
             </Layout>
         </Layout>

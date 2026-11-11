@@ -3,7 +3,6 @@ import { useParams, Link } from 'react-router-dom';
 import '@ant-design/v5-patch-for-react-19';
 import { Table, Button, Space, Popconfirm, Tooltip, Typography, Breadcrumb, Row, Col } from 'antd';
 import { HomeOutlined, PlusOutlined, EditOutlined, DeleteOutlined, StarOutlined } from '@ant-design/icons';
-import axiosInstance from '../../../api/axiosInstance';
 import { useDocument } from '../../../contexts/DocumentContext';
 import { useOrganization } from '../../../contexts/OrganizationContext';
 import { getFileIcon } from '../../../utils/fileIcons'; // Import helper mới
@@ -19,12 +18,7 @@ const DocumentView = () => {
     const [previewFile, setPreviewFile] = useState(null);
 
     const handlePreview = (record) => {
-        const fileUrl = `${axiosInstance.defaults.baseURL.replace('/api/v1', '')}/storage/${record.file_path}`;
-        console.log('Previewing file:', fileUrl);
-        setPreviewFile({
-            url: fileUrl,
-            name: record.original_filename
-        });
+        setPreviewFile(record);
     };
 
    useEffect(() => {
@@ -94,16 +88,12 @@ const DocumentView = () => {
                             icon={getFileIcon(record.type)}
                             onClick={() => handlePreview(record)}
                         >
-                            <span style={{display: 'inline-block', maxWidth: 250, overflow: 'hidden', textOverflow: 'ellipsis', verticalAlgin: 'middle', whiteSpace: 'nowrap'}}>
+                            <span style={{display: 'inline-block', maxWidth: 250, overflow: 'hidden', textOverflow: 'ellipsis', verticalAlign: 'middle', whiteSpace: 'nowrap'}}>
                                 {record.original_filename}
                             </span>
                         </Button>
                     </Tooltip>
-                    <FilePreviewModal
-                        visible={!!previewFile}
-                        file={previewFile}
-                        onCancel={() => setPreviewFile(null)}
-                    />
+
                 </Space>
             )
         },
@@ -143,7 +133,7 @@ const DocumentView = () => {
                 <GlobalSearch />
             </div>
             
-            <Row justify="space-between" style={{ marginBottom: 16 }}>
+            <Row className="aqua-toolbar" justify="space-between">
                 <Col><Typography.Title level={4}>Tài liệu trong {currentCategory?.name}</Typography.Title></Col>
                 <Col><Button type="primary" icon={<PlusOutlined />} onClick={() => setIsModalVisible(true)}>Thêm File</Button></Col>
             </Row>
@@ -158,14 +148,15 @@ const DocumentView = () => {
                 scroll={{ x: 1600 }}
             />
             <UploadModal 
-                visible={isModalVisible}
+                open={isModalVisible}
                 onCancel={handleCancelUpload}
                 onFinish={handleUploadFinish}
                 category={currentCategory}
             />
             <FilePreviewModal 
-                visible={!!previewFile} 
-                file={previewFile} 
+                open={!!previewFile}
+                documentId={previewFile?.id}
+                fileName={previewFile?.original_filename}
                 onCancel={() => setPreviewFile(null)}
             />
         </div>

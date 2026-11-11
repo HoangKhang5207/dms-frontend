@@ -217,14 +217,14 @@ const MembersTab = () => {
 
     return (
         <div>
-            <Row justify="space-between" style={{ marginBottom: 16 }}>
+            <Row className="aqua-toolbar" justify="space-between">
                 <Col>
                     <Input
                         placeholder="Tìm kiếm thành viên theo email..."
                         prefix={<SearchOutlined />}
                         allowClear
                         onChange={(e) => setSearchTerm(e.target.value)}
-                        style={{ width: 300 }}
+                        className="aqua-toolbar-search"
                     />
                 </Col>
                 <Col>

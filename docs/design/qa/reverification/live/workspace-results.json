@@ -1,0 +1,322 @@
+{
+  "mode": "REAL_ISOLATED_BACKEND",
+  "phase": "workspace",
+  "checks": [
+    {
+      "name": "Real login opens protected workspace",
+      "pass": true
+    },
+    {
+      "name": "Signed session returns current account",
+      "pass": true
+    },
+    {
+      "name": "Real organization detail renders",
+      "pass": true
+    },
+    {
+      "name": "Live documents expose stable IDs expected by selection",
+      "pass": false,
+      "detail": "Backend /documents/all currently returns numeric id, not fileId"
+    },
+    {
+      "name": "Real category creation and navigation",
+      "pass": true
+    }
+  ],
+  "responses": [
+    {
+      "path": "/api/v1/auth/login",
+      "method": "POST",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/users/me",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/organizations/1",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/organizations/1",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/organizations/1",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/organizations/1",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/departments/organization/1",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/departments/organization/1",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/departments/organization/1",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/departments/organization/1",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/users/me",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/users/me",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/organizations/1",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/organizations/1",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/organizations/1",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/departments/organization/1",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/departments/organization/1",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/departments/organization/1",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/organizations/1/members",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/organizations/1/members",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/organizations/1/members",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/users/me",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/users/me",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/documents/all",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/organizations/1",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/documents/all",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/organizations/1",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/departments/organization/1",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/departments/organization/1",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/organizations/1",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/departments/organization/1",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/organizations/1/members",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/organizations/1/members",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/organizations/1/members",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/users/me",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/users/me",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/organizations/1",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/organizations/1",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/departments/1/categories",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/departments/1/categories",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/organizations/1",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/departments/organization/1",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/departments/organization/1",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/departments/organization/1",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/organizations/1/members",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/organizations/1/members",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/organizations/1/members",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/categories",
+      "method": "POST",
+      "status": 201
+    },
+    {
+      "path": "/api/v1/departments/1/categories",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/organizations/1",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/categories/7/documents",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/departments/organization/1",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/organizations/1",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/categories/7/documents",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/departments/organization/1",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/organizations/1/members",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/organizations/1/members",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/documents",
+      "method": "POST",
+      "status": 500
+    }
+  ],
+  "errors": [
+    "locator.waitFor: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('dialog') to be hidden\u001b[22m\n\u001b[2m    63 × locator resolved to visible <div role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"«r1s»\" class=\"ant-modal css-dev-only-do-not-override-qqg4mk\">…</div>\u001b[22m\n"
+  ]
+}

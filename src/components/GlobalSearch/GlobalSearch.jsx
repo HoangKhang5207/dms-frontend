@@ -26,6 +26,7 @@ const GlobalSearch = () => {
                 <Input
                     size="large"
                     placeholder="Tìm kiếm tài liệu theo từ khóa..."
+                    aria-label="Tìm kiếm tài liệu"
                     prefix={<SearchOutlined />}
                     value={keyword}
                     onChange={(e) => setKeyword(e.target.value)}
@@ -34,7 +35,8 @@ const GlobalSearch = () => {
                 />
                 <Button 
                     size="large"
-                    icon={<FilterOutlined />} 
+                    icon={<FilterOutlined />}
+                    aria-label="Tìm kiếm nâng cao"
                     onClick={() => setIsModalVisible(true)}
                 />
             </Space.Compact>

@@ -1,0 +1,145 @@
+{
+  "viewports": [
+    {
+      "viewportWidth": 1672,
+      "viewportHeight": 1005,
+      "width": 1672,
+      "height": 941,
+      "top": 64,
+      "naturalWidth": 1672,
+      "naturalHeight": 941,
+      "overflow": false,
+      "fontLoaded": true
+    },
+    {
+      "viewportWidth": 1440,
+      "viewportHeight": 900,
+      "width": 1440,
+      "height": 810.421875,
+      "top": 64,
+      "naturalWidth": 1672,
+      "naturalHeight": 941,
+      "overflow": false,
+      "fontLoaded": true
+    },
+    {
+      "viewportWidth": 768,
+      "viewportHeight": 1024,
+      "width": 768,
+      "height": 432.21875,
+      "top": 64,
+      "naturalWidth": 1672,
+      "naturalHeight": 941,
+      "overflow": false,
+      "fontLoaded": true
+    },
+    {
+      "viewportWidth": 390,
+      "viewportHeight": 844,
+      "width": 390,
+      "height": 219.484375,
+      "top": 64,
+      "naturalWidth": 1672,
+      "naturalHeight": 941,
+      "overflow": false,
+      "fontLoaded": true
+    }
+  ],
+  "checks": [
+    {
+      "name": "No overflow 1672",
+      "pass": true
+    },
+    {
+      "name": "Landing uses AquaDocs identity 1672",
+      "pass": true
+    },
+    {
+      "name": "No overflow 1440",
+      "pass": true
+    },
+    {
+      "name": "Landing uses AquaDocs identity 1440",
+      "pass": true
+    },
+    {
+      "name": "No overflow 768",
+      "pass": true
+    },
+    {
+      "name": "Landing uses AquaDocs identity 768",
+      "pass": true
+    },
+    {
+      "name": "No overflow 390",
+      "pass": true
+    },
+    {
+      "name": "Landing uses AquaDocs identity 390",
+      "pass": true
+    },
+    {
+      "name": "Guest CTA opens login",
+      "pass": true
+    },
+    {
+      "name": "Login keeps existing identity",
+      "pass": true
+    },
+    {
+      "name": "Feature anchor from login",
+      "pass": true
+    },
+    {
+      "name": "Repeated feature anchor scrolls again",
+      "pass": true
+    },
+    {
+      "name": "Contact anchor visible",
+      "pass": true
+    },
+    {
+      "name": "Contact required validation",
+      "pass": true
+    },
+    {
+      "name": "Contact email validation",
+      "pass": true
+    },
+    {
+      "name": "Logo returns home",
+      "pass": true
+    },
+    {
+      "name": "Keyboard focus reaches link",
+      "pass": true
+    },
+    {
+      "name": "Landing footer uses AquaDocs",
+      "pass": true
+    },
+    {
+      "name": "No overflow 320",
+      "pass": true
+    },
+    {
+      "name": "Protected documents redirects guest",
+      "pass": true
+    },
+    {
+      "name": "Register route renders",
+      "pass": true
+    },
+    {
+      "name": "Forgot password route renders",
+      "pass": true
+    },
+    {
+      "name": "No uncaught browser errors",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "errors": [],
+  "failedRequests": []
+}

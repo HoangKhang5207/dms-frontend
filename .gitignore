@@ -25,3 +25,10 @@ dist-ssr
 
 # webviewer
 public/webviewer
+
+# Local tools and project instructions
+/.agents/
+/.runtime.local
+/scripts/
+/AGENTS.md
+/DESIGN.md

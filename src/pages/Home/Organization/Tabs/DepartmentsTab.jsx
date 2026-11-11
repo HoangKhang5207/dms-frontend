@@ -154,7 +154,7 @@ const DepartmentsTab = () => {
 
     return (
         <div>
-            <Row justify="space-between" style={{ marginBottom: 16 }}>
+            <Row className="aqua-toolbar" justify="space-between">
                 <Col>
                     {/* Ô tìm kiếm */}
                     <Input
@@ -162,7 +162,7 @@ const DepartmentsTab = () => {
                         prefix={<SearchOutlined />}
                         allowClear
                         onChange={(e) => setSearchTerm(e.target.value)}
-                        style={{ width: 300 }}
+                        className="aqua-toolbar-search"
                     />
                 </Col>
                 <Col>
@@ -195,7 +195,7 @@ const DepartmentsTab = () => {
                         />
                     ),
                     // Quản lý tổ chức hoặc Quản lý phòng ban đều có thể xem thành viên
-                    rowExpandable: (record) => fullUser?.is_organization_manager || fullUser?.is_dept_manager,
+                    rowExpandable: () => fullUser?.is_organization_manager || fullUser?.is_dept_manager,
                 }}
             />
             <DepartmentModal 

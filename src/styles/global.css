@@ -1,6 +1,10 @@
 /* ... các CSS rules khác (nếu có) */
-/* Import font Be Vietnam Pro từ Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap');
+/* Existing font served locally; license: src/assets/fonts/OFL.txt. */
+@font-face { font-family: 'Be Vietnam Pro'; font-style: normal; font-weight: 300; font-display: swap; src: url('../assets/fonts/BeVietnamPro-Light.ttf') format('truetype'); }
+@font-face { font-family: 'Be Vietnam Pro'; font-style: normal; font-weight: 400; font-display: swap; src: url('../assets/fonts/BeVietnamPro-Regular.ttf') format('truetype'); }
+@font-face { font-family: 'Be Vietnam Pro'; font-style: normal; font-weight: 500; font-display: swap; src: url('../assets/fonts/BeVietnamPro-Medium.ttf') format('truetype'); }
+@font-face { font-family: 'Be Vietnam Pro'; font-style: normal; font-weight: 600; font-display: swap; src: url('../assets/fonts/BeVietnamPro-SemiBold.ttf') format('truetype'); }
+@font-face { font-family: 'Be Vietnam Pro'; font-style: normal; font-weight: 700; font-display: swap; src: url('../assets/fonts/BeVietnamPro-Bold.ttf') format('truetype'); }
 
 html {
     scroll-behavior: smooth;

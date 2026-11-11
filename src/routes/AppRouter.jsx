@@ -7,6 +7,7 @@ import MainLayout from '../layouts/MainLayout';
 import DashboardLayout from '../layouts/DashboardLayout/DashboardLayout'; // Layout mới
 import ProtectedRoute from './ProtectedRoute';
 import AnimatedPage from '../components/AnimatedPage/AnimatedPage';
+import StatusPageShell from '../components/StatusPageShell/StatusPageShell';
 
 // Import các trang
 import HomePage from '../pages/HomePage/HomePage';
@@ -46,10 +47,10 @@ const AppRouter = () => {
                     <Route path="register" element={<AnimatedPage><RegisterPage /></AnimatedPage>} />
                     <Route path="forgot-password" element={<AnimatedPage><ForgotPasswordPage /></AnimatedPage>} />
                 </Route>
-                <Route path="/verify-email-message" element={<AnimatedPage><VerifyEmailMessagePage /></AnimatedPage>} />
-                <Route path="/verifired" element={<AnimatedPage><VerifyEmailPage /></AnimatedPage>} />
-                <Route path="/reset-password" element={<AnimatedPage><ResetPasswordPage /></AnimatedPage>} />
-                <Route path="/accepted-join" element={<AnimatedPage><AcceptInvitationPage /></AnimatedPage>} />
+                <Route path="/verify-email-message" element={<AnimatedPage><StatusPageShell><VerifyEmailMessagePage /></StatusPageShell></AnimatedPage>} />
+                <Route path="/verifired" element={<AnimatedPage><StatusPageShell><VerifyEmailPage /></StatusPageShell></AnimatedPage>} />
+                <Route path="/reset-password" element={<AnimatedPage><StatusPageShell><ResetPasswordPage /></StatusPageShell></AnimatedPage>} />
+                <Route path="/accepted-join" element={<AnimatedPage><StatusPageShell><AcceptInvitationPage /></StatusPageShell></AnimatedPage>} />
 
                 {/* --- CÁC ROUTE CẦN BẢO VỆ (ĐÃ SỬA LẠI CẤU TRÚC) --- */}
                 <Route element={<ProtectedRoute />}>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion as Motion, useReducedMotion } from 'framer-motion';
 
 // Định nghĩa các trạng thái của animation
 const animations = {
@@ -9,16 +9,18 @@ const animations = {
 };
 
 const AnimatedPage = ({ children }) => {
+    const reducedMotion = useReducedMotion();
+
     return (
-        <motion.div
+        <Motion.div
             variants={animations}
-            initial="initial"
+            initial={reducedMotion ? false : 'initial'}
             animate="animate"
             exit="exit"
-            transition={{ duration: 0.5, ease: "easeInOut" }} // Thời gian và kiểu chuyển động
+            transition={{ duration: reducedMotion ? 0 : 0.5, ease: "easeInOut" }}
         >
             {children}
-        </motion.div>
+        </Motion.div>
     );
 };
 

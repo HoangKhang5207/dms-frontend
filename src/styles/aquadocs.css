@@ -1,0 +1,132 @@
+:root {
+    --aqua-ink: #071b66;
+    --aqua-sidebar: #081e4b;
+    --aqua-blue: #0068ff;
+    --aqua-teal: #00b890;
+    --aqua-canvas: #f3f8ff;
+    --aqua-border: #dce8f7;
+    --aqua-muted: #526582;
+    --aqua-panel-shadow: 0 8px 32px rgba(20, 61, 121, 0.06);
+}
+
+.aquadocs-app { min-height: 100vh; color: #102552; }
+.aquadocs-app *, .aquadocs-app *::before, .aquadocs-app *::after { box-sizing: border-box; }
+.aquadocs-app a { text-underline-offset: 4px; }
+.aquadocs-app :where(a, button, input, textarea, [tabindex]):focus-visible {
+    outline: 3px solid var(--aqua-blue);
+    outline-offset: 3px;
+}
+.aquadocs-brand { display: inline-flex; align-items: center; flex-shrink: 0; }
+.aquadocs-brand svg { display: block; }
+.aquadocs-brand-wordmark { width: 200px; height: 40px; }
+.aquadocs-brand-symbol { display: none !important; width: 32px; height: 44px; }
+.aquadocs-brand-compact .aquadocs-brand-wordmark { display: none; }
+.aquadocs-brand-compact .aquadocs-brand-symbol { display: block !important; }
+
+.aquadocs-app .app-header { border-bottom: 1px solid var(--aqua-border); }
+.aquadocs-app .app-header .ant-btn-primary { box-shadow: none; }
+.aquadocs-app .app-footer { background: var(--aqua-canvas); padding: 24px 20px; }
+.aquadocs-app .footer-text { color: var(--aqua-muted); }
+.aquadocs-app .ant-card { border-color: var(--aqua-border); box-shadow: var(--aqua-panel-shadow); }
+.aquadocs-app .ant-table-wrapper { min-width: 0; max-width: 100%; }
+.aquadocs-app .ant-table { border: 1px solid var(--aqua-border); }
+.aquadocs-app .ant-table-content { overflow-x: auto; }
+.aquadocs-app .ant-form-item-label > label { font-weight: 500; }
+.ant-modal .ant-modal-content { border: 1px solid var(--aqua-border); box-shadow: 0 20px 70px rgba(8, 30, 75, 0.18); }
+.ant-modal .ant-modal-title { color: var(--aqua-ink); }
+.Toastify__toast, .ant-message .ant-message-notice-content {
+    font-family: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    color: #102552;
+    border: 1px solid var(--aqua-border);
+    border-radius: 12px;
+    box-shadow: var(--aqua-panel-shadow);
+}
+.Toastify__toast-container { max-width: calc(100vw - 24px); }
+.aqua-download-validation, .aqua-download-validation .ant-space-item { min-width: 0; max-width: 100%; }
+.aquadocs-app .ant-result { max-width: 720px; margin: auto; }
+
+.aquadocs-app .aqua-auth-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 140px);
+    padding: 48px 32px;
+    background: var(--aqua-canvas);
+}
+.aquadocs-app .aqua-auth-page > .ant-row { width: 100%; max-width: 1280px; }
+.aquadocs-app .aqua-auth-page .ant-col { min-width: 0; }
+.aquadocs-app .aqua-auth-page [class*="-illustration-col"] { padding: 24px 40px 24px 0; }
+.aquadocs-app .aqua-auth-page [class$="-form-container"] {
+    width: 100%;
+    max-width: 480px;
+    margin: auto;
+    padding: 36px;
+    background: white;
+    border: 1px solid var(--aqua-border);
+    border-radius: 20px;
+    box-shadow: var(--aqua-panel-shadow);
+}
+.aquadocs-app .register-page [class$="-form-container"] { max-width: 520px; }
+.aquadocs-app .reset-password-page > .ant-row { min-height: auto !important; }
+.aquadocs-auth-artwork { width: 100%; max-width: 620px; }
+.aquadocs-eyebrow { color: var(--aqua-blue); font-size: 13px; font-weight: 700; letter-spacing: 0.12em; }
+.aquadocs-auth-artwork h2 { color: var(--aqua-ink); font-size: clamp(24px, 2.5vw, 36px); line-height: 1.4; margin: 16px 0; }
+.aquadocs-auth-artwork p { color: var(--aqua-muted); line-height: 1.7; }
+.aquadocs-auth-artwork img { display: block; width: 100%; height: auto; margin: 28px 0 20px; border-radius: 20px; border: 1px solid var(--aqua-border); }
+.aquadocs-auth-artwork .aquadocs-auth-caption { font-size: 13px; }
+.aquadocs-status-shell { display: flex; flex-direction: column; min-height: 100vh; background: var(--aqua-canvas); }
+.aquadocs-status-content { flex: 1; display: grid; align-items: center; padding: 40px 24px; }
+.aquadocs-status-content > div { min-height: auto !important; }
+.aquadocs-status-content .ant-result { background: white; border: 1px solid var(--aqua-border); border-radius: 20px; width: 100%; box-shadow: var(--aqua-panel-shadow); }
+
+.aquadocs-app .aqua-toolbar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 24px; }
+.aqua-toolbar h1, .aqua-toolbar h2, .aqua-toolbar h3, .aqua-toolbar h4 { margin: 0; }
+.aqua-toolbar h1 { font-size: 24px; line-height: 1.4; color: var(--aqua-ink); }
+.aqua-page-heading { margin-bottom: 28px; }
+.aqua-page-heading h2.ant-typography { margin: 0 0 8px; }
+.aquadocs-app .main-dashboard .dashboard-header > .ant-col { min-width: 0; }
+.aqua-toolbar-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+.aqua-toolbar .aqua-toolbar-search { width: min(100%, 320px); }
+.aquadocs-app .aqua-filters { display: flex; flex-wrap: wrap; gap: 8px 16px; padding: 16px; background: var(--aqua-canvas); border: 1px solid var(--aqua-border); border-radius: 12px; }
+.aquadocs-app .aqua-filters .ant-form-item { margin-inline-end: 0; }
+.aquadocs-app .no-org-container, .aquadocs-app .create-org-page-container { background: var(--aqua-canvas); border-radius: 16px; }
+.aquadocs-app .no-org-content { width: 100%; max-width: 440px; padding: 24px; }
+.aquadocs-app .no-org-image { width: min(100%, 280px); height: auto; }
+.aquadocs-app .create-org-form-wrapper { box-shadow: var(--aqua-panel-shadow); border: 1px solid var(--aqua-border); border-radius: 16px; }
+.aquadocs-app .create-org-page-container > .ant-spin-nested-loading { width: 100%; max-width: 800px; }
+
+@media (max-width: 767px) {
+    .aqua-date-range-popup { position: fixed !important; top: 12px !important; left: 12px !important; right: 12px; }
+    .aqua-date-range-popup .ant-picker-panels { display: flex; flex-direction: column; }
+    .aqua-date-range-popup .ant-picker-panel-container { max-height: min(600px, calc(100dvh - 32px)); overflow-y: auto; }
+    .aqua-date-range-popup .ant-picker-panel,
+    .aqua-date-range-popup .ant-picker-date-panel { width: min(350px, calc(100vw - 24px)); }
+    .aqua-date-range-popup .ant-picker-date-panel .ant-picker-content { width: 100%; table-layout: fixed; }
+    .aqua-date-range-popup .ant-picker-date-panel .ant-picker-content th { width: auto; }
+    .app-header .aquadocs-brand-wordmark { width: 160px; height: 32px; }
+    .aquadocs-app .aqua-auth-page { padding: 28px 16px; }
+    .aquadocs-app .aqua-auth-page [class*="-illustration-col"] { display: none; }
+    .aquadocs-app .aqua-auth-page [class$="-form-container"] { padding: 24px; border-radius: 16px; }
+    .aquadocs-status-content { padding: 24px 16px; }
+    .aquadocs-status-content .ant-result { padding: 32px 20px; }
+    .aqua-toolbar > .ant-col { max-width: 100%; }
+    .aquadocs-app .main-dashboard .dashboard-header > .ant-col { flex-basis: 100%; }
+    .aqua-toolbar .aqua-toolbar-search { width: 100%; }
+    .aquadocs-app .aqua-filters .ant-form-item { width: 100%; }
+    .aquadocs-app .aqua-filters .ant-form-item-control, .aqua-filters .ant-picker { min-width: 0; width: 100%; }
+    .aquadocs-app .aqua-filters .ant-select { width: 100% !important; }
+    .aquadocs-app .create-org-page-container { padding: 0; }
+    .aquadocs-app .create-org-form-wrapper { padding: 24px 16px; }
+    .ant-modal { max-width: calc(100vw - 24px); }
+    .ant-modal .aqua-invite-row { flex-wrap: wrap; }
+    .ant-modal .aqua-invite-row > .ant-space-item { width: 100%; min-width: 0; }
+    .ant-modal .aqua-invite-row .ant-input, .ant-modal .aqua-invite-row .ant-select { width: 100% !important; }
+}
+@media (max-width: 480px) {
+    .app-header .aquadocs-brand-wordmark { display: none; }
+    .app-header .aquadocs-brand-symbol { display: block !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .aquadocs-app *, .aquadocs-app *::before, .aquadocs-app *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}

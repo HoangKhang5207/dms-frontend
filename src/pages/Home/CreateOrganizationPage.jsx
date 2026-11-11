@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import '@ant-design/v5-patch-for-react-19';
 import { Form, Input, Button, Checkbox, Switch, Typography, Modal, Spin } from 'antd';
-import { useNavigate } from 'react-router-dom';
 import { useOrganization } from '../../contexts/OrganizationContext';
 import './CreateOrganizationPage.css';
 
@@ -9,7 +8,7 @@ const { Title, Link: AntLink } = Typography;
 
 const TermsAndConditions = ({ visible, onOk, onCancel }) => (
     <Modal
-        title="Điều khoản & quy định của Genadata"
+        title="Điều khoản & quy định của AquaDocs"
         open={visible}
         onOk={onOk}
         onCancel={onCancel}
@@ -29,7 +28,6 @@ const TermsAndConditions = ({ visible, onOk, onCancel }) => (
 
 const CreateOrganizationPage = () => {
     const [form] = Form.useForm();
-    const navigate = useNavigate();
     const { createOrganization } = useOrganization();
     const [loading, setLoading] = useState(false);
     const [termsAccepted, setTermsAccepted] = useState(false);
@@ -64,7 +62,7 @@ const CreateOrganizationPage = () => {
                             label="Tên tổ chức"
                             rules={[{ required: true, message: 'Vui lòng nhập tên tổ chức!' }]}
                         >
-                            <Input placeholder="Ví dụ: Công ty TNHH Genifast" />
+                            <Input placeholder="Ví dụ: Công ty Cấp thoát nước" />
                         </Form.Item>
                         <Form.Item
                             name="description"

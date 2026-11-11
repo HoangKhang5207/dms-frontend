@@ -12,9 +12,9 @@ const MainLayout = () => {
   return (
     <Layout className="main-layout">
       {/* Header được đặt trong Layout.Header của antd để dễ dàng tùy chỉnh */}
-      <Layout.Header className="fixed-header">
+      <div className="fixed-header">
         <AppHeader />
-      </Layout.Header>
+      </div>
       
       {/* Content có padding top bằng chiều cao của header để không bị che khuất */}
       <Content className="main-content">

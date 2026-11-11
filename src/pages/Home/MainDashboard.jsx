@@ -5,7 +5,7 @@ import { SearchOutlined, FileTextOutlined } from '@ant-design/icons';
 import './MainDashboard.css';
 import GlobalSearch from '../../components/GlobalSearch/GlobalSearch';
 
-const { Title, Text } = Typography;
+const { Title, Text, Paragraph } = Typography;
 
 // Dữ liệu giả cho "Các tệp gần đây"
 const recentFiles = [
@@ -21,6 +21,10 @@ const recentFiles = [
 const MainDashboard = () => {
     return (
         <div className="main-dashboard">
+            <div className="aqua-page-heading">
+                <Title level={2}>Tổng quan</Title>
+                <Paragraph type="secondary">Quản lý và tìm kiếm tài liệu của tổ chức.</Paragraph>
+            </div>
             <Row justify="space-between" align="middle" className="dashboard-header">
                 <Col flex="auto">
                     <GlobalSearch />

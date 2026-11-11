@@ -15,7 +15,7 @@ const fileTypes = ['pdf', 'docx', 'xlsx', 'pptx', 'png', 'jpg'];
 const AdvancedSearchModal = ({ visible, onCancel }) => {
     const [form] = Form.useForm();
     const { members } = useOrganization(); // Lấy danh sách thành viên để lọc theo chủ sở hữu
-    const { performSearch, performKeywordSearch, searchParams } = useSearch();
+    const { performSearch, searchParams } = useSearch();
     const [isCustomType, setIsCustomType] = useState(false);
 
     useEffect(() => {
@@ -125,7 +125,7 @@ const AdvancedSearchModal = ({ visible, onCancel }) => {
                     </Form.Item>
 
                     <Form.Item name="dateRange" label="Ngày tạo">
-                        <RangePicker style={{ width: '100%' }} placeholder={['Từ ngày', 'Đến ngày']} />
+                        <RangePicker classNames={{ popup: { root: 'aqua-date-range-popup' } }} style={{ width: '100%' }} placeholder={['Từ ngày', 'Đến ngày']} />
                     </Form.Item>
                 </Form>
             ),

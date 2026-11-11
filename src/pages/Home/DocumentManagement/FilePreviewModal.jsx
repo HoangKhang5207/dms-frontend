@@ -1,27 +1,41 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Modal, Button, Spin } from 'antd';
+import { Modal, Button, Spin, Alert } from 'antd';
 import { DownloadOutlined } from '@ant-design/icons';
-import { useAuth } from '../../../contexts/AuthContext'; // Adjusted
-import { showErrorToast } from '../../../utils/toast'; // Adjusted
+import { useAuth } from '../../../contexts/AuthContext';
+import axiosInstance from '../../../api/axiosInstance';
 import WebViewer from '@pdftron/webviewer';
 
-const FilePreviewModal = ({ open, onCancel, fileId, fileName, password }) => {
-  const { token } = useAuth(); // Adjusted
+const FilePreviewModal = ({ open, onCancel, fileId, documentId, fileName, password }) => {
+  const { token } = useAuth();
   const viewerDivRef = useRef(null);
-  const webViewerInstance = useRef(null);
+  const viewerPromise = useRef(null);
+  const [ready, setReady] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
+  const [retry, setRetry] = useState(0);
+  const [downloadBlob, setDownloadBlob] = useState(null);
 
   useEffect(() => {
-    if (!open) {
-      if (webViewerInstance.current) {
-        webViewerInstance.current.UI.loadDocument('');
-      }
-      return;
-    }
-
-    if (!webViewerInstance.current && viewerDivRef.current) {
-      setLoading(true);
-      WebViewer(
+    if (!open || !ready || !viewerDivRef.current) return;
+    const controller = new AbortController();
+    setLoading(true);
+    setError(false);
+    setDownloadBlob(null);
+    const load = async () => {
+      try {
+        const query = new URLSearchParams({ password: password || '', withWatermark: 'true' });
+        const endpoint = documentId != null
+          ? `/documents/${encodeURIComponent(documentId)}/download`
+          : `/documents/${encodeURIComponent(fileId)}/retrieve?${query}`;
+        const response = await fetch(`${axiosInstance.defaults.baseURL}${endpoint}`, {
+          headers: { Authorization: `Bearer ${token}` }, signal: controller.signal,
+        });
+        if (!response.ok) throw new Error('preview');
+        const blob = await response.blob();
+        if (controller.signal.aborted) return;
+        setDownloadBlob(blob);
+        if (!viewerPromise.current) {
+          viewerPromise.current = WebViewer(
         {
           path: '/webviewer',
           initialDoc: '',
@@ -72,102 +86,48 @@ const FilePreviewModal = ({ open, onCancel, fileId, fileName, password }) => {
             'zoomToolButton',
           ],
         },
-        viewerDivRef.current,
-      ).then((instance) => {
-        webViewerInstance.current = instance;
-        const { documentViewer } = instance.Core;
-
-        documentViewer.addEventListener('documentLoaded', () => {
-          setLoading(false);
-        });
-
-        documentViewer.addEventListener('documentUnloaded', () => {
-          setLoading(true);
-        });
-
-        if (fileId && token) {
-          const loadDoc = async () => {
-            try {
-              const response = await fetch(`http://localhost:8080/api/v1/documents/${fileId}/retrieve?password=${password || ''}&withWatermark=true`,
-                {
-                  headers: {
-                    'Authorization': `Bearer ${token}`,
-                  },
-                }
-              );
-
-              if (response.ok) {
-                const blob = await response.blob();
-                instance.UI.loadDocument(blob, { filename: fileName || 'document' });
-              } else {
-                showErrorToast('Không thể xem tệp. Vui lòng kiểm tra mật khẩu hoặc thử lại sau.');
-                setLoading(false);
-              }
-            } catch (error) {
-              showErrorToast('Lỗi khi tải nội dung tệp.');
-              setLoading(false);
-            }
-          };
-          loadDoc();
+            viewerDivRef.current,
+          ).catch(cause => { viewerPromise.current = null; throw cause; });
         }
-      }).catch(error => {
-        showErrorToast('Lỗi khi khởi tạo trình xem tài liệu.');
-        setLoading(false);
-      });
-    } else if (open && webViewerInstance.current && fileId && token) {
-      const loadDoc = async () => {
-        try {
-          const response = await fetch(`http://localhost:8080/api/v1/documents/${fileId}/retrieve?password=${password || ''}&withWatermark=true`,
-            {
-              headers: {
-                'Authorization': `Bearer ${token}`,
-              },
-            }
-          );
+        const instance = await viewerPromise.current;
+        if (controller.signal.aborted) return;
+        await instance.Core.documentViewer.loadDocument(blob, { filename: fileName || 'document.pdf' });
+      } catch {
+        if (!controller.signal.aborted) setError(true);
+      } finally {
+        if (!controller.signal.aborted) setLoading(false);
+      }
+    };
+    load();
+    return () => controller.abort();
+  }, [open, ready, fileId, documentId, fileName, password, token, retry]);
 
-          if (response.ok) {
-            const blob = await response.blob();
-            webViewerInstance.current.UI.loadDocument(blob, { filename: fileName || 'document' });
-          } else {
-            showErrorToast('Không thể xem tệp. Vui lòng kiểm tra mật khẩu hoặc thử lại sau.');
-            setLoading(false);
-          }
-        } catch (error) {
-          showErrorToast('Lỗi khi tải nội dung tệp.');
-          setLoading(false);
-        }
-      };
-      loadDoc();
-    }
-  }, [open, fileId, fileName, password, token]);
+  useEffect(() => () => {
+    viewerPromise.current?.then(instance => instance.UI.dispose()).catch(() => {});
+  }, []);
 
   const handleDownload = () => {
-    if (fileId && fileName) {
-      window.open(`http://localhost:8080/api/v1/documents/${fileId}/retrieve?password=${password || ''}&withWatermark=true`, '_blank');
-    }
+    if (!downloadBlob) return;
+    const url = URL.createObjectURL(downloadBlob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = fileName || 'document';
+    link.click();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
   };
 
   return (
-    <Modal
-      title={`Xem tệp: ${fileName}`}
-      open={open}
-      onCancel={onCancel}
+    <Modal title={`Xem tệp: ${fileName || ''}`} open={open} onCancel={onCancel}
+      afterOpenChange={setReady}
       footer={[
-        <Button key="back" onClick={onCancel}>
-          Đóng
-        </Button>,
-        <Button key="download" type="primary" icon={<DownloadOutlined />} onClick={handleDownload}>
-          Tải xuống
-        </Button>,
+        <Button key="close" onClick={onCancel}>Đóng</Button>,
+        <Button key="download" type="primary" icon={<DownloadOutlined />} disabled={!downloadBlob} onClick={handleDownload}>Tải xuống</Button>,
       ]}
-      width="80%"
-      style={{ top: 20 }}
-      styles={{ body: { height: '80vh', overflow: 'hidden' } }}
-      getContainer={false}
-      zIndex={10000}
-    >
-      {loading && <Spin tip="Đang tải nội dung tệp..." style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', zIndex: 1000 }} />}
-      <div ref={viewerDivRef} style={{ height: '100%', width: '100%' }}></div>
+      width={1100} style={{ top: 20 }} styles={{ body: { height: '75vh', position: 'relative', overflow: 'hidden' } }}>
+      {error && <Alert type="error" showIcon message="Không thể xem tệp. Vui lòng kiểm tra mật khẩu hoặc thử lại."
+        action={<Button onClick={() => setRetry(value => value + 1)}>Thử lại</Button>} />}
+      {loading && <div role="status" style={{ position: 'absolute', inset: 0, display: 'grid', placeItems: 'center', zIndex: 1, background: 'rgba(255,255,255,.8)' }}><Spin tip="Đang tải nội dung tệp..." /></div>}
+      <div ref={viewerDivRef} style={{ height: error ? 'calc(100% - 80px)' : '100%', width: '100%', visibility: error ? 'hidden' : 'visible' }} />
     </Modal>
   );
 };

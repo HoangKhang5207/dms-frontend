@@ -1,0 +1,31 @@
+{
+  "mode": "MOCKED_BACKEND_NO_REAL_MUTATIONS",
+  "checks": [
+    {
+      "name": "API error renders existing error toast",
+      "pass": true
+    },
+    {
+      "name": "Error feedback fits mobile viewport",
+      "pass": true
+    },
+    {
+      "name": "Existing success feedback renders after mocked deletion",
+      "pass": true
+    },
+    {
+      "name": "Successful action refreshes empty state",
+      "pass": true
+    },
+    {
+      "name": "No unexpected backend requests",
+      "pass": true
+    },
+    {
+      "name": "No uncaught errors",
+      "pass": true
+    }
+  ],
+  "unexpected": [],
+  "errors": []
+}

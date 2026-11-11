@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
-import './styles/global.css'; // File CSS global
+import './styles/global.css';
+import './styles/aquadocs.css'; // File CSS global
 import { BrowserRouter } from 'react-router-dom';
 import '@ant-design/v5-patch-for-react-19';
 

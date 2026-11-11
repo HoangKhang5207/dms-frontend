@@ -115,13 +115,13 @@ const CategoryView = () => {
                 <GlobalSearch />
             </div>
             
-            <Row justify="space-between" align="middle" style={{ marginBottom: 16 }}>
+            <Row className="aqua-toolbar" justify="space-between" align="middle">
                 <Col>
                     <Typography.Title level={4} style={{ margin: 0 }}>
                         Thư mục trong {currentDepartment?.name}
                     </Typography.Title>
                 </Col>
-                <Col flex="auto" style={{ marginLeft: 24, marginRight: 24 }}>
+                <Col flex="auto">
                     {/* Thêm ô tìm kiếm */}
                     <Input
                         placeholder="Tìm kiếm thư mục theo tên..."

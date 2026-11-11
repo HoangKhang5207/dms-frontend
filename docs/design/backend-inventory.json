@@ -1,0 +1,2490 @@
+[
+  {
+    "path": ".gitattributes",
+    "bytes": 40,
+    "sha256": "18be76f9008af08719be1d98d291e1286907ad6df86e7bd4e2dbed4ce0903fe8",
+    "types": []
+  },
+  {
+    "path": ".gitignore",
+    "bytes": 448,
+    "sha256": "ef03cfbad4d5b5a70714bb2bef7cd959f9f11874df4b7473c5ba5a796ab53f59",
+    "types": []
+  },
+  {
+    "path": ".mvn/wrapper/maven-wrapper.properties",
+    "bytes": 972,
+    "sha256": "e707c12e74791e6c3012ca1e5ce8b00d60135a5da6ff94c2bde7269b1ab93c2d",
+    "types": []
+  },
+  {
+    "path": "docker-compose.yaml",
+    "bytes": 726,
+    "sha256": "fc19a14dfec238c569587b9153b50607d8e406e2028be5d1f3d1a19c448777ef",
+    "types": []
+  },
+  {
+    "path": "Dockerfile",
+    "bytes": 1009,
+    "sha256": "12862098ea65357c196167a555d65aa47dc50d366e5e48533c9c0bcd67c986c6",
+    "types": []
+  },
+  {
+    "path": "mvnw",
+    "bytes": 10665,
+    "sha256": "7e6e5d26712efd78140f2f63dafe8d17028f6c5c97ac1f746a043110b7a1d9ad",
+    "types": []
+  },
+  {
+    "path": "mvnw.cmd",
+    "bytes": 7061,
+    "sha256": "3dc8d558cc15e5051a9ef3778099c6a8bcd83320ba0383ece14811194d08d730",
+    "types": []
+  },
+  {
+    "path": "pom.xml",
+    "bytes": 6198,
+    "sha256": "d9e2cc4e6add72396fae70c6832a9095475ebfdb834f7a4ff01be390812ec180",
+    "types": []
+  },
+  {
+    "path": "README.md",
+    "bytes": 8651,
+    "sha256": "b2d003f76cdcb0373d28b6c80382542659bf22c75f6fa6c221a65066e8ad4043",
+    "types": []
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/aop/AuditLog.java",
+    "bytes": 566,
+    "sha256": "4764863f019159d86da8a2a253c8a27bf3a1c7ce135e81aab6377b3311f6d393",
+    "types": [
+      "AuditLog"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/aop/AuditLoggingAspect.java",
+    "bytes": 15954,
+    "sha256": "b3fc04cbd5668480c5da43ee5a6fca66c6f4e8385b450c2c11fb52b3472a515a",
+    "types": [
+      "AuditLoggingAspect"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/aop/ErrorHandlingAspect.java",
+    "bytes": 767,
+    "sha256": "3ea8421d09094415fb88d234ab16dbbd8eee2de30391cc9b4419a115172640f6",
+    "types": [
+      "ErrorHandlingAspect"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/aop/LoggingAspect.java",
+    "bytes": 2167,
+    "sha256": "30cf868920a35e1e3ebaf4c7cf1bf3f6e8e0b54d8d2b6f18c5a15e08f47b08f3",
+    "types": [
+      "LoggingAspect"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/common/constant/CommonConstants.java",
+    "bytes": 7035,
+    "sha256": "e7897070f75ee3540efa6d7f5f1dd27669790b06351aece6ea2731935e24ff89",
+    "types": [
+      "CommonConstants"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/common/constant/ErrorCode.java",
+    "bytes": 2861,
+    "sha256": "1e3c85189ff0ea2ab5b7cd36da270afbfc05bf667b306a743c983672d67f20a8",
+    "types": [
+      "ErrorCode"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/common/constant/ErrorMessage.java",
+    "bytes": 3601,
+    "sha256": "489ed118ad1a468cdefe8a5d6dd23f4bc2543136999d2e2bfd3fe5e8d6c5bdc6",
+    "types": [
+      "ErrorMessage",
+      "t\u1eeb"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/common/constant/FileSizeFormatter.java",
+    "bytes": 565,
+    "sha256": "b929d8cbe0737082b220028bcf8ba7e567f2987140cf7ecb52c4c42bbf79576b",
+    "types": [
+      "FileSizeFormatter"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/common/constant/MessageCode.java",
+    "bytes": 2924,
+    "sha256": "be2664737b60387599c011dce9727abc1cdba3463924cf9792bd1c3686bce28e",
+    "types": [
+      "MessageCode",
+      "CommonMessage"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/common/constant/OrganizationStatus.java",
+    "bytes": 303,
+    "sha256": "cb5e1513e25c7f61ff919c27e96c914562d2fbed3fb4fc02d172c3f502647f8c",
+    "types": [
+      "OrganizationStatus"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/common/constant/OtpFactor.java",
+    "bytes": 338,
+    "sha256": "541e8c42db0865e99a7e5a1172c37eee93b63109be79388a231fccf8ed0d200d",
+    "types": [
+      "OtpFactor"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/common/constant/PermissionCode.java",
+    "bytes": 465,
+    "sha256": "f225d1f00969922d383b89e0d8653af302ae563efdcc9370084a6a52d1decc07",
+    "types": [
+      "PermissionCode"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/common/constant/PermissionModule.java",
+    "bytes": 448,
+    "sha256": "2c97fbdb13d74eb7e7b331145803ead7aac439b08bbed0af7b7427c1666a20af",
+    "types": [
+      "PermissionModule"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/common/dto/EmailData.java",
+    "bytes": 114,
+    "sha256": "b2a3a9cbdd3c1c799c86b30e535609f851734bc71bb383496683488c85169a6e",
+    "types": [
+      "EmailData"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/common/dto/ErrorResponseDTO.java",
+    "bytes": 697,
+    "sha256": "e3490aeff3a8e4aec1a4364f7a499a52ba6aab56328c05a1e80d1ab0189d474c",
+    "types": [
+      "ErrorResponseDTO"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/common/dto/ResetPasswordInfo.java",
+    "bytes": 112,
+    "sha256": "881da66109bdb70ff81c14619eb1e6588563c3104038f09c011c6075b88a4d63",
+    "types": [
+      "ResetPasswordInfo"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/common/dto/StatusUpdateDto.java",
+    "bytes": 240,
+    "sha256": "abd83876a3762f7bf712c5fac64629ad16137f41475a12f9e9f135d162a0c3b0",
+    "types": [
+      "StatusUpdateDto"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/common/dto/VerifyEmailInfo.java",
+    "bytes": 97,
+    "sha256": "94bc9b948d0920a11473b11c144f2d4c1e214d1274c65d4669bcbb29cf64ed1c",
+    "types": [
+      "VerifyEmailInfo"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/common/exception/ApiException.java",
+    "bytes": 432,
+    "sha256": "1eb8ac3d8c0ea1a7d4cf85f0c6ee55274cf97cbaa68ee9a399f1e5ed53ba7eb7",
+    "types": [
+      "ApiException"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/common/exception/ResourceNotFoundException.java",
+    "bytes": 679,
+    "sha256": "bb616aa2de4705b73f616062a20a34a80d01ea3c8e0efefb01e0d507fb78d42a",
+    "types": [
+      "ResourceNotFoundException"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/common/exception/StorageException.java",
+    "bytes": 186,
+    "sha256": "f2240867be4ac5a45608e13398d585a1da5eeee1615ae559585d4e0ffc0fb82a",
+    "types": [
+      "StorageException"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/common/exception/StorageFileNotFoundException.java",
+    "bytes": 210,
+    "sha256": "c8c17e60a26fc0f22bb95706f22340fb579cdd8b09894248683e4ed13277167f",
+    "types": [
+      "StorageFileNotFoundException"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/common/handler/GlobalExceptionHandler.java",
+    "bytes": 11471,
+    "sha256": "f61dd7c93a45d1e148927d60ac2d21193c15a2b4fc7015cb57377d88b7fa3128",
+    "types": [
+      "GlobalExceptionHandler"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/common/service/EmailService.java",
+    "bytes": 4540,
+    "sha256": "5f4bace9eb59971b6c6be2c353d6c1c3ae5b68c4be63a7ba05c7372f04d817ae",
+    "types": [
+      "EmailService"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/common/utils/CommonUtils.java",
+    "bytes": 4000,
+    "sha256": "434082d287f6f0332119c1293a30e159499ba124b247255e4d44cb656c1ed91f",
+    "types": [
+      "CommonUtils"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/common/utils/ConvertUtil.java",
+    "bytes": 1815,
+    "sha256": "496cce16e0b708b47e5a0ad38d782236781005f0e09d148f22220f3a89ba512f",
+    "types": [
+      "ConvertUtil"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/common/utils/JwtUtils.java",
+    "bytes": 5098,
+    "sha256": "0a4b57faa7078b60d5217ea8a9afe3a1d121082524c89a686865edde8f58fddb",
+    "types": [
+      "JwtUtils"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/common/utils/LocalStorageMapperHelper.java",
+    "bytes": 608,
+    "sha256": "0b2e75f8d8e9bc48a064ec7109f5d8044130d523e2eb3b0ce4323fa6599eae11",
+    "types": [
+      "LocalStorageMapperHelper"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/common/utils/PemUtils.java",
+    "bytes": 475,
+    "sha256": "abfe03bd14cb6b19fa385c31638a2d390db2ad1489e924b3fd2fc169c3c39498",
+    "types": [
+      "PemUtils"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/config/AppAuditorAware.java",
+    "bytes": 539,
+    "sha256": "1736ca95b3dabe7d67a57282feb3049c42e27b1cf91ccb0ca8d71928a49b67b7",
+    "types": [
+      "AppAuditorAware"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/config/ApplicationProperties.java",
+    "bytes": 2634,
+    "sha256": "e91de74bf62c4ec7afc39bb820fb1a96af5c3d8a9d70e4af059821c205453113",
+    "types": [
+      "ApplicationProperties",
+      "AppInfoProperties",
+      "KafkaProperties",
+      "JwtProperties",
+      "EmailProperties",
+      "ResetPasswordProperties"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/config/CamundaDataSourceConfiguration.java",
+    "bytes": 2752,
+    "sha256": "c53073277a931e91c6799b1064c3eec6640ad2fb872f5e741ba4a51b1403314c",
+    "types": [
+      "CamundaDataSourceConfiguration"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/config/CorsConfig.java",
+    "bytes": 865,
+    "sha256": "bbbadff110f9749e30ab26caafc10b059631ae4c75be809e8bc465d625523326",
+    "types": [
+      "CorsConfig"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/config/CustomAuthenticationEntryPoint.java",
+    "bytes": 2126,
+    "sha256": "25a72ca9a95a83419a78b89d082f30ea2ba4fe8a67b529b8a079b34cfe672718",
+    "types": [
+      "CustomAuthenticationEntryPoint"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/config/CustomPermissionEvaluator.java",
+    "bytes": 17772,
+    "sha256": "6ade199a245e88271c1b9400dded5c596d7268b2b2183f0339a60eb1a920f746",
+    "types": [
+      "CustomPermissionEvaluator"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/config/DatabaseInitializer.java",
+    "bytes": 62234,
+    "sha256": "2b89814630e09247362c1c595c5aad83784ee842d0ded3a8600a702cc243f835",
+    "types": [
+      "DatabaseInitializer"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/config/DateTimeFormatConfig.java",
+    "bytes": 653,
+    "sha256": "35898319727768aca9649896a7a9976f393cd24e18ce0115b411ad42c09328a6",
+    "types": [
+      "DateTimeFormatConfig"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/config/KeycloakConfig.java",
+    "bytes": 910,
+    "sha256": "bfde53be221dd46835ed5125f8284a1ae43dc5d83e6d71f3194949b90d615241",
+    "types": [
+      "KeycloakConfig"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/config/MethodSecurityConfig.java",
+    "bytes": 1100,
+    "sha256": "97b3975d00a657b36a281e53bd1a86c09df42fe75f83277790123e156a6d0f0d",
+    "types": [
+      "MethodSecurityConfig"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/config/OpenAPIConfig.java",
+    "bytes": 2443,
+    "sha256": "c22b8e7c5bfd6c2252490be9b0b3e49b6736e0192e27132c00147871c4590cf1",
+    "types": [
+      "OpenAPIConfig"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/config/RedisConfig.java",
+    "bytes": 816,
+    "sha256": "c8f5f3c92642915913d684505dba080c04558f2365edc836e56a83724c3b36a8",
+    "types": [
+      "RedisConfig"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/config/SecurityConfig.java",
+    "bytes": 11502,
+    "sha256": "abd7a60c0c0ba1c8da9be7fd03e67cb063ffc2ea0d76a98b52ca8b817b7c78a9",
+    "types": [
+      "SecurityConfig"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/config/StaticResourcesWebConfiguration.java",
+    "bytes": 825,
+    "sha256": "4411f55bb90bb07f372a67503897fe7de201e17b1f585aed0413c7bc7b3bcc59",
+    "types": [
+      "StaticResourcesWebConfiguration"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/config/UserDetailsCustom.java",
+    "bytes": 2265,
+    "sha256": "3067b6c20c3d292911331a9e72c8a2f44059a671b98adcf7d00f12da9449ef00",
+    "types": [
+      "UserDetailsCustom"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/controller/AuditLogController.java",
+    "bytes": 1284,
+    "sha256": "d567279ee98496a202cb5dca20f6bea4622e190a251a08047f428fdf89377b95",
+    "types": [
+      "AuditLogController"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/controller/AuthController.java",
+    "bytes": 3472,
+    "sha256": "4ff7c26d00587f77d538d1bb2bf6b80c301fd6c637b5214592e6996994e7fb90",
+    "types": [
+      "AuthController"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/controller/BaseController.java",
+    "bytes": 3091,
+    "sha256": "863505b836a8d0212352bbe34f5331b24561bb2a3c9ca1158d4a5dc4308072e5",
+    "types": [
+      "BaseController"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/controller/BpmnController.java",
+    "bytes": 7777,
+    "sha256": "b117017ce9a84f4e61cdc367f157b0016e6b2162ec85e69b0a6ecb6a6821fedb",
+    "types": [
+      "BpmnController"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/controller/CategoryController.java",
+    "bytes": 2784,
+    "sha256": "e3d036c6fa4b1191df3d415ae2cb17bd6e3f201d4e3f612ffe97b3a849ed3f53",
+    "types": [
+      "CategoryController"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/controller/DelegationController.java",
+    "bytes": 1438,
+    "sha256": "d93f8dcc36c979cd13d5a505a2f9e3cd747a315f94d92e72f56c52719ed058db",
+    "types": [
+      "DelegationController"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/controller/DepartmentController.java",
+    "bytes": 3618,
+    "sha256": "fd1ed24b3c7fe04da302baaee401e34bfebfe1e6b6c3c97430a17e26c50af485",
+    "types": [
+      "DepartmentController"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/controller/DocumentController.java",
+    "bytes": 20041,
+    "sha256": "ba5ffc7093cff37d3422a2733aecc0e5669e9794c9d28c2825909bb46ff75781",
+    "types": [
+      "DocumentController"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/controller/FileController.java",
+    "bytes": 1517,
+    "sha256": "068b243c6b0355fbd8496ca6870be5bf2c376fc30f9db44bd32e50d0b7074894",
+    "types": [
+      "FileController"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/controller/InvitationController.java",
+    "bytes": 1059,
+    "sha256": "9d254b363c88d4ca2b224a361f61023c514c650963f2c6f3471a66be434455e7",
+    "types": [
+      "InvitationController"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/controller/MemberController.java",
+    "bytes": 1951,
+    "sha256": "72a36ce92c83f9b572fd8e3f9b4150b206413d37c1634cee4145a2246cd8a038",
+    "types": [
+      "MemberController"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/controller/OrganizationController.java",
+    "bytes": 3907,
+    "sha256": "f01054ac8257c266e0fcb4d869b44872a765353c146177cf89ffcc3b2e8980c3",
+    "types": [
+      "OrganizationController"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/controller/PermissionAdminController.java",
+    "bytes": 934,
+    "sha256": "2191b517ecab42d4d8c55387d069d2dd1d89f31fcc490ba41b5dc962664dfb63",
+    "types": [
+      "PermissionAdminController"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/controller/ProductController.java",
+    "bytes": 2679,
+    "sha256": "16a8fa5b6de49bd6ee6400f3dd3e2371955dd2f10ddbc61efff600566b517442",
+    "types": [
+      "ProductController"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/controller/ProjectController.java",
+    "bytes": 3838,
+    "sha256": "be9a6aa77ad1cec5e2a947e496517706323ad9dc3b5ef7af915bf73c81835f8a",
+    "types": [
+      "ProjectController"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/controller/PublicDocumentController.java",
+    "bytes": 11967,
+    "sha256": "928d2ccaff8dcb482cd70970f0dd3fd2afe1a93481b542926ac739bd716bc554",
+    "types": [
+      "PublicDocumentController"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/controller/ResetPasswordController.java",
+    "bytes": 1026,
+    "sha256": "9fef8133ec785e683e468402e670cb0d4fc25c657e6d17de4581ec9d9aaec452",
+    "types": [
+      "ResetPasswordController"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/controller/RoleAdminController.java",
+    "bytes": 1803,
+    "sha256": "047467f2a2a9f5ee6f70e10786453031e1d2bb24f8ec3ab6fced0960c0e8bdbe",
+    "types": [
+      "RoleAdminController"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/controller/SearchHistoryController.java",
+    "bytes": 1441,
+    "sha256": "56a307e5d1979fa649fcd3e860c7a02734d08f7cbab48e015fb07af42cc0a3b9",
+    "types": [
+      "SearchHistoryController"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/controller/TaskController.java",
+    "bytes": 2294,
+    "sha256": "50ce5d0ab6b3a4db5ce8bcd8adf05d51bf9397a5aebcb1835845a3f43c4853a7",
+    "types": [
+      "TaskController"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/controller/UserAdminController.java",
+    "bytes": 2182,
+    "sha256": "ad3f91df13569a23fc02c904db55a18f0fbb25e03b4966c3774e6719ae07f389",
+    "types": [
+      "UserAdminController"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/controller/UserController.java",
+    "bytes": 777,
+    "sha256": "8fddafd4c76f0e701fd57cb2758265bf68303382f24bd10025a885a5a7228aa3",
+    "types": [
+      "UserController"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/controller/WorkflowController.java",
+    "bytes": 7460,
+    "sha256": "661cd99bb5f0f802b43e8e9a6d90bd7ee7c8b54a3cf3e056fb37e4517ec476c2",
+    "types": [
+      "WorkflowController"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/DocumentManagementApplication.java",
+    "bytes": 918,
+    "sha256": "93f2c077fde62452ca6696ba0d57d869c0e120855d7181c7bcdbd433b2cdc35b",
+    "types": [
+      "DocumentManagementApplication"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/dto/account/AccountDTO.java",
+    "bytes": 588,
+    "sha256": "be8510d9a57eab5830b6846a7f2f1ec8c1eda06c66c6e242bfc234a1118c2e1c",
+    "types": [
+      "AccountDTO"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/dto/BaseResponseDto.java",
+    "bytes": 2261,
+    "sha256": "cb6157f477bca24e8f8606de4ed524ba6080a660a3caa6f743a116712f61eae3",
+    "types": [
+      "BaseResponseDto"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/dto/bpmn/BpmnUploadDTO.java",
+    "bytes": 895,
+    "sha256": "c18474c0db50197c7498d9a6ff33d274d7b46c89b3256c734f102de7d14029fa",
+    "types": [
+      "BpmnUploadDTO"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/dto/bpmn/BpmnUploadHistoryDTO.java",
+    "bytes": 702,
+    "sha256": "c4f0b0553812aa629d1c41ff353c67e34f8ca644f58a76a1d8f150741aa7fb38",
+    "types": [
+      "BpmnUploadHistoryDTO"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/dto/bpmn/request/SaveBRequest.java",
+    "bytes": 578,
+    "sha256": "85ba8869c22917e8b4f280c97b9dc8cd73b853e755dd96b51628a28766562066",
+    "types": [
+      "SaveBRequest"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/dto/bpmn/VersionInfoDTO.java",
+    "bytes": 396,
+    "sha256": "4ef10b6c8e2b85189136a5d99c928dfa4af47aa507351c1c17cbf7ceeec13557",
+    "types": [
+      "VersionInfoDTO"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/dto/request/AuditLogRequest.java",
+    "bytes": 423,
+    "sha256": "30e7cbcd24bd22524da36b9a4d9e7b2e988ac829b340a68557ff0e7edac2a5d2",
+    "types": [
+      "AuditLogRequest"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/dto/request/CategoryCreateRequest.java",
+    "bytes": 688,
+    "sha256": "73bdd62d183b6260b35991fd3879e8b26363061b584f7ba6ea2472db8011aed3",
+    "types": [
+      "CategoryCreateRequest"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/dto/request/CategoryUpdateRequest.java",
+    "bytes": 431,
+    "sha256": "e14d0d036d22b63fda619538170c2b989f83b0003da951e7c3aa6e3b9ff2ee6a",
+    "types": [
+      "CategoryUpdateRequest"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/dto/request/DelegationRequest.java",
+    "bytes": 977,
+    "sha256": "5a98822eff6adfe56c1c2a75adde38175bb5f9a1640378a7fcb5e36f172aaffc",
+    "types": [
+      "DelegationRequest"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/dto/request/DepartmentCreateRequest.java",
+    "bytes": 607,
+    "sha256": "b36f95d9d5fcf3deb1949e2e56f66d356d9fd22823bf110d040667e3df03be15",
+    "types": [
+      "DepartmentCreateRequest"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/dto/request/DepartmentUpdateRequest.java",
+    "bytes": 363,
+    "sha256": "b7b311dd1fe3abf38a772b4e451dd1831640ae3062e8c98104d386093be65f25",
+    "types": [
+      "DepartmentUpdateRequest"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/dto/request/DeptManagerUpdateRequest.java",
+    "bytes": 699,
+    "sha256": "2971fc46845a8ac682663e9f2d2010cea1789dda2a270489c36baf442f7c0b83",
+    "types": [
+      "DeptManagerUpdateRequest"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/dto/request/DocumentCommentRequest.java",
+    "bytes": 85,
+    "sha256": "c640a0f441b6843c2404c8d8b21f7573e9587e9906a3428bfd274c73107f5039",
+    "types": [
+      "DocumentCommentRequest"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/dto/request/DocumentCreateRequest.java",
+    "bytes": 811,
+    "sha256": "4a8e673c75b3196c51aa161ba7391361e625610b904d2f2a3f111e425d1acc47",
+    "types": [
+      "DocumentCreateRequest"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/dto/request/DocumentFilterRequest.java",
+    "bytes": 473,
+    "sha256": "73a6705e3bcd5a466a3ed1472482ce6bc43708f700d319144e0f6cb78da3720a",
+    "types": [
+      "DocumentFilterRequest"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/dto/request/DocumentReviewRequest.java",
+    "bytes": 377,
+    "sha256": "b36876cfe45668ac620ccd024e3e01e4cb0daa4ac778577c25fc91121e82a215",
+    "types": [
+      "DocumentReviewRequest"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/dto/request/DocumentShareRequest.java",
+    "bytes": 1385,
+    "sha256": "d289e42f9b86b254822b5e28749fd2ec61a3288a76e37fde6cd592fee0abec81",
+    "types": [
+      "DocumentShareRequest"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/dto/request/DocumentSignRequest.java",
+    "bytes": 321,
+    "sha256": "5aa44611eb20ea431016471f4222fc784645247e80b06e7c60d77138bdd2511b",
+    "types": [
+      "DocumentSignRequest"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/dto/request/DocumentUpdateRequest.java",
+    "bytes": 490,
+    "sha256": "a8edd01dc00b40dff5193a9bffde9bb9881e3e882e152b1f5425873bb4bb1dd6",
+    "types": [
+      "DocumentUpdateRequest"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/dto/request/InviteUsersRequest.java",
+    "bytes": 998,
+    "sha256": "1698cea5333ca715c2d5ce0a6925727626f4e0e28a0613161653571367ac9a62",
+    "types": [
+      "InviteUsersRequest",
+      "UserInvite"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/dto/request/LoginRequestDto.java",
+    "bytes": 605,
+    "sha256": "b3e85c4d0a93e7164bb58b7f11f3a179ccbf24fba01700cf6bb14a2f681c6575",
+    "types": [
+      "LoginRequestDto"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/dto/request/OrganizationCreateRequest.java",
+    "bytes": 698,
+    "sha256": "5838b20fad4c3fe1536a740bd877ec3f34b209727f6b3a361ae5d03eb6a9018a",
+    "types": [
+      "OrganizationCreateRequest"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/dto/request/OrganizationUpdateRequest.java",
+    "bytes": 576,
+    "sha256": "817107e7620254e4d38a3cc2549ae7abbaf23da01b785e5c422d52bcb64bff68",
+    "types": [
+      "OrganizationUpdateRequest"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/dto/request/ProductCreateUpdateRequest.java",
+    "bytes": 656,
+    "sha256": "1d5c7377ef1c04627bd0a4ad061a09f3784fbc99f0d646b0e70ac2e85cfa861f",
+    "types": [
+      "ProductCreateUpdateRequest"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/dto/request/ProjectCreateRequest.java",
+    "bytes": 1001,
+    "sha256": "62d49181c44c7ea6611cecbe786fd9802e982f65d0a69fb1fdcf8348b47a6086",
+    "types": [
+      "ProjectCreateRequest"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/dto/request/ProjectMemberRequest.java",
+    "bytes": 487,
+    "sha256": "c73fbcc21726ab8be4fad42e3e5ce583d2d2adbea0b94c199638472768da7273",
+    "types": [
+      "ProjectMemberRequest"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/dto/request/ProjectRoleRequest.java",
+    "bytes": 474,
+    "sha256": "c7b129103bffe8bd7d178867e063ae6bfd58503de99c76161b0492e065616df5",
+    "types": [
+      "ProjectRoleRequest"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/dto/request/ProjectUpdateRequest.java",
+    "bytes": 887,
+    "sha256": "41e8bd393095f32005d5ba241914040edce0f5cba9437c019198432dde2346a1",
+    "types": [
+      "ProjectUpdateRequest"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/dto/request/RefreshTokenRequestDto.java",
+    "bytes": 361,
+    "sha256": "f7e903253329b1aaec37f4d016e88a41b57bfc2b97f64389433025d28d35a155",
+    "types": [
+      "RefreshTokenRequestDto"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/dto/request/ResetPasswordDto.java",
+    "bytes": 784,
+    "sha256": "52abec8c200348e30b5f3e26c5e458eb5f4cb5329ee279eb2a2e8fc17190c9e1",
+    "types": [
+      "ResetPasswordDto"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/dto/request/ResetPasswordRequestDto.java",
+    "bytes": 514,
+    "sha256": "9736113c1789f24709a938e48aac9babee16540fca4037069fb1a271efe4faa7",
+    "types": [
+      "ResetPasswordRequestDto"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/dto/request/RoleRequestDto.java",
+    "bytes": 416,
+    "sha256": "ef6d5fb9ade6076efc624a50fd1e8c0a260e50a743cce14dfa47c1413597d3b0",
+    "types": [
+      "RoleRequestDto"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/dto/request/SaveSearchHistoryRequest.java",
+    "bytes": 389,
+    "sha256": "cc5cea7f6bd974f26e1f864555e8823f2f4fdc57452bde4c3402cb1dcf0845a6",
+    "types": [
+      "SaveSearchHistoryRequest"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/dto/request/SearchAndOrNotRequest.java",
+    "bytes": 419,
+    "sha256": "5645059312c73124c7987c61750e1b1a8b3e4ca29894bd466866295a27f7ed3d",
+    "types": [
+      "SearchAndOrNotRequest"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/dto/request/SearchKeywordRequest.java",
+    "bytes": 216,
+    "sha256": "b06e7c3ebd1bb009ec06891c534a1dd62d5caf633d5e37361eea9f2441374e3d",
+    "types": [
+      "SearchKeywordRequest"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/dto/request/SignUpRequestDto.java",
+    "bytes": 1338,
+    "sha256": "a293766a34fafab718f8066c2de3aaaf731514729487100020d6cc72a8b7e153",
+    "types": [
+      "SignUpRequestDto"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/dto/request/SocialLoginRequestDto.java",
+    "bytes": 825,
+    "sha256": "9d80d07083972b9bfed4868b8d30897ae2bbb44f5d4b14c1707e5df46d26085a",
+    "types": [
+      "SocialLoginRequestDto"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/dto/request/UpdateOrganizationStatusRequest.java",
+    "bytes": 311,
+    "sha256": "c882b06f9446f36842eed5564d28f81d810c0adad1dca3075bfe86f264bc7a53",
+    "types": [
+      "UpdateOrganizationStatusRequest"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/dto/request/UserActionRequest.java",
+    "bytes": 508,
+    "sha256": "2da5c2667c021c9c86c9b372c1a0bf4a8ec06534637eb104e2ff16f6b0017e2f",
+    "types": [
+      "UserActionRequest"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/dto/request/UserPermissionRequestDto.java",
+    "bytes": 259,
+    "sha256": "79e7a65cde4c07398f71f3dcd612ba12822f46996cc0f6087e10e64d27d6fec1",
+    "types": [
+      "UserPermissionRequestDto"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/dto/request/UserRoleUpdateRequestDto.java",
+    "bytes": 168,
+    "sha256": "17960ce7f6aaf7dd1ec92e0c4088ba6264b6050d251066ccd2fa53c7f815690d",
+    "types": [
+      "UserRoleUpdateRequestDto"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/dto/response/AuditLogResponse.java",
+    "bytes": 716,
+    "sha256": "80a8e121725a4368662f9496444a5432955fcfa3fc0f18b599dc0b39b31d0c11",
+    "types": [
+      "AuditLogResponse"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/dto/response/CategoryBriefResponse.java",
+    "bytes": 304,
+    "sha256": "4a5b70c468e7e2220c901c922b4811b1acd32f59a15dfc8e2f23baced3cdac9c",
+    "types": [
+      "CategoryBriefResponse"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/dto/response/CategoryResponse.java",
+    "bytes": 761,
+    "sha256": "69f2dc380d3970d6dfc4f4440b3603db86b557596ecadd21dbf63667521da37d",
+    "types": [
+      "CategoryResponse"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/dto/response/CheckOrgResponse.java",
+    "bytes": 305,
+    "sha256": "75be579f560eacc74a606864d5e0392cd0e55695aa0bd94c57407ab14e8841f3",
+    "types": [
+      "CheckOrgResponse"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/dto/response/DelegationResponse.java",
+    "bytes": 677,
+    "sha256": "4eb68937829eea67084cb8fe183d35183da6456e5bc913459c24a664b480e4db",
+    "types": [
+      "DelegationResponse"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/dto/response/DepartmentResponse.java",
+    "bytes": 523,
+    "sha256": "ad5a97b7940d54ee3d29f51f19d9c964bef8f301601bc036ffff5dec99d99270",
+    "types": [
+      "DepartmentResponse"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/dto/response/DocumentAllResponse.java",
+    "bytes": 618,
+    "sha256": "b569f29ab8f829dbbdb3c6ca2a02a06f1f40faedce7d0ee6bef4149656475961",
+    "types": [
+      "DocumentAllResponse"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/dto/response/DocumentResponse.java",
+    "bytes": 1805,
+    "sha256": "92b0d145e590e79df78bfafed39ed53d4b3f400f1b551dd4b2d0ae591d447db1",
+    "types": [
+      "DocumentResponse"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/dto/response/DocumentVersionResponse.java",
+    "bytes": 731,
+    "sha256": "c5f14d8ee3b24c2764438228723aac82ebc9853d4b7091bf94afff21ec686452",
+    "types": [
+      "DocumentVersionResponse"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/dto/response/InviteUsersResponse.java",
+    "bytes": 445,
+    "sha256": "858c14fb31b54d02a7ea598c001156331a77cb9a9961bad0dbed5f599001d272",
+    "types": [
+      "InviteUsersResponse"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/dto/response/LoginResponseDto.java",
+    "bytes": 339,
+    "sha256": "a0421e51e55311f12182bb227c7379eca1cd6528a9a2852306d631f449cbed13",
+    "types": [
+      "LoginResponseDto"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/dto/response/OrganizationBriefResponse.java",
+    "bytes": 448,
+    "sha256": "7ef1748c5654fca98ee38b5d20dec1ada992ed1a9c23c9a91d3054544ce85463",
+    "types": [
+      "OrganizationBriefResponse"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/dto/response/OrganizationResponse.java",
+    "bytes": 990,
+    "sha256": "020997cbc267aec81d607b34984f1e3ef23bfc6f5d6dfa8df7b50719d7f80019",
+    "types": [
+      "OrganizationResponse"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/dto/response/PermissionResponseDto.java",
+    "bytes": 192,
+    "sha256": "119b2bdf568896fb26a4a7d2675c521d6e72e9f9573a91321ffb233bdbaffbd7",
+    "types": [
+      "PermissionResponseDto"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/dto/response/ProductResponse.java",
+    "bytes": 505,
+    "sha256": "c5b4dc08be0e048837237b62142fcf827f6d8e4c4bdbacea2d946bff83e949da",
+    "types": [
+      "ProductResponse"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/dto/response/ProjectMemberResponse.java",
+    "bytes": 657,
+    "sha256": "42c83efc0642d15ece48538afa1e5859805aa7368fa7f237f39a28397e9ff832",
+    "types": [
+      "ProjectMemberResponse"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/dto/response/ProjectResponse.java",
+    "bytes": 919,
+    "sha256": "843ac30c18362056ed1381149e4bd069915f8e28ac2e8e2d44232441daede2be",
+    "types": [
+      "ProjectResponse"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/dto/response/ProjectRoleResponse.java",
+    "bytes": 455,
+    "sha256": "a4e12ccc4a204e44c9b60bab8224f1da7e77f68a84af8f249d739c772dec50b9",
+    "types": [
+      "ProjectRoleResponse"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/dto/response/RoleResponseDto.java",
+    "bytes": 346,
+    "sha256": "48f6b0e20dc17480903e74108809d5b0ae77b994ad793c6c58849318fb808927",
+    "types": [
+      "RoleResponseDto"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/dto/response/UserResponse.java",
+    "bytes": 1236,
+    "sha256": "c7fc626ff0e7e0a71576316632a895ca4caa46f33aafac81bdb9dec1cd590a50",
+    "types": [
+      "UserResponse"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/dto/task/request/ProcessTRequest.java",
+    "bytes": 333,
+    "sha256": "aa804ea0515af50c3e5868344bfc59f15382347a543c181309a86e6294fe964e",
+    "types": [
+      "ProcessTRequest"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/dto/task/response/ProcessTResponse.java",
+    "bytes": 355,
+    "sha256": "41433030d9cfc42a685067e1a922b2f719ae0da2edc5e9a80728cba9e1e438b0",
+    "types": [
+      "ProcessTResponse"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/dto/task/response/TaskInfoResponse.java",
+    "bytes": 625,
+    "sha256": "7e6a36abd9a645bef2df7d20694b3349c88e994a888c795df186f3a4f129c477",
+    "types": [
+      "TaskInfoResponse"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/dto/workflow/AssignedWorkflow.java",
+    "bytes": 527,
+    "sha256": "150cacd7350597a88705e73677aac9856da171a9d52827e6a8272277816ab000",
+    "types": [
+      "AssignedWorkflow"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/dto/workflow/request/StartWRequest.java",
+    "bytes": 516,
+    "sha256": "4cbf2fd2f54af93c9e8a85e6d157f52f7fd6872b1209fd023659b904acef4a95",
+    "types": [
+      "StartWRequest"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/dto/workflow/response/AssignedWResponse.java",
+    "bytes": 637,
+    "sha256": "b3ec218828c0fc806508841d4a518ee3c129378ade467ec8c94e61e99450a258",
+    "types": [
+      "AssignedWResponse"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/dto/workflow/WorkflowDTO.java",
+    "bytes": 926,
+    "sha256": "2d32fa674838adf7ec169934b511f16c9e2c4b886eb5056ba1b81e8835526499",
+    "types": [
+      "WorkflowDTO"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/dto/workflow/WorkflowEleDTO.java",
+    "bytes": 466,
+    "sha256": "90ac4d382634a4750ffd1858faa1d90c6b337eaaf2e6abe7a95ba4fac178cdbc",
+    "types": [
+      "WorkflowEleDTO"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/dto/workflow/WorkflowStepsDTO.java",
+    "bytes": 507,
+    "sha256": "7326273253853ae6b9d3f3ff12eeeec5ea0843470071e6bceaa7c94e03d23555",
+    "types": [
+      "WorkflowStepsDTO"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/entity/AbstractAuditingEntity.java",
+    "bytes": 1032,
+    "sha256": "f6de14a2d9af2a152eb5bc7a208a5fc7bcacfee3a49c5e2bbfa8e0256f27799a",
+    "types": [
+      "AbstractAuditingEntity"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/entity/AuditLog.java",
+    "bytes": 1823,
+    "sha256": "f8b4d3ad68a088d3c55aa306881b00d6bf9c10ee76e2bb2e829c310f3c47bf3c",
+    "types": [
+      "AuditLog"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/entity/BaseEntity.java",
+    "bytes": 901,
+    "sha256": "720c45db79fb334a2012dd66ec4044a612ed4f1bdb4390f9159bc465d727e20f",
+    "types": [
+      "BaseEntity"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/entity/bpmn/BpmnUpload.java",
+    "bytes": 1244,
+    "sha256": "ce4ac63c2a0b12abf0cfdd9c2b06dd046c674c2e13d031b2dcc18dfe8eebeaa9",
+    "types": [
+      "BpmnUpload"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/entity/bpmn/BpmnUploadHistory.java",
+    "bytes": 1397,
+    "sha256": "340fb1f575552c51aaba89860ff277549e4ecbac09fe975c1f2507c86644abb4",
+    "types": [
+      "BpmnUploadHistory"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/entity/Category.java",
+    "bytes": 1961,
+    "sha256": "88b437b8c70e91878962db322ec4a5b76fe46b77ac70d4d3bf3a4fec66de5168",
+    "types": [
+      "Category"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/entity/Comment.java",
+    "bytes": 1428,
+    "sha256": "267fc2ec36f4a7966f5263700cb93da690da67728626e3c2ef20c5471a87f4c2",
+    "types": [
+      "Comment"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/entity/Delegation.java",
+    "bytes": 1352,
+    "sha256": "46ef22010e99def43d281b7b986afa8710b4a987c5d27ef2fe9aa60a35058535",
+    "types": [
+      "Delegation"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/entity/Department.java",
+    "bytes": 1742,
+    "sha256": "6f3d18c3f85b6122d25639490f3e8c5f7c349d69b8e51bb88fc8f83b9139c547",
+    "types": [
+      "Department"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/entity/Device.java",
+    "bytes": 1194,
+    "sha256": "6c36687b7c00a4dde0fb85b6c5652853c90d672c70dbba81cce791bfa8b28366",
+    "types": [
+      "Device"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/entity/Document.java",
+    "bytes": 6323,
+    "sha256": "a6e28f695dd83c700ac58deb1799591f6bd985b9d55acd87108263c21293d2c0",
+    "types": [
+      "Document"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/entity/DocumentPermission.java",
+    "bytes": 1213,
+    "sha256": "66b1de1d3cece06a3a46a42403396dd40f2d3015dee5b5a76928063c64d07ef1",
+    "types": [
+      "DocumentPermission"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/entity/DocumentVersion.java",
+    "bytes": 2037,
+    "sha256": "676f5795a1f7625fa7eeda1ec9a88798a9f990ed3e806bb9eb5c3cf1b4d09080",
+    "types": [
+      "DocumentVersion"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/entity/enums/CommentStatus.java",
+    "bytes": 100,
+    "sha256": "c98089cf6c9889e176585197232c26c29aa59e20fe475bd84bbe06c796f01e84",
+    "types": [
+      "CommentStatus"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/entity/enums/CommonStatus.java",
+    "bytes": 114,
+    "sha256": "7d942768d668265fa1492bdfafaf8bded967fdf08f1dc2d04bf64e8365b69e34",
+    "types": [
+      "CommonStatus"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/entity/enums/DeviceType.java",
+    "bytes": 581,
+    "sha256": "91acb1e9c8b4baba30c9c11107f2aed1c9932896a54703a7c51e2ddb20f66fff",
+    "types": [
+      "DeviceType"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/entity/enums/DocAccessType.java",
+    "bytes": 100,
+    "sha256": "c32a5ce65ae97438e3750c96c1ad4c62a865d26ecf1764678d56790ebd9b81bd",
+    "types": [
+      "DocAccessType"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/entity/enums/DocumentConfidentiality.java",
+    "bytes": 745,
+    "sha256": "687859cee44d6dc2d3bb5b511ae4a2891acb0782656114a4d95bffa24eff959e",
+    "types": [
+      "DocumentConfidentiality"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/entity/enums/DocumentStatus.java",
+    "bytes": 667,
+    "sha256": "1cb41cec58b2c29c64edcd0cb5507c4eac5468587b76bafa9ef00aed9e306a76",
+    "types": [
+      "DocumentStatus"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/entity/enums/DocumentType.java",
+    "bytes": 812,
+    "sha256": "c3e1d993ffe5a346a17bb1900a3ef1ed0809d193cb3ccafa9bc5ac96526975e1",
+    "types": [
+      "DocumentType"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/entity/enums/ProjectRole.java",
+    "bytes": 595,
+    "sha256": "4547ea620a2e5f5a1a0297fd0c72f45c4f30f7b98c924e447887e110ef2edf82",
+    "types": [
+      "ProjectRole"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/entity/enums/ProjectStatus.java",
+    "bytes": 610,
+    "sha256": "1df9b3eef626423a36342b488ac8800180a57aaf26ddde471b1b7c6c86a06e02",
+    "types": [
+      "ProjectStatus"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/entity/enums/SearchType.java",
+    "bytes": 115,
+    "sha256": "4935b97a0ffe5fa2546823911b319aa78243f7bd59b0b6c486181f1013bf2ed2",
+    "types": [
+      "SearchType"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/entity/enums/StarredDocStatus.java",
+    "bytes": 106,
+    "sha256": "2d9ec88a30b3a12cb5724dc619349280bda004be272859d039484fc721171562",
+    "types": [
+      "StarredDocStatus"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/entity/enums/TransactionStatus.java",
+    "bytes": 121,
+    "sha256": "56a6577fc90ade5a5346e67fd01d2ca828cb91aa8289a0779c4dc37b026b9f5f",
+    "types": [
+      "TransactionStatus"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/entity/enums/UserDocType.java",
+    "bytes": 115,
+    "sha256": "8ef300edec9f925af2bce40a70ebad60b002a8002e25c0ff7ca437c6cea2b72d",
+    "types": [
+      "UserDocType"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/entity/FileUpload.java",
+    "bytes": 666,
+    "sha256": "469e752ca687617d6049a81d2a8b10218f4b398e632bb3e8a4fed2a0ac913214",
+    "types": [
+      "FileUpload"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/entity/Log.java",
+    "bytes": 872,
+    "sha256": "fb335bc15d4980dbe8feca1623a3265931f64299e737c19e78bc865470f201e3",
+    "types": [
+      "Log"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/entity/Notification.java",
+    "bytes": 901,
+    "sha256": "16509a4ed3e16f1f82d254d95d7ded0b20354b571d48181db998c3b6af38a765",
+    "types": [
+      "Notification"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/entity/Organization.java",
+    "bytes": 2637,
+    "sha256": "880e7192c8482634fe1929da8dc96cf75412fa31b569a4443c349e9bfcd5eb93",
+    "types": [
+      "Organization"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/entity/Permission.java",
+    "bytes": 1268,
+    "sha256": "8549c01fe10c8ebdd72679dde6c8d8990933582093eae0b895d38f836aec1708",
+    "types": [
+      "Permission"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/entity/Position.java",
+    "bytes": 713,
+    "sha256": "9eff435c694d28696a132ed7878caeb537bec4edb62bf35f87b86ca163c4d427",
+    "types": [
+      "Position"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/entity/PrivateDoc.java",
+    "bytes": 833,
+    "sha256": "8eabf881d123c4404aab83c7be8992c65f80196fb6e320a8a6d76ab6c1edcde5",
+    "types": [
+      "PrivateDoc"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/entity/Product.java",
+    "bytes": 1157,
+    "sha256": "e5598ce98cfb197d2f25403938f360aeb322e0e505b2979c747d99cd65bdbed9",
+    "types": [
+      "Product"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/entity/Project.java",
+    "bytes": 1797,
+    "sha256": "f15d1d701dbc992723cf41687bd5c5b72728081afbab74e2ac29da8be7f2c072",
+    "types": [
+      "Project"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/entity/ProjectMember.java",
+    "bytes": 917,
+    "sha256": "81938812b4da067060bc6b12a03bd9e1fa18f32fa52547ee334b8b9f6532ef6f",
+    "types": [
+      "ProjectMember"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/entity/ProjectRole.java",
+    "bytes": 1023,
+    "sha256": "b13daaee2d70e28cd04d0f5ab5a1a9e96f5971b6cc451a856766ee44a7bf1889",
+    "types": [
+      "ProjectRole"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/entity/RefreshToken.java",
+    "bytes": 708,
+    "sha256": "ca8170aa08312ff88fd699264cfaddb3d6312b85989c8b351afa8b25bd0a0eca",
+    "types": [
+      "RefreshToken"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/entity/Role.java",
+    "bytes": 2038,
+    "sha256": "995edffb717c3fc7d3dd7b7587027dc3e8cd207d4fc01bbf41abf58995995ed6",
+    "types": [
+      "Role"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/entity/SearchHistory.java",
+    "bytes": 1123,
+    "sha256": "f6d820408e6315da13f66ca3b3ff2f44f348289d2967f2077caa0e4a8d9e5000",
+    "types": [
+      "SearchHistory"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/entity/StarredDoc.java",
+    "bytes": 950,
+    "sha256": "8c0540071df14d94d38b3534c781d9f11af48c97cb9d558fd0d304220cce5f68",
+    "types": [
+      "StarredDoc"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/entity/Transaction.java",
+    "bytes": 1347,
+    "sha256": "d9322e85933c8c7143bd54fc397f29106c36f0e7f620c4aac9fc1a64aec5ee2b",
+    "types": [
+      "Transaction"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/entity/User.java",
+    "bytes": 3529,
+    "sha256": "b8e773b9063d45414210c5138303ce29af217b45c3cb263855e84ba331253d02",
+    "types": [
+      "User"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/entity/UserDocument.java",
+    "bytes": 1082,
+    "sha256": "4078a8789eb702f0bdec277bb8f9b6b586f60b072dade5e60c4008364666de70",
+    "types": [
+      "UserDocument"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/entity/UserNotification.java",
+    "bytes": 846,
+    "sha256": "e3f5918433a42088e37542f843aeccbf3884aedef03a6e78aac1edd7c1908aea",
+    "types": [
+      "UserNotification"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/entity/UserPermission.java",
+    "bytes": 2400,
+    "sha256": "e4fe90177ad9a5db18d290c8c2a3fc07564c677618ef90e2d9d8721c1b62fc03",
+    "types": [
+      "UserPermission",
+      "UserPermissionId"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/entity/workflow/Workflow.java",
+    "bytes": 1539,
+    "sha256": "027661ee57e249b3f2bdfb554b775e1dc9221c31360ce57adf4dc87b66020490",
+    "types": [
+      "Workflow"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/entity/workflow/WorkflowDept.java",
+    "bytes": 665,
+    "sha256": "aeb52a89d0652fddafad0535e86acd6d7c0b9b9232e472e5432797ae547068aa",
+    "types": [
+      "WorkflowDept"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/entity/workflow/WorkflowEle.java",
+    "bytes": 870,
+    "sha256": "c35b8cd172a922d69f4b2821ec2735be1e2ee064f5221f0c2a4e32e43654d013",
+    "types": [
+      "WorkflowEle"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/entity/workflow/WorkflowHistory.java",
+    "bytes": 930,
+    "sha256": "62cf5fda4d2ab05a93a3c87b4bb7ecad559951cb5069fad7cf47c4357ec80ef0",
+    "types": [
+      "WorkflowHistory"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/entity/workflow/WorkflowSteps.java",
+    "bytes": 1141,
+    "sha256": "a6ff33c25962f66ffcdedd88b6f24352b867f200b48f7b6f04082e5fa01c3d75",
+    "types": [
+      "WorkflowSteps"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/mapper/AuditLogMapper.java",
+    "bytes": 609,
+    "sha256": "1e1ba5aa0b2d664f991bb3d98048178f15770fe97816d3e47fd58dc2444f1bc9",
+    "types": [
+      "AuditLogMapper"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/mapper/bpmn/BpmnUploadHistoryMapper.java",
+    "bytes": 1542,
+    "sha256": "8075c47f3186a81e7bcb89e56d22ce7e3e909ecc31036905a48bcce09ce24ded",
+    "types": [
+      "BpmnUploadHistoryMapper"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/mapper/bpmn/BpmnUploadMapper.java",
+    "bytes": 937,
+    "sha256": "4c29748cdca498525c698b7b811b8d13a452071ca262f0ca6774b7d49d9ab893",
+    "types": [
+      "BpmnUploadMapper"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/mapper/CategoryMapper.java",
+    "bytes": 1071,
+    "sha256": "a4687dc35e019d4c05336f585aa168256bccb4807271ceec2c85c7ac8bc94438",
+    "types": [
+      "CategoryMapper"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/mapper/DelegationMapper.java",
+    "bytes": 617,
+    "sha256": "91c288eb65f7cc5274ece6f7cd141ebc88b290eb5ebf4d27726fed2670cf8eda",
+    "types": [
+      "DelegationMapper"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/mapper/DepartmentMapper.java",
+    "bytes": 798,
+    "sha256": "f57417fdbd72eb2e39da55c518eb91458a883068c72a4e297540ff32222b8f81",
+    "types": [
+      "DepartmentMapper"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/mapper/DocumentMapper.java",
+    "bytes": 1816,
+    "sha256": "5c42135fc77192f5351584ac77d2d79f9eda820fcf9e7d1bca1673b9e9e78966",
+    "types": [
+      "DocumentMapper"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/mapper/DocumentVersionMapper.java",
+    "bytes": 615,
+    "sha256": "dc4178ff5f57de3e40604789d9b7dbc32f68a99430eb61c1baf6bac6806097ce",
+    "types": [
+      "DocumentVersionMapper"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/mapper/OrganizationMapper.java",
+    "bytes": 1017,
+    "sha256": "f3c5ffa59c11b1a57cf88593005d77ee3438c38ef439da53d79b22b8410af1ac",
+    "types": [
+      "OrganizationMapper"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/mapper/PermissionMapper.java",
+    "bytes": 528,
+    "sha256": "fe850af7af03c69eb9d66a567b324a12ee0d28a6c2cd0913cc5ad354b07024bb",
+    "types": [
+      "PermissionMapper"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/mapper/ProductMapper.java",
+    "bytes": 754,
+    "sha256": "d596441a1ed0eec28e234c280f66af1ea980ebbfe3510aa878b99eb7d80869aa",
+    "types": [
+      "ProductMapper"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/mapper/ProjectMapper.java",
+    "bytes": 1121,
+    "sha256": "8a842b83883629b003c3b5d69b150e6a6f6d385330b64e1c9a7730cb4439152f",
+    "types": [
+      "ProjectMapper"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/mapper/ProjectMemberMapper.java",
+    "bytes": 1360,
+    "sha256": "00854eca68778c44314cfbe5db2c31db5fca3c7e6f0883dc34b121eae93d6042",
+    "types": [
+      "ProjectMemberMapper"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/mapper/ProjectRoleMapper.java",
+    "bytes": 640,
+    "sha256": "92a6ec79d540064ceff462454bd1e6b26ee95b0680689aa1cf77022640941741",
+    "types": [
+      "ProjectRoleMapper"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/mapper/RoleMapper.java",
+    "bytes": 894,
+    "sha256": "04bd63eece439eef2f609caced44aeb675cf870afb55b6f8708eccbfeaf23d47",
+    "types": [
+      "RoleMapper"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/mapper/UserMapper.java",
+    "bytes": 3036,
+    "sha256": "141e54f80e835d6d4703b89ed011b66c8102f5622880c4d7ef741fdb4d90873d",
+    "types": [
+      "UserMapper"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/mapper/workflow/WorkflowEleMapper.java",
+    "bytes": 1690,
+    "sha256": "173cc1e7aa6f34039e41118a094d60dcd38bbd5aaf6abbd2ca51dd1606d066da",
+    "types": [
+      "WorkflowEleMapper"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/mapper/workflow/WorkflowMapper.java",
+    "bytes": 1832,
+    "sha256": "9393b58b02198cd42d2826ca3dc4c37609536f705de9baca6e7064ae8b338e9e",
+    "types": [
+      "WorkflowMapper"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/mapper/workflow/WorkflowStepsMapper.java",
+    "bytes": 561,
+    "sha256": "74776cffec34c1213168178cb8e1b30f0357b7ce98df615308b38706d9ab4dfa",
+    "types": [
+      "WorkflowStepsMapper"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/repository/AuditLogRepository.java",
+    "bytes": 527,
+    "sha256": "8caa41cfa6cf14c9f601f2fc638b0caa06b8c838251ae0abf72cab9b98465362",
+    "types": [
+      "AuditLogRepository"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/repository/BaseRepository.java",
+    "bytes": 860,
+    "sha256": "514366d27e41b18b722f7d4156671404e1b33584a9e78ff8a76c7b687b7b90f8",
+    "types": [
+      "BaseRepository"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/repository/bpmn/BpmnUploadHistoryRepository.java",
+    "bytes": 626,
+    "sha256": "c7f968df704bf190030281f11bbb2d2de5462b59d6d9ba28e815e79faf0af782",
+    "types": [
+      "BpmnUploadHistoryRepository"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/repository/bpmn/BpmnUploadRepository.java",
+    "bytes": 507,
+    "sha256": "b8535f98125b0b90f23e7ea52a468b12e2eb70635709af33633d4ac610d2d743",
+    "types": [
+      "BpmnUploadRepository"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/repository/CategoryRepository.java",
+    "bytes": 3060,
+    "sha256": "7a94c23ce1c99d1748310a1ce6d5b8900dee430216129ab4b680f645215c6657",
+    "types": [
+      "cho",
+      "CategoryRepository"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/repository/DelegationRepository.java",
+    "bytes": 1644,
+    "sha256": "3037afcd5a56c45932bf7b6e2123508994a093f6fa2c0a3f35ba7206e3357beb",
+    "types": [
+      "DelegationRepository"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/repository/DepartmentRepository.java",
+    "bytes": 1957,
+    "sha256": "3ad0f4e366889771dbc1626d1895047fb3745d339c50bae144619643deb8a978",
+    "types": [
+      "cho",
+      "DepartmentRepository"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/repository/DeviceRepository.java",
+    "bytes": 1843,
+    "sha256": "d05c678a9ab296390739683b32eeb12d796f3391a8ac115fa8fd2b3aa2302db5",
+    "types": [
+      "DeviceRepository"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/repository/DocumentPermissionRepository.java",
+    "bytes": 1148,
+    "sha256": "bc55804aad27c07c4461ba210994119758e5ffd1052dbd02cee50b9d2d914044",
+    "types": [
+      "DocumentPermissionRepository"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/repository/DocumentRepository.java",
+    "bytes": 3186,
+    "sha256": "12b2ce11211d539300435d19627b8099a196c261d3e9c3413edbac76e59d264e",
+    "types": [
+      "cho",
+      "DocumentRepository"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/repository/DocumentVersionRepository.java",
+    "bytes": 737,
+    "sha256": "7702e7137911b486122e5d48537ed84cbf311dfceecb4f9a6d0e903cc33b6f51",
+    "types": [
+      "DocumentVersionRepository"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/repository/FileUploadRepository.java",
+    "bytes": 698,
+    "sha256": "64d33f283635c0cab0584e9f2bc45f55073a32554b1a6cc1f55d26e3172bf35b",
+    "types": [
+      "FileUploadRepository"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/repository/OrganizationRepository.java",
+    "bytes": 1315,
+    "sha256": "14b4b1def4bf9203b81581c87a97f53f2e83dae3a77f5aa577b9b90208b27e99",
+    "types": [
+      "OrganizationRepository"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/repository/PermissionRepository.java",
+    "bytes": 513,
+    "sha256": "387d027b0977842e5bce33954505b0c757205901441e50cf386c710db848c58f",
+    "types": [
+      "PermissionRepository"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/repository/PositionRepository.java",
+    "bytes": 370,
+    "sha256": "b40b5dcab535dddbda0d6399dda80c5e2dc865d735e263df0058cecb2394269d",
+    "types": [
+      "PositionRepository"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/repository/PrivateDocRepository.java",
+    "bytes": 473,
+    "sha256": "ef4ecdb3dc97dab3a363edb025280a2f33f5cf27871f95391bbf1aab1bec2bbd",
+    "types": [
+      "PrivateDocRepository"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/repository/PrivateDocumentRepository.java",
+    "bytes": 1247,
+    "sha256": "eb10246cc7ec7904c5c4a52aba0b01fa699c092d0f9457bf483bb627056e8526",
+    "types": [
+      "cho",
+      "PrivateDocumentRepository"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/repository/ProductRepository.java",
+    "bytes": 783,
+    "sha256": "feabc41a156a93d8f0c121888f01e383739869c4f24661181d71f131f1ec0b5a",
+    "types": [
+      "cho",
+      "ProductRepository"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/repository/ProjectMemberRepository.java",
+    "bytes": 1089,
+    "sha256": "32f2cc60aac240c0e3a0811cb1eb236a73b93a6c94939aaecb9b91ee12bec736",
+    "types": [
+      "ProjectMemberRepository"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/repository/ProjectRepository.java",
+    "bytes": 538,
+    "sha256": "44acd6160df439b9c2aaed1281682e005a2da44a2d85bff858fd2335543293fd",
+    "types": [
+      "ProjectRepository"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/repository/ProjectRoleRepository.java",
+    "bytes": 409,
+    "sha256": "63dd64b6eb8ab3fd76e6c88f2d16b961d81028f99fe40dcc0b807fcc62d0d6d8",
+    "types": [
+      "ProjectRoleRepository"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/repository/RefreshTokenRepository.java",
+    "bytes": 892,
+    "sha256": "e4612baffb7b63b8cca4a50ccde609d367804757c4634e29c044f20f6448f9d0",
+    "types": [
+      "cho",
+      "RefreshTokenRepository"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/repository/RoleRepository.java",
+    "bytes": 820,
+    "sha256": "186fe05a7f04d9747142f6c70c4f59bc262583dbcd27ca4cacf43b814df4fea2",
+    "types": [
+      "RoleRepository"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/repository/SearchHistoryRepository.java",
+    "bytes": 2027,
+    "sha256": "bc85e086d25436d01c5df56dcd86720542589da72be50fab5975c5e5146769d7",
+    "types": [
+      "cho",
+      "SearchHistoryRepository"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/repository/specifications/CommonSpecifications.java",
+    "bytes": 387,
+    "sha256": "4816d5c9a3ea118dde4fbe0ace91cfe5db3e5ac565ce27f3ddaba85108d0f83a",
+    "types": [
+      "CommonSpecifications"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/repository/specifications/DocumentSpecification.java",
+    "bytes": 5784,
+    "sha256": "4728b4e53b7d007d06802680d96aa0a80111225532d71bb1f6d3909772c74591",
+    "types": [
+      "DocumentSpecification"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/repository/UserDocumentRepository.java",
+    "bytes": 708,
+    "sha256": "590e61e73257e1ac9c9180d21577b5fbbc70d753ca6bda4ef26bcbfb1322cfff",
+    "types": [
+      "UserDocumentRepository"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/repository/UserPermissionRepository.java",
+    "bytes": 493,
+    "sha256": "92fff0f56ec8e5ad90c8dd748a19913a801b2c46c655ebe79584df7fd04889e0",
+    "types": [
+      "UserPermissionRepository"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/repository/UserRepository.java",
+    "bytes": 5263,
+    "sha256": "8208bba2d4805a0ab5c6e3f4672fa83ac2cccbdd1d4f54d47d99f822e278602d",
+    "types": [
+      "cho",
+      "UserRepository"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/repository/workflow/workflow_custom/WorkflowCRepository.java",
+    "bytes": 449,
+    "sha256": "75b86116ee8c2f5e131a41b172c6ab96c55028fbae3728596ba3601c7ee55242",
+    "types": [
+      "WorkflowCRepository"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/repository/workflow/workflow_custom/WorkflowCRepositoryImpl.java",
+    "bytes": 3908,
+    "sha256": "804ba2be5342e1972400dfd51991c15cab7d64b0e7e17c29b5d80f7d45280d58",
+    "types": [
+      "WorkflowCRepositoryImpl"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/repository/workflow/WorkflowEleRepository.java",
+    "bytes": 400,
+    "sha256": "871e16e1fee434e957c57b4504ce4952086a9f95ad092a139a272adb8bce6f92",
+    "types": [
+      "WorkflowEleRepository"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/repository/workflow/WorkflowOrgRepository.java",
+    "bytes": 397,
+    "sha256": "8266a7fb3cc5ad1b5d772e09a75def957f7ba9e8430e3407a43740bdaf433e0d",
+    "types": [
+      "WorkflowOrgRepository"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/repository/workflow/WorkflowRepository.java",
+    "bytes": 948,
+    "sha256": "b5b9db55050d8f94cb362d900132eaebd678927a66962678f4caba4a58bb3f9c",
+    "types": [
+      "WorkflowRepository"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/repository/workflow/WorkflowStepsRepository.java",
+    "bytes": 764,
+    "sha256": "62cb6a1486dfa05900117812e9220bb2e649d0f3fce1baec866e21c269b4d811",
+    "types": [
+      "WorkflowStepsRepository"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/security/abac/RequirePermission.java",
+    "bytes": 525,
+    "sha256": "744ed26b074870833ac7a6e960f081dc56ae616abec1b6124e750dd29a82c440",
+    "types": [
+      "RequirePermission"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/security/abac/RequirePermissionAspect.java",
+    "bytes": 7171,
+    "sha256": "d28dcb84b9cdac96cf49799ae2d6ee496f79baeb511e3f9bb531e0f623a0f08d",
+    "types": [
+      "RequirePermissionAspect"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/service/abac/ABACService.java",
+    "bytes": 10994,
+    "sha256": "ae6d9a6111834590bbef36904e11909408aafced2fbec22d91160942212520e7",
+    "types": [
+      "ABACService"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/service/abac/AttributeExtractor.java",
+    "bytes": 5793,
+    "sha256": "5deb1fc2f1b89fb143593ab76ccbd060b00bb2f71bdeb83038604a031673ff22",
+    "types": [
+      "AttributeExtractor"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/service/abac/model/ActionAttributes.java",
+    "bytes": 895,
+    "sha256": "f45df441d69246f266890cd145397b56de01f92e9a86ec81679986fce88af1ed",
+    "types": [
+      "ActionAttributes"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/service/abac/model/Environment.java",
+    "bytes": 1097,
+    "sha256": "be4bf6e2deebc2442393b7b2112201d924832919e49defe8096194d2af1db16a",
+    "types": [
+      "Environment"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/service/abac/model/ResourceAttributes.java",
+    "bytes": 708,
+    "sha256": "baf2140e080aa221d5ca9d3202bf863b4bad8efb82b83db82a9c3b257a4c480c",
+    "types": [
+      "ResourceAttributes"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/service/abac/model/SubjectAttributes.java",
+    "bytes": 583,
+    "sha256": "c5ff2d494216ce92542ea0f549b1cc6d1ed7f03d81593d2fddbf79d53a1028df",
+    "types": [
+      "SubjectAttributes"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/service/abac/PolicyEvaluator.java",
+    "bytes": 3582,
+    "sha256": "f646598824d7096f1c09480a8f7f4895af37ebb352f5b67dd0e1738f03a8f6bb",
+    "types": [
+      "PolicyEvaluator"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/service/AuditLogService.java",
+    "bytes": 476,
+    "sha256": "a31d16a8ae691057e2efdf6f9e0c62edd3a5a7f4d8683fcc6a56871aeac1632b",
+    "types": [
+      "AuditLogService"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/service/azureStorage/AzureStorageService.java",
+    "bytes": 3532,
+    "sha256": "6a27e31ee73341fd0a4ae1cf492759f92e0b360bdf9bc3758a8c4db0967350e1",
+    "types": [
+      "AzureStorageService"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/service/BaseService.java",
+    "bytes": 2542,
+    "sha256": "3788fda712db49678e33b70a80fa8324f0704873f66f8f9b69e60f1feb7ea9ea",
+    "types": [
+      "BaseService"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/service/BaseServiceImpl.java",
+    "bytes": 3262,
+    "sha256": "c43c5e6de07243f82ae3cedcc3e0ac04d800643297e2c6b1b7bb96eb89408842",
+    "types": [
+      "BaseServiceImpl"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/service/bpmn/BpmnService.java",
+    "bytes": 884,
+    "sha256": "ac481420aae3794111003da60ecc9a240748ff75e4e429a5fc89de6d958b1228",
+    "types": [
+      "BpmnService"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/service/bpmn/BpmnServiceImpl.java",
+    "bytes": 8258,
+    "sha256": "6e786f6a52d51c176d2e0d6a6adea29eec3f53025f82584dbdb3973924fca5c0",
+    "types": [
+      "BpmnServiceImpl",
+      "for"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/service/CategoryService.java",
+    "bytes": 1055,
+    "sha256": "2a14ccf3592c79e66da08083df30f1942bd7839cb1ce73db13b7aac8062b1ac2",
+    "types": [
+      "CategoryService"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/service/DelegationService.java",
+    "bytes": 419,
+    "sha256": "f44c939089c15f7862f958fc05b68cb73850b813c491a52eb8418f15342af91c",
+    "types": [
+      "DelegationService"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/service/DepartmentService.java",
+    "bytes": 739,
+    "sha256": "83f1aabb050da74c939c45dd4cc05bd1ac1b733cb4a950185e68647a4ab2dd89",
+    "types": [
+      "DepartmentService"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/service/DocumentService.java",
+    "bytes": 3867,
+    "sha256": "0ddb4d89108ac2b6a5fa2be82ba9e9e476c77498857225a73d841cea04c60345",
+    "types": [
+      "DocumentService"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/service/FileStorageService.java",
+    "bytes": 1541,
+    "sha256": "9c929d1673360b72370976c0310da49f977631e48bbf90acbac35644386adaf5",
+    "types": [
+      "FileStorageService"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/service/impl/AuditLogServiceImpl.java",
+    "bytes": 6841,
+    "sha256": "4a18cc9972716b76f3ffd6bb1e972d986fe9c941d8ed00753a0037e0df85cd94",
+    "types": [
+      "AuditLogServiceImpl"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/service/impl/CategoryServiceImpl.java",
+    "bytes": 10777,
+    "sha256": "b76e0949070cf90f7ed2edfe8aa3834734cef579b92ed99a33a5d38aedd74398",
+    "types": [
+      "CategoryServiceImpl"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/service/impl/DelegationServiceImpl.java",
+    "bytes": 7795,
+    "sha256": "79ef68d5ea1e8965a21302363436411a322f3471eda3666f7394bf7ea8297cb4",
+    "types": [
+      "DelegationServiceImpl"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/service/impl/DepartmentServiceImpl.java",
+    "bytes": 9180,
+    "sha256": "86735fc506b7382f0a6c3e23595f90b7faed20225daee55a7806d57e3efc70e4",
+    "types": [
+      "DepartmentServiceImpl"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/service/impl/DocumentServiceImpl.java",
+    "bytes": 55486,
+    "sha256": "b5369e64edfe8e89cdb5f5005f84be343164f364a87a7017a501a7c3ee894d5b",
+    "types": [
+      "DocumentServiceImpl"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/service/impl/FileSystemStorageService.java",
+    "bytes": 23426,
+    "sha256": "8ad03796cd8999df6b5953e32cf9fb377e074233abc3ae32e3fe55acef5e902b",
+    "types": [
+      "FileSystemStorageService",
+      "from",
+      "if"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/service/impl/OrganizationServiceImpl.java",
+    "bytes": 23508,
+    "sha256": "ca66f0a1e4b2863a07f580dd19fe04e729a2c00e69ab98097b91535518e5a9d8",
+    "types": [
+      "OrganizationServiceImpl"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/service/impl/PermissionServiceImpl.java",
+    "bytes": 781,
+    "sha256": "d5fe48366fcda182471b1d74989352d003fe11df81fcc6cbefeb01c1eace9034",
+    "types": [
+      "PermissionServiceImpl"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/service/impl/ProductServiceImpl.java",
+    "bytes": 3296,
+    "sha256": "518ec1f0c62bc4929758d67c9c7a6acba5e1ee5d838112359786e5da82a45d94",
+    "types": [
+      "ProductServiceImpl"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/service/impl/ProjectServiceImpl.java",
+    "bytes": 18613,
+    "sha256": "87f0fdeab31e7b8c056650979bae0815fb2d8cf24c76f74e26e320cacf63d942",
+    "types": [
+      "ProjectServiceImpl"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/service/impl/RefreshTokenServiceImpl.java",
+    "bytes": 1961,
+    "sha256": "fbac36c0d5444cf8c66dc5c3d2c4da0d032dea8487fb16ab1f1970e48301989b",
+    "types": [
+      "RefreshTokenServiceImpl"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/service/impl/RoleServiceImpl.java",
+    "bytes": 7698,
+    "sha256": "e22b809e51afbb26eef7949015fba638a390f3679f9934e6f743c9931ad1ecae",
+    "types": [
+      "RoleServiceImpl"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/service/impl/SearchHistoryServiceImpl.java",
+    "bytes": 2758,
+    "sha256": "d8158a5c4ff50ad9642f8947d163d0ce4dcc44544891e4ff45e15356c74d614a",
+    "types": [
+      "SearchHistoryServiceImpl"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/service/impl/UserServiceImpl.java",
+    "bytes": 16304,
+    "sha256": "e1ed28ee938cb2847e1926143906ce15b71fde1e8d8095641b5b02d3e871f858",
+    "types": [
+      "UserServiceImpl"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/service/localStorage/LocalStorageService.java",
+    "bytes": 2254,
+    "sha256": "c88baad76862b1ecfdebfdcb5bdc79815fef84419f6016133c98eb032f85e551",
+    "types": [
+      "LocalStorageService"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/service/OrganizationService.java",
+    "bytes": 3466,
+    "sha256": "dc5389d850b9e4d472f06d0a15f98a64d3dac17307de92df1c52f27e14980e1d",
+    "types": [
+      "OrganizationService"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/service/PermissionService.java",
+    "bytes": 217,
+    "sha256": "693a4dd4266d3b28c7a620b59fd6e785a42da4cab332d861462c7e36edcd21e2",
+    "types": [
+      "PermissionService"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/service/ProductService.java",
+    "bytes": 713,
+    "sha256": "680768011f7ec9d1c4a04dd98a63658bb44b0bd36b47f335ec46e3a971d59025",
+    "types": [
+      "ProductService"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/service/ProjectService.java",
+    "bytes": 1629,
+    "sha256": "aaa696ab6732811bfe6dd05195be6b2adea97954f3f9daf9817c3dec2c1100d9",
+    "types": [
+      "ProjectService"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/service/RefreshTokenService.java",
+    "bytes": 207,
+    "sha256": "0d157e0e3b24ce7cd5c28b38db4948d192354de44c5c9490e48abe5b41be7025",
+    "types": [
+      "RefreshTokenService"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/service/RoleService.java",
+    "bytes": 480,
+    "sha256": "1d05bd5b88e5f861d31353f1d490ca1d8699dd53a564e8ed8a47de1c39aaf593",
+    "types": [
+      "RoleService"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/service/SearchHistoryService.java",
+    "bytes": 288,
+    "sha256": "1a8ddb611065ef50f4df562cfa08104d4784f257b1a827144feeeae9506bd5dc",
+    "types": [
+      "SearchHistoryService"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/service/task/WTaskService.java",
+    "bytes": 526,
+    "sha256": "06232939477028aacc84c32cf9bef22c1aa8abc28295402e509b5fe405e9fdd2",
+    "types": [
+      "WTaskService"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/service/task/WTaskServiceImp.java",
+    "bytes": 9597,
+    "sha256": "d378f09e3b2c0ce19d1b75c102f41449eeee74e7643eac2fee0e301dc5799a1a",
+    "types": [
+      "WTaskServiceImp"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/service/UserService.java",
+    "bytes": 1582,
+    "sha256": "60fdff0a50c86f03e4e196fdd677302f22fd057e697f7727f5a40b8b8ddd6150",
+    "types": [
+      "UserService"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/service/util/CryptoService.java",
+    "bytes": 3678,
+    "sha256": "5ec3db051038e71d2dc24240f91581bdff09cebf26b4499604413a164164ec56",
+    "types": [
+      "CryptoService"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/service/util/WatermarkService.java",
+    "bytes": 11332,
+    "sha256": "8dc954663389c2e0e04c66e3080da7938689f498a32347bff77a1c4b4718d526",
+    "types": [
+      "WatermarkService"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/service/workflow/WorkflowService.java",
+    "bytes": 1288,
+    "sha256": "f5c82c1a6b8e0ac9dc9287c897d58709adb006fbcfa98878f1f9ccfc0c9418b0",
+    "types": [
+      "WorkflowService"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/service/workflow/WorkflowServiceImpl.java",
+    "bytes": 26501,
+    "sha256": "4289272afa2acb5daaa79036e94013a8e64e8a6702c2cd7849723e37c4a85701",
+    "types": [
+      "WorkflowServiceImpl"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/service/workflow/WorkflowStepsService.java",
+    "bytes": 357,
+    "sha256": "f6055793c827d7073ab8f82911575649445374bcf3283ee814ed721427c1413a",
+    "types": [
+      "WorkflowStepsService"
+    ]
+  },
+  {
+    "path": "src/main/java/com/genifast/dms/service/workflow/WorkflowStepsServiceImpl.java",
+    "bytes": 1653,
+    "sha256": "e2a3a3c06c0891ec708a726dd23f65bd23e7a7b99a6104f423ffd18864c47e4f",
+    "types": [
+      "WorkflowStepsServiceImpl"
+    ]
+  },
+  {
+    "path": "src/main/resources/application.properties",
+    "bytes": 5975,
+    "sha256": "008568775f880eeb939b8806f5aa609e758e2f7e166640018918680f8a02a1fa",
+    "types": []
+  },
+  {
+    "path": "src/main/resources/keys/access_token_private.pem",
+    "bytes": 1732,
+    "sha256": "cc5d267e9a68da39c1be91d9a379e9d0086fccc5f5cd0a17947ef8b1626f15b9",
+    "types": []
+  },
+  {
+    "path": "src/main/resources/keys/access_token_public.pem",
+    "bytes": 460,
+    "sha256": "599486ab7546cb67b8a82108d0b944b5a0293bd2f38ce0be9ea5e1fea0b60255",
+    "types": []
+  },
+  {
+    "path": "src/main/resources/keys/reset_password_private.pem",
+    "bytes": 1732,
+    "sha256": "12e8e8104ec49a3c10393622d8064075a79c3d4b25ba3b605396c564d271ab5e",
+    "types": []
+  },
+  {
+    "path": "src/main/resources/keys/reset_password_public.pem",
+    "bytes": 460,
+    "sha256": "33d80962a4f6c34c9a35cfdd1a2ef1fae24003ad3ad3570a9fc6ba81133c6699",
+    "types": []
+  },
+  {
+    "path": "src/main/resources/templates/document_notification.html",
+    "bytes": 1609,
+    "sha256": "9bc358b2f363e895e75114d9178d0977b3922ff4af37db13f930cedb638fc5c6",
+    "types": []
+  },
+  {
+    "path": "src/main/resources/templates/organization_invitation.html",
+    "bytes": 2433,
+    "sha256": "dd8a9660cc444ddaff02bd24d377cd8b7fbe640ecc6d84e13295546b3a8d9eb3",
+    "types": []
+  },
+  {
+    "path": "src/main/resources/templates/reset_password.html",
+    "bytes": 1837,
+    "sha256": "f0ecf6c4970decdd93f4afe86bfc55547e1da1995a0e34ae7a053af514420139",
+    "types": []
+  },
+  {
+    "path": "src/main/resources/templates/verify_email.html",
+    "bytes": 1819,
+    "sha256": "989e988b0fad5c84c73bca1c2603f14328237ad5f2f38547fdd5a91fe4c139b7",
+    "types": []
+  }
+]

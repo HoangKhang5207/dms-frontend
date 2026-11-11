@@ -11,17 +11,6 @@
     cursor: pointer;
 }
 
-.logo img {
-    height: 32px;
-    margin-right: 8px;
-}
-
-.logo span {
-    font-size: 20px;
-    font-weight: 600;
-    color: #0d5bb5;
-}
-
 .header-link {
     color: rgba(0, 0, 0, 0.85);
     font-size: 16px;
@@ -29,5 +18,17 @@
 }
 
 .header-link:hover {
-    color: #0d5bb5;
+    color: var(--aqua-blue);
+}
+
+.app-header a:focus-visible {
+    outline: 3px solid var(--aqua-blue);
+    outline-offset: 4px;
+    border-radius: 4px;
+}
+
+@media (max-width: 767px) {
+    .app-header { padding: 0 16px !important; }
+    .app-header .ant-space { gap: 12px !important; }
+    .app-header .header-link { font-size: 14px; }
 }

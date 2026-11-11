@@ -4,14 +4,16 @@ import { Layout, Row, Col, Typography } from 'antd';
 import './AppFooter.css';
 
 const { Footer } = Layout;
-const { Text, Link } = Typography;
+const { Text } = Typography;
 
 const AppFooter = () => {
   return (
     <Footer className="app-footer">
       <Row justify="center" align="middle">
         <Col>
-          <Text className="footer-text">Genadata Search ©2025</Text>
+          <Text className="footer-text">
+            AquaDocs AI · Đồng hành cùng ngành nước hiện đại
+          </Text>
         </Col>
       </Row>
     </Footer>

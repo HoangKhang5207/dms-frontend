@@ -4,6 +4,7 @@ import { Row, Col, Typography, Form, Input, Button, Result } from 'antd';
 import { MailOutlined } from '@ant-design/icons';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
+import AuthIllustration from '../../components/AuthIllustration/AuthIllustration';
 import './ForgotPasswordPage.css';
 
 const { Title, Text, Paragraph } = Typography;
@@ -24,7 +25,7 @@ const ForgotPasswordPage = () => {
     // UI hiển thị sau khi gửi yêu cầu
     if (requestSent) {
         return (
-            <div className="forgot-password-page">
+            <div className="forgot-password-page aqua-auth-page">
                 <Result
                     status="success"
                     title="Yêu Cầu Đã Được Gửi!"
@@ -41,14 +42,10 @@ const ForgotPasswordPage = () => {
     
     // UI form ban đầu
     return (
-        <div className="forgot-password-page">
+        <div className="forgot-password-page aqua-auth-page">
             <Row justify="center" align="middle" style={{ minHeight: '100%' }}>
                 <Col xs={0} md={12} className="forgot-password-illustration-col">
-                    <img
-                        src="/src/assets/metadata-illustration.png" // Sử dụng hình ảnh khác
-                        alt="Forgot Password Illustration"
-                        className="forgot-password-illustration-img"
-                    />
+                    <AuthIllustration />
                 </Col>
 
                 <Col xs={24} md={12}>
@@ -64,6 +61,7 @@ const ForgotPasswordPage = () => {
                         >
                             <Form.Item
                                 name="email"
+                                label="Email"
                                 rules={[{ required: true, message: 'Vui lòng nhập email!' }, { type: 'email', message: 'Email không hợp lệ!' }]}
                             >
                                 <Input prefix={<MailOutlined />} placeholder="Nhập email của bạn" size="large" />

@@ -154,6 +154,7 @@ const DownloadMultipleModal = ({ visible, onCancel, selectedFileIds, documents }
               <Button
                 type="text"
                 icon={<CloseOutlined />}
+                aria-label="Bỏ tài liệu khỏi danh sách"
                 onClick={() => handleRemoveFile(item.fileId)}
               />,
             ]}
@@ -161,7 +162,7 @@ const DownloadMultipleModal = ({ visible, onCancel, selectedFileIds, documents }
             <List.Item.Meta
               title={item.title}
               description={
-                <Space>
+                <Space wrap className="aqua-download-validation">
                   <Form ref={item.formRef} layout="inline" key={`${item.fileId}-${resetKey}`}>
                     <Form.Item
                       name={[item.fileId, 'password']}

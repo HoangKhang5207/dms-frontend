@@ -1,0 +1,894 @@
+{
+  "mode": "MOCKED_BACKEND_NOT_LIVE",
+  "stage": "after",
+  "screens": [
+    {
+      "name": "landing",
+      "route": "/",
+      "width": 1440,
+      "height": 900,
+      "overflow": false,
+      "scrollWidth": 1440,
+      "title": "AquaDocs AI · Quản lý tài liệu",
+      "legacyBrand": false,
+      "bodyText": "Tính năng\nLiên hệ\nĐăng nhập\nAquaDocs AI\n\nGiải pháp quản lý tài liệu, quy trình và tri thức bằng AI cho ngành cấp thoát nước.\n\nSử dụng ngay\nLiên hệ tư vấn\nTính năng chính\nHệ thống c"
+    },
+    {
+      "name": "login",
+      "route": "/login",
+      "width": 1440,
+      "height": 900,
+      "overflow": false,
+      "scrollWidth": 1440,
+      "title": "AquaDocs AI · Quản lý tài liệu",
+      "legacyBrand": false,
+      "bodyText": "Tính năng\nLiên hệ\nĐăng nhập\nAQUADOCS AI\nTài liệu, quy trình và tri thức\ntrong một nền tảng.\n\nGiải pháp quản lý tài liệu cho ngành cấp thoát nước.\n\nĐồng hành cùng ngành nước hiện đạ"
+    },
+    {
+      "name": "register",
+      "route": "/register",
+      "width": 1440,
+      "height": 900,
+      "overflow": false,
+      "scrollWidth": 1440,
+      "title": "AquaDocs AI · Quản lý tài liệu",
+      "legacyBrand": false,
+      "bodyText": "Tính năng\nLiên hệ\nĐăng nhập\nAQUADOCS AI\nTài liệu, quy trình và tri thức\ntrong một nền tảng.\n\nGiải pháp quản lý tài liệu cho ngành cấp thoát nước.\n\nĐồng hành cùng ngành nước hiện đạ"
+    },
+    {
+      "name": "forgot",
+      "route": "/forgot-password",
+      "width": 1440,
+      "height": 900,
+      "overflow": false,
+      "scrollWidth": 1440,
+      "title": "AquaDocs AI · Quản lý tài liệu",
+      "legacyBrand": false,
+      "bodyText": "Tính năng\nLiên hệ\nĐăng nhập\nAQUADOCS AI\nTài liệu, quy trình và tri thức\ntrong một nền tảng.\n\nGiải pháp quản lý tài liệu cho ngành cấp thoát nước.\n\nĐồng hành cùng ngành nước hiện đạ"
+    },
+    {
+      "name": "reset",
+      "route": "/reset-password?token=fixture-only",
+      "width": 1440,
+      "height": 900,
+      "overflow": false,
+      "scrollWidth": 1440,
+      "title": "AquaDocs AI · Quản lý tài liệu",
+      "legacyBrand": false,
+      "bodyText": "Tính năng\nLiên hệ\nĐăng nhập\nTạo mật khẩu mới\nMật khẩu mới của bạn phải khác với mật khẩu đã sử dụng trước đây.\nMật khẩu mới\nXác nhận mật khẩu mới\nĐặt lại mật khẩu\nAquaDocs AI · Đồn"
+    },
+    {
+      "name": "reset-invalid",
+      "route": "/reset-password",
+      "width": 1440,
+      "height": 900,
+      "overflow": false,
+      "scrollWidth": 1440,
+      "title": "AquaDocs AI · Quản lý tài liệu",
+      "legacyBrand": false,
+      "bodyText": "Tính năng\nLiên hệ\nĐăng nhập\nĐường dẫn không hợp lệ\nĐường dẫn đặt lại mật khẩu không đúng hoặc đã hết hạn. Vui lòng thử lại.\nYêu cầu lại\nAquaDocs AI · Đồng hành cùng ngành nước hiện"
+    },
+    {
+      "name": "verify-message",
+      "route": "/verify-email-message",
+      "width": 1440,
+      "height": 900,
+      "overflow": false,
+      "scrollWidth": 1440,
+      "title": "AquaDocs AI · Quản lý tài liệu",
+      "legacyBrand": false,
+      "bodyText": "Tính năng\nLiên hệ\nĐăng nhập\nĐăng Ký Thành Công!\nChúng tôi đã gửi một liên kết xác thực đến email của bạn.\nVui lòng kiểm tra hộp thư (bao gồm cả mục spam) và làm theo hướng dẫn để k"
+    },
+    {
+      "name": "verify-success",
+      "route": "/verifired?email=qa@example.invalid",
+      "width": 1440,
+      "height": 900,
+      "overflow": false,
+      "scrollWidth": 1440,
+      "title": "AquaDocs AI · Quản lý tài liệu",
+      "legacyBrand": false,
+      "bodyText": "Tính năng\nLiên hệ\nĐăng nhập\nXác Thực Thành Công!\nTài khoản của bạn đã được kích hoạt. Bây giờ bạn có thể đăng nhập.\nĐăng nhập ngay\nAquaDocs AI · Đồng hành cùng ngành nước hiện đại"
+    },
+    {
+      "name": "verify-invalid",
+      "route": "/verifired",
+      "width": 1440,
+      "height": 900,
+      "overflow": false,
+      "scrollWidth": 1440,
+      "title": "AquaDocs AI · Quản lý tài liệu",
+      "legacyBrand": false,
+      "bodyText": "Tính năng\nLiên hệ\nĐăng nhập\nXác Thực Thất Bại\nĐường dẫn xác thực không hợp lệ hoặc đã hết hạn.\nQuay về trang chủ\nAquaDocs AI · Đồng hành cùng ngành nước hiện đại"
+    },
+    {
+      "name": "invitation-success",
+      "route": "/accepted-join?orgId=1&deptId=1&email=qa@example.invalid",
+      "width": 1440,
+      "height": 900,
+      "overflow": false,
+      "scrollWidth": 1440,
+      "title": "AquaDocs AI · Quản lý tài liệu",
+      "legacyBrand": false,
+      "bodyText": "Tính năng\nLiên hệ\nĐăng nhập\nTham gia tổ chức thành công!\nBạn đã là thành viên của tổ chức. Vui lòng đăng nhập để tiếp tục.\nĐăng nhập\nAquaDocs AI · Đồng hành cùng ngành nước hiện đạ"
+    },
+    {
+      "name": "invitation-invalid",
+      "route": "/accepted-join",
+      "width": 1440,
+      "height": 900,
+      "overflow": false,
+      "scrollWidth": 1440,
+      "title": "AquaDocs AI · Quản lý tài liệu",
+      "legacyBrand": false,
+      "bodyText": "Tính năng\nLiên hệ\nĐăng nhập\nThao tác thất bại\nĐường dẫn mời không hợp lệ.\nVề trang chủ\nAquaDocs AI · Đồng hành cùng ngành nước hiện đại"
+    },
+    {
+      "name": "dashboard",
+      "route": "/home/dashboard",
+      "width": 1440,
+      "height": 900,
+      "overflow": false,
+      "scrollWidth": 1440,
+      "title": "AquaDocs AI · Quản lý tài liệu",
+      "legacyBrand": false,
+      "bodyText": "Trang chủ\nTổ chức của tôi\nQuản lý tài liệu\nĐược đánh dấu\nĐược chia sẻ với tôi\nCấp thoát nước · QA\nQuản lý tổ chức\ntK\nAquaDocs Kiểm thử\nTổng quan\nQuản lý và tìm kiếm tài liệu của tổ"
+    },
+    {
+      "name": "no-organization",
+      "route": "/home/no-organization",
+      "width": 1440,
+      "height": 900,
+      "overflow": false,
+      "scrollWidth": 1440,
+      "title": "AquaDocs AI · Quản lý tài liệu",
+      "legacyBrand": false,
+      "bodyText": "Trang chủ\nTổ chức của tôi\nQuản lý tài liệu\nĐược đánh dấu\nĐược chia sẻ với tôi\nChưa tham gia tổ chức\nQuản lý tổ chức\ntK\nAquaDocs Kiểm thử\nBạn chưa tham gia tổ chức nào\nHãy tạo tổ ch"
+    },
+    {
+      "name": "create-organization",
+      "route": "/home/create-organization",
+      "width": 1440,
+      "height": 900,
+      "overflow": false,
+      "scrollWidth": 1440,
+      "title": "AquaDocs AI · Quản lý tài liệu",
+      "legacyBrand": false,
+      "bodyText": "Trang chủ\nTổ chức của tôi\nQuản lý tài liệu\nĐược đánh dấu\nĐược chia sẻ với tôi\nChưa tham gia tổ chức\nQuản lý tổ chức\ntK\nAquaDocs Kiểm thử\nYêu cầu tạo tổ chức\nTên tổ chức\nMô tả\nSử dụ"
+    },
+    {
+      "name": "pending-organization",
+      "route": "/home/pending-organization",
+      "width": 1440,
+      "height": 900,
+      "overflow": false,
+      "scrollWidth": 1440,
+      "title": "AquaDocs AI · Quản lý tài liệu",
+      "legacyBrand": false,
+      "bodyText": "Trang chủ\nTổ chức của tôi\nQuản lý tài liệu\nĐược đánh dấu\nĐược chia sẻ với tôi\nChưa tham gia tổ chức\nQuản lý tổ chức\ntK\nAquaDocs Kiểm thử\nYêu cầu của bạn đang chờ duyệt\nYêu cầu tạo "
+    },
+    {
+      "name": "organization-info",
+      "route": "/home/organization/info",
+      "width": 1440,
+      "height": 900,
+      "overflow": false,
+      "scrollWidth": 1440,
+      "title": "AquaDocs AI · Quản lý tài liệu",
+      "legacyBrand": false,
+      "bodyText": "Trang chủ\nTổ chức của tôi\nThông tin chung\nPhòng ban\nThành viên\nQuản lý tài liệu\nĐược đánh dấu\nĐược chia sẻ với tôi\nCấp thoát nước · QA\nQuản lý tổ chức\ntK\nAquaDocs Kiểm thử\nThông ti"
+    },
+    {
+      "name": "departments",
+      "route": "/home/organization/departments",
+      "width": 1440,
+      "height": 900,
+      "overflow": false,
+      "scrollWidth": 1440,
+      "title": "AquaDocs AI · Quản lý tài liệu",
+      "legacyBrand": false,
+      "bodyText": "Trang chủ\nTổ chức của tôi\nThông tin chung\nPhòng ban\nThành viên\nQuản lý tài liệu\nĐược đánh dấu\nĐược chia sẻ với tôi\nCấp thoát nước · QA\nQuản lý tổ chức\ntK\nAquaDocs Kiểm thử\nThông ti"
+    },
+    {
+      "name": "members",
+      "route": "/home/organization/members",
+      "width": 1440,
+      "height": 900,
+      "overflow": false,
+      "scrollWidth": 1440,
+      "title": "AquaDocs AI · Quản lý tài liệu",
+      "legacyBrand": false,
+      "bodyText": "Trang chủ\nTổ chức của tôi\nThông tin chung\nPhòng ban\nThành viên\nQuản lý tài liệu\nĐược đánh dấu\nĐược chia sẻ với tôi\nCấp thoát nước · QA\nQuản lý tổ chức\ntK\nAquaDocs Kiểm thử\nThông ti"
+    },
+    {
+      "name": "documents",
+      "route": "/home/document-management",
+      "width": 1440,
+      "height": 900,
+      "overflow": false,
+      "scrollWidth": 1440,
+      "title": "AquaDocs AI · Quản lý tài liệu",
+      "legacyBrand": false,
+      "bodyText": "Trang chủ\nTổ chức của tôi\nQuản lý tài liệu\nĐược đánh dấu\nĐược chia sẻ với tôi\nCấp thoát nước · QA\nQuản lý tổ chức\ntK\nAquaDocs Kiểm thử\nDanh sách tài liệu\nThêm tài liệu\nKiểm tra Fil"
+    },
+    {
+      "name": "categories",
+      "route": "/home/document-management/1",
+      "width": 1440,
+      "height": 900,
+      "overflow": false,
+      "scrollWidth": 1440,
+      "title": "AquaDocs AI · Quản lý tài liệu",
+      "legacyBrand": false,
+      "bodyText": "Trang chủ\nTổ chức của tôi\nQuản lý tài liệu\nĐược đánh dấu\nĐược chia sẻ với tôi\nCấp thoát nước · QA\nQuản lý tổ chức\ntK\nAquaDocs Kiểm thử\n/\nQuản lý tài liệu\n/\nVận hành\nThư mục trong V"
+    },
+    {
+      "name": "category-documents",
+      "route": "/home/document-management/1/1",
+      "width": 1440,
+      "height": 900,
+      "overflow": false,
+      "scrollWidth": 1440,
+      "title": "AquaDocs AI · Quản lý tài liệu",
+      "legacyBrand": false,
+      "bodyText": "Trang chủ\nTổ chức của tôi\nQuản lý tài liệu\nĐược đánh dấu\nĐược chia sẻ với tôi\nCấp thoát nước · QA\nQuản lý tổ chức\ntK\nAquaDocs Kiểm thử\n/\nQuản lý tài liệu\n/\nVận hành\n/\nHồ sơ vận hàn"
+    },
+    {
+      "name": "search",
+      "route": "/home/document-management/search",
+      "width": 1440,
+      "height": 900,
+      "overflow": false,
+      "scrollWidth": 1440,
+      "title": "AquaDocs AI · Quản lý tài liệu",
+      "legacyBrand": false,
+      "bodyText": "Trang chủ\nTổ chức của tôi\nQuản lý tài liệu\nĐược đánh dấu\nĐược chia sẻ với tôi\nCấp thoát nước · QA\nQuản lý tổ chức\ntK\nAquaDocs Kiểm thử\nTìm kiếm tài liệu\nQuay về\nLoại\nTất cả\nChủ sở "
+    },
+    {
+      "name": "landing",
+      "route": "/",
+      "width": 390,
+      "height": 844,
+      "overflow": false,
+      "scrollWidth": 390,
+      "title": "AquaDocs AI · Quản lý tài liệu",
+      "legacyBrand": false,
+      "bodyText": "Tính năng\nLiên hệ\nĐăng nhập\nAquaDocs AI\n\nGiải pháp quản lý tài liệu, quy trình và tri thức bằng AI cho ngành cấp thoát nước.\n\nQuản lý tài liệu thông minh · Tự động hóa quy trình · "
+    },
+    {
+      "name": "login",
+      "route": "/login",
+      "width": 390,
+      "height": 844,
+      "overflow": false,
+      "scrollWidth": 390,
+      "title": "AquaDocs AI · Quản lý tài liệu",
+      "legacyBrand": false,
+      "bodyText": "Tính năng\nLiên hệ\nĐăng nhập\nAQUADOCS AI\nTài liệu, quy trình và tri thức\ntrong một nền tảng.\n\nGiải pháp quản lý tài liệu cho ngành cấp thoát nước.\n\nĐồng hành cùng ngành nước hiện đạ"
+    },
+    {
+      "name": "register",
+      "route": "/register",
+      "width": 390,
+      "height": 844,
+      "overflow": false,
+      "scrollWidth": 390,
+      "title": "AquaDocs AI · Quản lý tài liệu",
+      "legacyBrand": false,
+      "bodyText": "Tính năng\nLiên hệ\nĐăng nhập\nAQUADOCS AI\nTài liệu, quy trình và tri thức\ntrong một nền tảng.\n\nGiải pháp quản lý tài liệu cho ngành cấp thoát nước.\n\nĐồng hành cùng ngành nước hiện đạ"
+    },
+    {
+      "name": "forgot",
+      "route": "/forgot-password",
+      "width": 390,
+      "height": 844,
+      "overflow": false,
+      "scrollWidth": 390,
+      "title": "AquaDocs AI · Quản lý tài liệu",
+      "legacyBrand": false,
+      "bodyText": "Tính năng\nLiên hệ\nĐăng nhập\nAQUADOCS AI\nTài liệu, quy trình và tri thức\ntrong một nền tảng.\n\nGiải pháp quản lý tài liệu cho ngành cấp thoát nước.\n\nĐồng hành cùng ngành nước hiện đạ"
+    },
+    {
+      "name": "reset",
+      "route": "/reset-password?token=fixture-only",
+      "width": 390,
+      "height": 844,
+      "overflow": false,
+      "scrollWidth": 390,
+      "title": "AquaDocs AI · Quản lý tài liệu",
+      "legacyBrand": false,
+      "bodyText": "Tính năng\nLiên hệ\nĐăng nhập\nTạo mật khẩu mới\nMật khẩu mới của bạn phải khác với mật khẩu đã sử dụng trước đây.\nMật khẩu mới\nXác nhận mật khẩu mới\nĐặt lại mật khẩu\nAquaDocs AI · Đồn"
+    },
+    {
+      "name": "reset-invalid",
+      "route": "/reset-password",
+      "width": 390,
+      "height": 844,
+      "overflow": false,
+      "scrollWidth": 390,
+      "title": "AquaDocs AI · Quản lý tài liệu",
+      "legacyBrand": false,
+      "bodyText": "Tính năng\nLiên hệ\nĐăng nhập\nĐường dẫn không hợp lệ\nĐường dẫn đặt lại mật khẩu không đúng hoặc đã hết hạn. Vui lòng thử lại.\nYêu cầu lại\nAquaDocs AI · Đồng hành cùng ngành nước hiện"
+    },
+    {
+      "name": "verify-message",
+      "route": "/verify-email-message",
+      "width": 390,
+      "height": 844,
+      "overflow": false,
+      "scrollWidth": 390,
+      "title": "AquaDocs AI · Quản lý tài liệu",
+      "legacyBrand": false,
+      "bodyText": "Tính năng\nLiên hệ\nĐăng nhập\nĐăng Ký Thành Công!\nChúng tôi đã gửi một liên kết xác thực đến email của bạn.\nVui lòng kiểm tra hộp thư (bao gồm cả mục spam) và làm theo hướng dẫn để k"
+    },
+    {
+      "name": "verify-success",
+      "route": "/verifired?email=qa@example.invalid",
+      "width": 390,
+      "height": 844,
+      "overflow": false,
+      "scrollWidth": 390,
+      "title": "AquaDocs AI · Quản lý tài liệu",
+      "legacyBrand": false,
+      "bodyText": "Tính năng\nLiên hệ\nĐăng nhập\nXác Thực Thành Công!\nTài khoản của bạn đã được kích hoạt. Bây giờ bạn có thể đăng nhập.\nĐăng nhập ngay\nAquaDocs AI · Đồng hành cùng ngành nước hiện đại"
+    },
+    {
+      "name": "verify-invalid",
+      "route": "/verifired",
+      "width": 390,
+      "height": 844,
+      "overflow": false,
+      "scrollWidth": 390,
+      "title": "AquaDocs AI · Quản lý tài liệu",
+      "legacyBrand": false,
+      "bodyText": "Tính năng\nLiên hệ\nĐăng nhập\nXác Thực Thất Bại\nĐường dẫn xác thực không hợp lệ hoặc đã hết hạn.\nQuay về trang chủ\nAquaDocs AI · Đồng hành cùng ngành nước hiện đại"
+    },
+    {
+      "name": "invitation-success",
+      "route": "/accepted-join?orgId=1&deptId=1&email=qa@example.invalid",
+      "width": 390,
+      "height": 844,
+      "overflow": false,
+      "scrollWidth": 390,
+      "title": "AquaDocs AI · Quản lý tài liệu",
+      "legacyBrand": false,
+      "bodyText": "Tính năng\nLiên hệ\nĐăng nhập\nTham gia tổ chức thành công!\nBạn đã là thành viên của tổ chức. Vui lòng đăng nhập để tiếp tục.\nĐăng nhập\nAquaDocs AI · Đồng hành cùng ngành nước hiện đạ"
+    },
+    {
+      "name": "invitation-invalid",
+      "route": "/accepted-join",
+      "width": 390,
+      "height": 844,
+      "overflow": false,
+      "scrollWidth": 390,
+      "title": "AquaDocs AI · Quản lý tài liệu",
+      "legacyBrand": false,
+      "bodyText": "Tính năng\nLiên hệ\nĐăng nhập\nThao tác thất bại\nĐường dẫn mời không hợp lệ.\nVề trang chủ\nAquaDocs AI · Đồng hành cùng ngành nước hiện đại"
+    },
+    {
+      "name": "dashboard",
+      "route": "/home/dashboard",
+      "width": 390,
+      "height": 844,
+      "overflow": false,
+      "scrollWidth": 390,
+      "title": "AquaDocs AI · Quản lý tài liệu",
+      "legacyBrand": false,
+      "bodyText": "Cấp thoát nước · QA\nQuản lý tổ chức\ntK\nTổng quan\nQuản lý và tìm kiếm tài liệu của tổ chức.\nTìm kiếm bằng AI\nCác tệp gần đây\nURD_WebQuanLyTaiLieu.pdf\ndangquocthai214@gm...\n25/07/202"
+    },
+    {
+      "name": "no-organization",
+      "route": "/home/no-organization",
+      "width": 390,
+      "height": 844,
+      "overflow": false,
+      "scrollWidth": 390,
+      "title": "AquaDocs AI · Quản lý tài liệu",
+      "legacyBrand": false,
+      "bodyText": "Chưa tham gia tổ chức\nQuản lý tổ chức\ntK\nBạn chưa tham gia tổ chức nào\nHãy tạo tổ chức của riêng bạn để bắt đầu quản lý tài liệu.\nTạo tổ chức"
+    },
+    {
+      "name": "create-organization",
+      "route": "/home/create-organization",
+      "width": 390,
+      "height": 844,
+      "overflow": false,
+      "scrollWidth": 390,
+      "title": "AquaDocs AI · Quản lý tài liệu",
+      "legacyBrand": false,
+      "bodyText": "Chưa tham gia tổ chức\nQuản lý tổ chức\ntK\nYêu cầu tạo tổ chức\nTên tổ chức\nMô tả\nSử dụng tích hợp OpenAI\nTôi đã đọc và đồng ý với Điều khoản\nGửi Yêu cầu"
+    },
+    {
+      "name": "pending-organization",
+      "route": "/home/pending-organization",
+      "width": 390,
+      "height": 844,
+      "overflow": false,
+      "scrollWidth": 390,
+      "title": "AquaDocs AI · Quản lý tài liệu",
+      "legacyBrand": false,
+      "bodyText": "Chưa tham gia tổ chức\nQuản lý tổ chức\ntK\nYêu cầu của bạn đang chờ duyệt\nYêu cầu tạo tổ chức đã được gửi thành công. Quản trị viên hệ thống sẽ xem xét và phê duyệt trong thời gian s"
+    },
+    {
+      "name": "organization-info",
+      "route": "/home/organization/info",
+      "width": 390,
+      "height": 844,
+      "overflow": false,
+      "scrollWidth": 390,
+      "title": "AquaDocs AI · Quản lý tài liệu",
+      "legacyBrand": false,
+      "bodyText": "Cấp thoát nước · QA\nQuản lý tổ chức\ntK\nThông tin chung\nPhòng ban\nThành viên\nThông tin cơ bản\nChỉnh sửa\nTên tổ chức\nCấp thoát nước · QA\nNgười tạo\nqa@example.invalid\nTạo lúc\n09:00:00"
+    },
+    {
+      "name": "departments",
+      "route": "/home/organization/departments",
+      "width": 390,
+      "height": 844,
+      "overflow": false,
+      "scrollWidth": 390,
+      "title": "AquaDocs AI · Quản lý tài liệu",
+      "legacyBrand": false,
+      "bodyText": "Cấp thoát nước · QA\nQuản lý tổ chức\ntK\nThông tin chung\nPhòng ban\nThành viên\nThêm phòng ban\n\tTên phòng ban\tMô tả\tNgười tạo\tTạo lúc\tTrạng thái\tHành động\n\n \n\t\n \n\t\n \n\t\n \n\t\n \n\t\n \n\t\n \n\n\t"
+    },
+    {
+      "name": "members",
+      "route": "/home/organization/members",
+      "width": 390,
+      "height": 844,
+      "overflow": false,
+      "scrollWidth": 390,
+      "title": "AquaDocs AI · Quản lý tài liệu",
+      "legacyBrand": false,
+      "bodyText": "Cấp thoát nước · QA\nQuản lý tổ chức\ntK\nThông tin chung\nPhòng ban\nThành viên\nMời thành viên\nEmail\n\tHọ và tên đệm\tTên thành viên\t\nChức danh\n\tPhòng ban\tTrạng thái\tNgày tham gia\tHành đ"
+    },
+    {
+      "name": "documents",
+      "route": "/home/document-management",
+      "width": 390,
+      "height": 844,
+      "overflow": false,
+      "scrollWidth": 390,
+      "title": "AquaDocs AI · Quản lý tài liệu",
+      "legacyBrand": false,
+      "bodyText": "Cấp thoát nước · QA\nQuản lý tổ chức\ntK\nDanh sách tài liệu\nThêm tài liệu\nKiểm tra File Local\nXóa đã chọn (0)\nTải xuống đã chọn (0)\n\tTiêu đề\tLoại\tKích thước (bytes)\tThời gian tải lên"
+    },
+    {
+      "name": "categories",
+      "route": "/home/document-management/1",
+      "width": 390,
+      "height": 844,
+      "overflow": false,
+      "scrollWidth": 390,
+      "title": "AquaDocs AI · Quản lý tài liệu",
+      "legacyBrand": false,
+      "bodyText": "Cấp thoát nước · QA\nQuản lý tổ chức\ntK\n/\nQuản lý tài liệu\n/\nVận hành\nThư mục trong Vận hành\nThêm thư mục\nTên thư mục\tMô tả\tChủ sở hữu\tTạo lúc\tHành động\n\n \n\t\n \n\t\n \n\t\n \n\t\n \n\n\nHồ sơ v"
+    },
+    {
+      "name": "category-documents",
+      "route": "/home/document-management/1/1",
+      "width": 390,
+      "height": 844,
+      "overflow": false,
+      "scrollWidth": 390,
+      "title": "AquaDocs AI · Quản lý tài liệu",
+      "legacyBrand": false,
+      "bodyText": "Cấp thoát nước · QA\nQuản lý tổ chức\ntK\n/\nQuản lý tài liệu\n/\nVận hành\n/\nHồ sơ vận hành\nTài liệu trong Hồ sơ vận hành\nThêm File\nTiêu đề tài liệu\tTên tài liệu\tChủ sở hữu\tTạo lúc\tKích "
+    },
+    {
+      "name": "search",
+      "route": "/home/document-management/search",
+      "width": 390,
+      "height": 844,
+      "overflow": false,
+      "scrollWidth": 390,
+      "title": "AquaDocs AI · Quản lý tài liệu",
+      "legacyBrand": false,
+      "bodyText": "Cấp thoát nước · QA\nQuản lý tổ chức\ntK\nTìm kiếm tài liệu\nQuay về\nLoại\nTất cả\nChủ sở hữu\nChủ sở hữu\nNgày tạo\nÁp dụng\nKết quả tìm kiếm\nTiêu đề tài liệu\tTên tài liệu\tChủ sở hữu\tTạo lú"
+    }
+  ],
+  "checks": [
+    {
+      "name": "landing 1440: no page overflow",
+      "pass": true,
+      "detail": 1440
+    },
+    {
+      "name": "landing 1440: no legacy product branding",
+      "pass": true
+    },
+    {
+      "name": "login 1440: no page overflow",
+      "pass": true,
+      "detail": 1440
+    },
+    {
+      "name": "login 1440: no legacy product branding",
+      "pass": true
+    },
+    {
+      "name": "register 1440: no page overflow",
+      "pass": true,
+      "detail": 1440
+    },
+    {
+      "name": "register 1440: no legacy product branding",
+      "pass": true
+    },
+    {
+      "name": "forgot 1440: no page overflow",
+      "pass": true,
+      "detail": 1440
+    },
+    {
+      "name": "forgot 1440: no legacy product branding",
+      "pass": true
+    },
+    {
+      "name": "reset 1440: no page overflow",
+      "pass": true,
+      "detail": 1440
+    },
+    {
+      "name": "reset 1440: no legacy product branding",
+      "pass": true
+    },
+    {
+      "name": "reset-invalid 1440: no page overflow",
+      "pass": true,
+      "detail": 1440
+    },
+    {
+      "name": "reset-invalid 1440: no legacy product branding",
+      "pass": true
+    },
+    {
+      "name": "verify-message 1440: no page overflow",
+      "pass": true,
+      "detail": 1440
+    },
+    {
+      "name": "verify-message 1440: no legacy product branding",
+      "pass": true
+    },
+    {
+      "name": "verify-success 1440: no page overflow",
+      "pass": true,
+      "detail": 1440
+    },
+    {
+      "name": "verify-success 1440: no legacy product branding",
+      "pass": true
+    },
+    {
+      "name": "verify-invalid 1440: no page overflow",
+      "pass": true,
+      "detail": 1440
+    },
+    {
+      "name": "verify-invalid 1440: no legacy product branding",
+      "pass": true
+    },
+    {
+      "name": "invitation-success 1440: no page overflow",
+      "pass": true,
+      "detail": 1440
+    },
+    {
+      "name": "invitation-success 1440: no legacy product branding",
+      "pass": true
+    },
+    {
+      "name": "invitation-invalid 1440: no page overflow",
+      "pass": true,
+      "detail": 1440
+    },
+    {
+      "name": "invitation-invalid 1440: no legacy product branding",
+      "pass": true
+    },
+    {
+      "name": "dashboard 1440: no page overflow",
+      "pass": true,
+      "detail": 1440
+    },
+    {
+      "name": "dashboard 1440: no legacy product branding",
+      "pass": true
+    },
+    {
+      "name": "no-organization 1440: no page overflow",
+      "pass": true,
+      "detail": 1440
+    },
+    {
+      "name": "no-organization 1440: no legacy product branding",
+      "pass": true
+    },
+    {
+      "name": "create-organization 1440: no page overflow",
+      "pass": true,
+      "detail": 1440
+    },
+    {
+      "name": "create-organization 1440: no legacy product branding",
+      "pass": true
+    },
+    {
+      "name": "pending-organization 1440: no page overflow",
+      "pass": true,
+      "detail": 1440
+    },
+    {
+      "name": "pending-organization 1440: no legacy product branding",
+      "pass": true
+    },
+    {
+      "name": "organization-info 1440: no page overflow",
+      "pass": true,
+      "detail": 1440
+    },
+    {
+      "name": "organization-info 1440: no legacy product branding",
+      "pass": true
+    },
+    {
+      "name": "departments 1440: no page overflow",
+      "pass": true,
+      "detail": 1440
+    },
+    {
+      "name": "departments 1440: no legacy product branding",
+      "pass": true
+    },
+    {
+      "name": "members 1440: no page overflow",
+      "pass": true,
+      "detail": 1440
+    },
+    {
+      "name": "members 1440: no legacy product branding",
+      "pass": true
+    },
+    {
+      "name": "documents 1440: no page overflow",
+      "pass": true,
+      "detail": 1440
+    },
+    {
+      "name": "documents 1440: no legacy product branding",
+      "pass": true
+    },
+    {
+      "name": "categories 1440: no page overflow",
+      "pass": true,
+      "detail": 1440
+    },
+    {
+      "name": "categories 1440: no legacy product branding",
+      "pass": true
+    },
+    {
+      "name": "category-documents 1440: no page overflow",
+      "pass": true,
+      "detail": 1440
+    },
+    {
+      "name": "category-documents 1440: no legacy product branding",
+      "pass": true
+    },
+    {
+      "name": "search 1440: no page overflow",
+      "pass": true,
+      "detail": 1440
+    },
+    {
+      "name": "search 1440: no legacy product branding",
+      "pass": true
+    },
+    {
+      "name": "landing 390: no page overflow",
+      "pass": true,
+      "detail": 390
+    },
+    {
+      "name": "landing 390: no legacy product branding",
+      "pass": true
+    },
+    {
+      "name": "login 390: no page overflow",
+      "pass": true,
+      "detail": 390
+    },
+    {
+      "name": "login 390: no legacy product branding",
+      "pass": true
+    },
+    {
+      "name": "register 390: no page overflow",
+      "pass": true,
+      "detail": 390
+    },
+    {
+      "name": "register 390: no legacy product branding",
+      "pass": true
+    },
+    {
+      "name": "forgot 390: no page overflow",
+      "pass": true,
+      "detail": 390
+    },
+    {
+      "name": "forgot 390: no legacy product branding",
+      "pass": true
+    },
+    {
+      "name": "reset 390: no page overflow",
+      "pass": true,
+      "detail": 390
+    },
+    {
+      "name": "reset 390: no legacy product branding",
+      "pass": true
+    },
+    {
+      "name": "reset-invalid 390: no page overflow",
+      "pass": true,
+      "detail": 390
+    },
+    {
+      "name": "reset-invalid 390: no legacy product branding",
+      "pass": true
+    },
+    {
+      "name": "verify-message 390: no page overflow",
+      "pass": true,
+      "detail": 390
+    },
+    {
+      "name": "verify-message 390: no legacy product branding",
+      "pass": true
+    },
+    {
+      "name": "verify-success 390: no page overflow",
+      "pass": true,
+      "detail": 390
+    },
+    {
+      "name": "verify-success 390: no legacy product branding",
+      "pass": true
+    },
+    {
+      "name": "verify-invalid 390: no page overflow",
+      "pass": true,
+      "detail": 390
+    },
+    {
+      "name": "verify-invalid 390: no legacy product branding",
+      "pass": true
+    },
+    {
+      "name": "invitation-success 390: no page overflow",
+      "pass": true,
+      "detail": 390
+    },
+    {
+      "name": "invitation-success 390: no legacy product branding",
+      "pass": true
+    },
+    {
+      "name": "invitation-invalid 390: no page overflow",
+      "pass": true,
+      "detail": 390
+    },
+    {
+      "name": "invitation-invalid 390: no legacy product branding",
+      "pass": true
+    },
+    {
+      "name": "dashboard 390: no page overflow",
+      "pass": true,
+      "detail": 390
+    },
+    {
+      "name": "dashboard 390: no legacy product branding",
+      "pass": true
+    },
+    {
+      "name": "no-organization 390: no page overflow",
+      "pass": true,
+      "detail": 390
+    },
+    {
+      "name": "no-organization 390: no legacy product branding",
+      "pass": true
+    },
+    {
+      "name": "create-organization 390: no page overflow",
+      "pass": true,
+      "detail": 390
+    },
+    {
+      "name": "create-organization 390: no legacy product branding",
+      "pass": true
+    },
+    {
+      "name": "pending-organization 390: no page overflow",
+      "pass": true,
+      "detail": 390
+    },
+    {
+      "name": "pending-organization 390: no legacy product branding",
+      "pass": true
+    },
+    {
+      "name": "organization-info 390: no page overflow",
+      "pass": true,
+      "detail": 390
+    },
+    {
+      "name": "organization-info 390: no legacy product branding",
+      "pass": true
+    },
+    {
+      "name": "departments 390: no page overflow",
+      "pass": true,
+      "detail": 390
+    },
+    {
+      "name": "departments 390: no legacy product branding",
+      "pass": true
+    },
+    {
+      "name": "members 390: no page overflow",
+      "pass": true,
+      "detail": 390
+    },
+    {
+      "name": "members 390: no legacy product branding",
+      "pass": true
+    },
+    {
+      "name": "documents 390: no page overflow",
+      "pass": true,
+      "detail": 390
+    },
+    {
+      "name": "documents 390: no legacy product branding",
+      "pass": true
+    },
+    {
+      "name": "categories 390: no page overflow",
+      "pass": true,
+      "detail": 390
+    },
+    {
+      "name": "categories 390: no legacy product branding",
+      "pass": true
+    },
+    {
+      "name": "category-documents 390: no page overflow",
+      "pass": true,
+      "detail": 390
+    },
+    {
+      "name": "category-documents 390: no legacy product branding",
+      "pass": true
+    },
+    {
+      "name": "search 390: no page overflow",
+      "pass": true,
+      "detail": 390
+    },
+    {
+      "name": "search 390: no legacy product branding",
+      "pass": true
+    },
+    {
+      "name": "Mobile navigation drawer opens",
+      "pass": true
+    }
+  ],
+  "pageErrors": [],
+  "unexpectedApi": []
+}

@@ -39,7 +39,7 @@ const ResetPasswordPage = () => {
 
     if (status === 'error') {
         return (
-            <div className="reset-password-page">
+            <div className="reset-password-page aqua-auth-page">
                  <Result
                     status="error"
                     title="Đường dẫn không hợp lệ"
@@ -52,7 +52,7 @@ const ResetPasswordPage = () => {
 
     if (status === 'success') {
          return (
-            <div className="reset-password-page">
+            <div className="reset-password-page aqua-auth-page">
                 <Result
                     status="success"
                     title="Đặt Lại Mật Khẩu Thành Công!"
@@ -65,7 +65,7 @@ const ResetPasswordPage = () => {
     
     // Mặc định hiển thị form
     return (
-        <div className="reset-password-page">
+        <div className="reset-password-page aqua-auth-page">
             <Row justify="center" style={{ minHeight: '100vh' }}>
                  <Col xs={22} sm={20} md={12} lg={10} xl={8}>
                      <div className="reset-password-form-container">

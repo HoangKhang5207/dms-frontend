@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import '@ant-design/v5-patch-for-react-19';
-import { Row, Col, Typography, Form, Input, Button, Divider, message } from 'antd';
+import { Row, Col, Typography, Form, Input, Button, Divider } from 'antd';
 import { MailOutlined, LockOutlined, GoogleOutlined } from '@ant-design/icons';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
+import AuthIllustration from '../../components/AuthIllustration/AuthIllustration';
 import './LoginPage.css';
 
 const { Title, Text } = Typography;
@@ -24,14 +25,10 @@ const LoginPage = () => {
     };
 
     return (
-        <div className="login-page">
+        <div className="login-page aqua-auth-page">
             <Row justify="center" align="middle" style={{ minHeight: '100%' }}>
                 <Col xs={0} md={12} className="login-illustration-col">
-                    <img
-                        src="/src/assets/search-illustration-1.png"
-                        alt="Login Illustration"
-                        className="login-illustration-img"
-                    />
+                    <AuthIllustration />
                 </Col>
 
                 <Col xs={24} md={12}>
@@ -46,6 +43,7 @@ const LoginPage = () => {
                         >
                             <Form.Item
                                 name="email"
+                                label="Email"
                                 rules={[{ required: true, message: 'Vui lòng nhập email!' }, { type: 'email', message: 'Email không hợp lệ!' }]}
                             >
                                 <Input prefix={<MailOutlined />} placeholder="Email" size="large" />
@@ -53,6 +51,7 @@ const LoginPage = () => {
 
                             <Form.Item
                                 name="password"
+                                label="Mật khẩu"
                                 rules={[{ required: true, message: 'Vui lòng nhập mật khẩu!' }]}
                             >
                                 <Input.Password prefix={<LockOutlined />} placeholder="Mật khẩu" size="large" />

@@ -1,0 +1,208 @@
+{
+  "mode": "MOCKED_BACKEND_NOT_LIVE",
+  "checks": [
+    {
+      "name": "1440: category upload opens",
+      "pass": true
+    },
+    {
+      "name": "1440: required metadata and file validation",
+      "pass": true
+    },
+    {
+      "name": "1440: invalid upload sends no request",
+      "pass": true
+    },
+    {
+      "name": "1440: static feedback inherits AquaDocs theme",
+      "pass": true,
+      "detail": {
+        "color": "rgb(16, 37, 82)",
+        "font": "\"Be Vietnam Pro\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+      }
+    },
+    {
+      "name": "1440: category upload submits existing metadata contract",
+      "pass": true
+    },
+    {
+      "name": "1440: one preview, authenticated numeric download",
+      "pass": true
+    },
+    {
+      "name": "1440: unavailable file cannot download",
+      "pass": true
+    },
+    {
+      "name": "1440: preview retry sends another request",
+      "pass": true
+    },
+    {
+      "name": "1440: multi upload validates destination",
+      "pass": true
+    },
+    {
+      "name": "1440: multi upload sends category and file",
+      "pass": true
+    },
+    {
+      "name": "1440: range calendar fits viewport",
+      "pass": true,
+      "detail": {
+        "left": 485,
+        "right": 1187,
+        "top": 151.65625,
+        "bottom": 512.65625,
+        "viewport": 1440,
+        "viewportHeight": 900
+      }
+    },
+    {
+      "name": "1440: calendar selects date range",
+      "pass": true
+    },
+    {
+      "name": "390: category upload opens",
+      "pass": true
+    },
+    {
+      "name": "390: required metadata and file validation",
+      "pass": true
+    },
+    {
+      "name": "390: invalid upload sends no request",
+      "pass": true
+    },
+    {
+      "name": "390: static feedback inherits AquaDocs theme",
+      "pass": true,
+      "detail": {
+        "color": "rgb(16, 37, 82)",
+        "font": "\"Be Vietnam Pro\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+      }
+    },
+    {
+      "name": "390: category upload submits existing metadata contract",
+      "pass": true
+    },
+    {
+      "name": "390: one preview, authenticated numeric download",
+      "pass": true
+    },
+    {
+      "name": "390: unavailable file cannot download",
+      "pass": true
+    },
+    {
+      "name": "390: preview retry sends another request",
+      "pass": true
+    },
+    {
+      "name": "390: multi upload validates destination",
+      "pass": true
+    },
+    {
+      "name": "390: multi upload sends category and file",
+      "pass": true
+    },
+    {
+      "name": "390: range calendar fits viewport",
+      "pass": true,
+      "detail": {
+        "left": 12,
+        "right": 362,
+        "top": 22.65625,
+        "bottom": 622.65625,
+        "viewport": 390,
+        "viewportHeight": 844
+      }
+    },
+    {
+      "name": "390: calendar selects date range",
+      "pass": true
+    },
+    {
+      "name": "Search has one authenticated preview",
+      "pass": true
+    },
+    {
+      "name": "PDF renderer completes without error",
+      "pass": true
+    },
+    {
+      "name": "Preview downloads authorized blob with filename",
+      "pass": true
+    },
+    {
+      "name": "Missing UUID disables preview instead of sending undefined",
+      "pass": true
+    },
+    {
+      "name": "Numeric row ID selects only one record",
+      "pass": true
+    },
+    {
+      "name": "Missing UUID disables multi-download",
+      "pass": true
+    },
+    {
+      "name": "Deletion uses numeric document ID, not missing UUID",
+      "pass": true
+    }
+  ],
+  "errors": [],
+  "requests": [
+    {
+      "p": "/documents",
+      "category": false,
+      "metadata": true,
+      "file": true
+    },
+    {
+      "p": "/documents/1/download",
+      "authorization": true
+    },
+    {
+      "p": "/documents/1/download",
+      "authorization": true
+    },
+    {
+      "p": "/documents/upload-multiple",
+      "category": true,
+      "metadata": false,
+      "file": true
+    },
+    {
+      "p": "/documents",
+      "category": false,
+      "metadata": true,
+      "file": true
+    },
+    {
+      "p": "/documents/1/download",
+      "authorization": true
+    },
+    {
+      "p": "/documents/1/download",
+      "authorization": true
+    },
+    {
+      "p": "/documents/upload-multiple",
+      "category": true,
+      "metadata": false,
+      "file": true
+    },
+    {
+      "p": "/documents/1/download",
+      "authorization": true
+    },
+    {
+      "p": "/documents/1/download",
+      "authorization": true
+    },
+    {
+      "p": "/documents/71",
+      "method": "DELETE"
+    }
+  ]
+}

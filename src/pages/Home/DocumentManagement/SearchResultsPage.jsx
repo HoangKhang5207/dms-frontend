@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import '@ant-design/v5-patch-for-react-19';
 import { Table, Typography, Button, Space, Tag, Empty, Tooltip, Popconfirm } from 'antd';
 import { ArrowLeftOutlined, StarOutlined, EditOutlined, DeleteOutlined } from '@ant-design/icons';
-import axiosInstance from '../../../api/axiosInstance';
 import { useSearch } from '../../../contexts/SearchContext';
 import { getFileIcon } from '../../../utils/fileIcons'; // Import helper icon
 import GlobalSearch from '../../../components/GlobalSearch/GlobalSearch';
@@ -18,12 +17,7 @@ const SearchResultsPage = () => {
     const [previewFile, setPreviewFile] = useState(null);
 
     const handlePreview = (record) => {
-        const fileUrl = `${axiosInstance.defaults.baseURL.replace('/api/v1', '')}/storage/${record.file_path}`;
-        console.log('Previewing file:', fileUrl);
-        setPreviewFile({
-            url: fileUrl,
-            name: record.original_filename
-        });
+        setPreviewFile(record);
     };
 
     const handleTableChange = (page) => {
@@ -57,16 +51,12 @@ const SearchResultsPage = () => {
                             icon={getFileIcon(record.type)}
                             onClick={() => handlePreview(record)}
                         >
-                            <span style={{display: 'inline-block', maxWidth: 250, overflow: 'hidden', textOverflow: 'ellipsis', verticalAlgin: 'middle', whiteSpace: 'nowrap'}}>
+                            <span style={{display: 'inline-block', maxWidth: 250, overflow: 'hidden', textOverflow: 'ellipsis', verticalAlign: 'middle', whiteSpace: 'nowrap'}}>
                                 {record.original_filename}
                             </span>
                         </Button>
                     </Tooltip>
-                    <FilePreviewModal
-                        visible={!!previewFile}
-                        file={previewFile}
-                        onCancel={() => setPreviewFile(null)}
-                    />
+
                 </Space>
             )
         },
@@ -131,6 +121,8 @@ const SearchResultsPage = () => {
                     locale={{ emptyText: <Empty description="Không tìm thấy tài liệu nào phù hợp." /> }}
                 />
             </div>
+            <FilePreviewModal open={!!previewFile} documentId={previewFile?.id}
+                fileName={previewFile?.original_filename} onCancel={() => setPreviewFile(null)} />
         </div>
     );
 };

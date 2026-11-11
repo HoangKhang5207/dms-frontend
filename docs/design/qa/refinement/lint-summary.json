@@ -1,0 +1,12 @@
+{
+  "all": {
+    "errors": 8108,
+    "warnings": 431,
+    "files_with_findings": 64
+  },
+  "application_src": {
+    "errors": 18,
+    "warnings": 4,
+    "files_with_findings": 15
+  }
+}

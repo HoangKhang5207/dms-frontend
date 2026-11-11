@@ -1,130 +1,70 @@
-.dashboard-layout {
-    min-height: 100vh;
-}
-
-/* Cố định Sider */
-.dashboard-sider {
-    overflow: auto;
-    height: 100vh;
+.dashboard-layout { min-height: 100vh; }
+.dashboard-layout .dashboard-sider {
     position: fixed;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    box-shadow: 2px 0 6px rgba(0, 21, 41, 0.05);
-    /* Thêm đổ bóng nhẹ */
-    z-index: 10;
+    inset: 0 auto 0 0;
+    height: 100vh;
+    overflow: auto;
+    z-index: 20;
+    border-right: 1px solid rgba(128, 183, 255, 0.15);
 }
-
-.logo-dashboard {
+.dashboard-layout .logo-dashboard {
     display: flex;
+    align-items: center;
     justify-content: center;
-    align-items: center;
+    min-height: 64px;
+    margin: 20px 14px 24px;
+    padding: 10px 6px;
+    background: #f5fbff;
+    border-radius: 12px;
 }
-
-.logo-dashboard-img {
-    height: 40px;
-    margin: 16px;
-    /* Bạn có thể thay bằng logo thật */
-}
-
-.logo-dashboard-text {
-    color: #033f8f;
-    font-size: 20px;
-    font-weight: bold;
-}
-
-
-/* Chỉnh sửa layout chính để có khoảng trống cho Sider */
-.site-layout {
-    /* Thay đổi margin-left từ 200px thành 240px */
-    margin-left: 240px;
-    transition: margin-left 0.2s;
-}
-
-/* Khi Sider thu gọn lại (rộng 80px), giảm margin-left của layout chính */
-.ant-layout-sider-collapsed+.site-layout {
-    margin-left: 80px;
-}
-
-.site-layout-header {
-    padding: 0 24px;
-    background: #fff;
+.dashboard-layout .logo-dashboard .aquadocs-brand-wordmark { width: 188px; height: 38px; }
+.dashboard-layout .ant-layout-sider-children { display: flex; flex-direction: column; min-height: 100%; }
+.dashboard-layout .sidebar-collapse { margin: auto 16px 16px; width: calc(100% - 32px); flex-shrink: 0; color: #d3e3ff; border: 1px solid #29466e; }
+.dashboard-layout .site-layout { margin-left: 240px; min-width: 0; transition: margin-left 0.2s; }
+.dashboard-layout .ant-layout-sider-collapsed + .ant-drawer + .site-layout,
+.dashboard-layout .ant-layout-sider-collapsed ~ .site-layout { margin-left: 80px; }
+.dashboard-layout .site-layout-header {
     display: flex;
-    justify-content: flex-end;
     align-items: center;
-    border-bottom: 1px solid #f0f0f0;
-}
-
-/* Cho phép vùng nội dung cuộn */
-.site-layout-content-wrapper {
-    margin: 16px;
-    overflow: initial;
-}
-
-/* .site-layout .site-layout-background {
-    background: #fff;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-} */
-
-.site-layout-content {
-    border-radius: 33px;
-    padding: 24px;
-    background: #fff;
-    min-height: calc(100vh - 64px - 32px);
-    /* Full height trừ header và margin */
-}
-
-.header-right {
-    cursor: pointer;
-}
-
-.site-layout-header {
-    padding: 0 24px;
-    background: #fff;
-    display: flex;
     justify-content: space-between;
-    /* Thay đổi để đẩy 2 item ra 2 phía */
-    align-items: center;
-    border-bottom: 1px solid #f0f0f0;
+    gap: 20px;
+    height: 80px;
+    padding: 0 32px;
+    background: rgba(255, 255, 255, 0.96);
+    border-bottom: 1px solid var(--aqua-border);
+    line-height: normal;
 }
-
-.header-left {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    /* Khoảng cách giữa 2 tag */
+.dashboard-layout .header-left { display: flex; align-items: center; gap: 8px; min-width: 0; }
+.dashboard-layout .workspace-identity { display: flex; flex-direction: column; gap: 5px; min-width: 0; }
+.dashboard-layout .org-name-tag { font-size: 15px; font-weight: 600; color: var(--aqua-ink); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.dashboard-layout .user-role-text { color: var(--aqua-muted); font-size: 12px; }
+.dashboard-layout .account-trigger { height: auto; min-height: 44px; padding: 4px 8px; }
+.dashboard-layout .account-name { max-width: 180px; overflow: hidden; text-overflow: ellipsis; }
+.dashboard-layout .site-layout-content-wrapper { min-width: 0; margin: 28px; }
+.dashboard-layout .site-layout-content {
+    min-width: 0;
+    padding: 28px;
+    min-height: calc(100vh - 136px);
+    border: 1px solid var(--aqua-border);
+    border-radius: 20px;
+    background: #fff;
+    box-shadow: var(--aqua-panel-shadow);
 }
-
-/* Style cho tag tên tổ chức */
-.org-name-tag {
-    background-color: #e6f7ff;
-    border: 1px solid #91d5ff;
-    color: #096dd9;
-    padding: 0 12px;
-    border-radius: 16px;
-    /* Bo tròn mềm mại */
-    font-weight: 500;
-    font-size: 14px;
-}
-
-/* Style cho vai trò người dùng */
-.user-role-text {
-    font-size: 14px;
-    color: #000;
-    position: relative;
-    padding-left: 12px;
-}
-
-/* Dấu gạch đứng phân cách */
-.user-role-text::before {
-    content: '|';
-    position: absolute;
-    left: 0;
-    color: #999797;
-}
-
-.header-right {
-    cursor: pointer;
+.dashboard-layout .ant-menu-dark, .aquadocs-navigation-drawer .ant-menu-dark { padding: 0 8px; }
+.dashboard-layout .ant-tabs { min-width: 0; }
+.dashboard-layout .ant-breadcrumb { overflow-wrap: anywhere; }
+.dashboard-layout .ant-progress-text { white-space: normal; font-size: 12px; }
+.dashboard-mobile .site-layout { margin-left: 0; }
+.dashboard-mobile .site-layout-header { padding: 0 16px; height: 72px; gap: 8px; }
+.dashboard-mobile .site-layout-content-wrapper { margin: 16px; }
+.dashboard-mobile .site-layout-content { padding: 20px; min-height: calc(100vh - 104px); border-radius: 16px; }
+.dashboard-mobile .org-name-tag { max-width: 225px; }
+.dashboard-mobile .account-name { display: none; }
+@media (max-width: 575px) {
+    .dashboard-mobile .site-layout-content-wrapper { margin: 12px; }
+    .dashboard-mobile .site-layout-content { padding: 16px; }
+    .dashboard-mobile .org-name-tag { max-width: 190px; font-size: 13px; }
+    .dashboard-mobile .site-layout-header { padding: 0 12px; }
+    .dashboard-layout .ant-descriptions-row { display: flex; flex-wrap: wrap; }
+    .dashboard-layout .ant-descriptions-item-label, .dashboard-layout .ant-descriptions-item-content { display: block; width: 100%; overflow-wrap: anywhere; }
 }

@@ -56,7 +56,7 @@ const ActiveFiltersForm = () => {
     };
     
     return (
-        <Form form={form} layout="inline" style={{ marginBottom: 16 }}>
+        <Form className="aqua-filters" form={form} layout="inline" style={{ marginBottom: 16 }}>
             <Form.Item name="type" label="Loại" style={{ marginBottom: 8 }}>
                 <Select allowClear placeholder="Tất cả" style={{ width: 200 }} onChange={handleTypeChange}>
                     {fileTypes.map(type => (
@@ -102,7 +102,7 @@ const ActiveFiltersForm = () => {
             </Form.Item>
 
             <Form.Item name="dateRange" label="Ngày tạo" style={{ marginBottom: 8 }}>
-                <RangePicker placeholder={['Từ ngày', 'Đến ngày']} />
+                <RangePicker classNames={{ popup: { root: 'aqua-date-range-popup' } }} placeholder={['Từ ngày', 'Đến ngày']} />
             </Form.Item>
 
             <Form.Item style={{ marginBottom: 8 }}>

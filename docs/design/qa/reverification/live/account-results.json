@@ -1,0 +1,73 @@
+{
+  "mode": "REAL_ISOLATED_BACKEND",
+  "phase": "account",
+  "checks": [
+    {
+      "name": "Real signup reaches verification notice",
+      "pass": true
+    },
+    {
+      "name": "SMTP captured verification email locally",
+      "pass": true
+    },
+    {
+      "name": "Email subject uses AquaDocs",
+      "pass": false,
+      "detail": "Existing backend email branding; no mail body recorded"
+    },
+    {
+      "name": "Real email verification activates account",
+      "pass": true
+    },
+    {
+      "name": "Real login opens protected workspace",
+      "pass": true
+    },
+    {
+      "name": "Signed session returns current account",
+      "pass": true
+    },
+    {
+      "name": "No uncaught frontend exceptions",
+      "pass": true
+    }
+  ],
+  "responses": [
+    {
+      "path": "/api/v1/auth/signup",
+      "method": "POST",
+      "status": 201
+    },
+    {
+      "path": "/api/v1/auth/email/verify",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/auth/email/verify",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/auth/login",
+      "method": "POST",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/users/me",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/organizations/check-pending-request",
+      "method": "GET",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/organizations/check-pending-request",
+      "method": "GET",
+      "status": 200
+    }
+  ],
+  "errors": []
+}

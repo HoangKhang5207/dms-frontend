@@ -66,26 +66,26 @@ const InviteMembersModal = ({ visible, onCancel }) => {
                         {(fields, { add, remove }) => (
                             <>
                                 {fields.map(({ key, name, ...restField }) => (
-                                    <Space key={key} style={{ display: 'flex', marginBottom: 8 }} align="baseline">
+                                    <Space key={key} className="aqua-invite-row" style={{ display: 'flex', marginBottom: 8 }} align="baseline">
                                         <Form.Item
                                             {...restField}
                                             name={[name, 'email']}
                                             rules={[{ required: true, type: 'email', message: 'Email không hợp lệ!' }]}
                                         >
-                                            <Input placeholder="Email thành viên" style={{ width: 250 }} />
+                                            <Input aria-label="Email thành viên" placeholder="Email thành viên" style={{ width: 250 }} />
                                         </Form.Item>
                                         <Form.Item
                                             {...restField}
                                             name={[name, 'department_id']}
                                             rules={[{ required: true, message: 'Vui lòng chọn phòng ban!' }]}
                                         >
-                                            <Select placeholder="Chọn phòng ban" style={{ width: 200 }}>
+                                            <Select aria-label="Phòng ban thành viên" placeholder="Chọn phòng ban" style={{ width: 200 }}>
                                                 {departments.map(dept => (
                                                     <Option key={dept.id} value={dept.id}>{dept.name}</Option>
                                                 ))}
                                             </Select>
                                         </Form.Item>
-                                        <MinusCircleOutlined onClick={() => remove(name)} />
+                                        <Button type="text" icon={<MinusCircleOutlined />} aria-label="Xóa dòng thành viên" onClick={() => remove(name)} />
                                     </Space>
                                 ))}
                                 <Form.Item>
