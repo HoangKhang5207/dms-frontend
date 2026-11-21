@@ -9,6 +9,7 @@ import { AuthProvider } from './contexts/AuthContext'; // Import
 import { OrganizationProvider } from './contexts/OrganizationContext';
 import { DocumentProvider } from './contexts/DocumentContext'; // Import
 import { SearchProvider } from './contexts/SearchContext';
+import GaaProvider from './contexts/GaaContext';
 
 // Existing context/services use Ant Design's static feedback APIs.
 // Those render outside the application provider and need the same theme.
@@ -28,7 +29,7 @@ const App = () => {
           <OrganizationProvider> {/* Bọc ở đây */}
             <DocumentProvider> {/* Bọc ở đây */}
               <SearchProvider> {/* Bọc ở đây */}
-                <AppRouter />
+                <GaaProvider><AppRouter /></GaaProvider>
               </SearchProvider>
             </DocumentProvider>
           </OrganizationProvider>

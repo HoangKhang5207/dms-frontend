@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '@ant-design/v5-patch-for-react-19';
 import { Layout, Menu, Avatar, Dropdown, Space, Typography, Grid, Drawer, Button } from 'antd';
+import { useGaa } from '../../contexts/useGaa';
 import {
     HomeOutlined,
     TeamOutlined,
@@ -27,6 +28,7 @@ const { Header, Content, Sider } = Layout;
 const { Text } = Typography;
 
 const DashboardLayout = () => {
+    const gaa = useGaa();
     const navigate = useNavigate();
     const location = useLocation();
     const { fullUser, logout } = useAuth();
@@ -61,6 +63,8 @@ const DashboardLayout = () => {
         }
         // Các trường hợp khác
         switch (path) {
+            case '/home/agent-analysis':
+                return { selectedKey: 'gaa', openKey: null };
             case '/home':
             case '/home/dashboard':
                 return { selectedKey: '1', openKey: null };
@@ -166,6 +170,8 @@ const DashboardLayout = () => {
                     <Menu.Item key="6" icon={<FileOutlined />} onClick={() => navigateTo('/home/document-management')}>Quản lý tài liệu</Menu.Item>
                     <Menu.Item key="7" icon={<StarOutlined />}>Được đánh dấu</Menu.Item>
                     <Menu.Item key="8" icon={<ShareAltOutlined />}>Được chia sẻ với tôi</Menu.Item>
+                    {gaa.enabled && gaa.capabilities?.perms.some(permission => ['gaa.search', 'gaa.analytics'].includes(permission)) &&
+                        <Menu.Item key="gaa" icon={<SolutionOutlined />} onClick={() => navigateTo('/home/agent-analysis')}>Phân tích tài liệu</Menu.Item>}
                 </Menu>
     );
 

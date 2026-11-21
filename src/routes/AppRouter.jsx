@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 
@@ -33,6 +33,7 @@ import SearchResultsPage from '../pages/Home/DocumentManagement/SearchResultsPag
 import HomeDispatcher from '../pages/Home/HomeDispatcher';
 
 // Placeholders for pages to be implemented
+const AgentAnalysisPage = lazy(() => import('../pages/Home/AgentAnalysis/AgentAnalysisPage'));
 
 const AppRouter = () => {
     const location = useLocation();
@@ -57,6 +58,7 @@ const AppRouter = () => {
                     <Route path="/home" element={<DashboardLayout />}>
                         <Route index element={<HomeDispatcher />} />
                         <Route path="dashboard" element={<AnimatedPage><MainDashboard /></AnimatedPage>} />
+                        <Route path="agent-analysis" element={<Suspense fallback={<p>Đang tải phân tích tài liệu…</p>}><AgentAnalysisPage /></Suspense>} />
                         <Route path="no-organization" element={<AnimatedPage><NoOrganizationPage /></AnimatedPage>} />
                         <Route path="create-organization" element={<AnimatedPage><CreateOrganizationPage /></AnimatedPage>} />
                         <Route path="pending-organization" element={<AnimatedPage><PendingOrganizationPage /></AnimatedPage>} />

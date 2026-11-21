@@ -1,5 +1,9 @@
 # Hệ thống Quản lý Tài liệu (DMS) - Giao diện Người dùng
 
+## GAA — source cho nhóm tiếp tục nghiệm thu
+
+Đọc [hướng dẫn nhận source và nghiệm thu GAA](docs/GAA_ACCEPTANCE.md). Nhánh `feature/gaa-integration` chứa giao diện tích hợp, test và ba helper QA. Nghiệm thu mô hình thật còn **PENDING_TEAM_EXECUTION**; tính năng mặc định tắt. Không chuyển runtime, token, khóa hoặc tài khoản của máy cũ vào repo.
+
 ## Giới thiệu
 
 **DMS Genifast - Frontend** là giao diện người dùng cho hệ thống quản lý tài liệu mạnh mẽ và linh hạch, được xây dựng để giúp các tổ chức và doanh nghiệp sắp xếp, lưu trữ, và truy xuất tài liệu một cách hiệu quả. Giao diện được xây dựng bằng React, cung cấp một trải nghiệm người dùng hiện đại, trực quan và đáp ứng (responsive).

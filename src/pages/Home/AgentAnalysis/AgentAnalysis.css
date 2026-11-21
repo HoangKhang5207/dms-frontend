@@ -1,0 +1,24 @@
+.gaa-workspace { display: grid; gap: 20px; max-width: 1200px; margin: 0 auto; min-width: 0; }
+.gaa-workspace h2 { margin-top: 0; }
+.gaa-workspace .ant-card { min-width: 0; }
+.gaa-answer { white-space: pre-wrap; overflow-wrap: anywhere; line-height: 1.8; }
+.gaa-table { max-width: 100%; overflow: auto; margin: 16px 0; }
+.gaa-cell { display: inline-block; max-width: 32rem; white-space: pre-wrap; overflow-wrap: anywhere; }
+.gaa-value { overflow: auto; max-height: 24rem; padding: 16px; background: var(--aq-canvas, #f3f8ff); }
+.gaa-workspace details { margin: 16px 0; }
+.gaa-workspace summary { cursor: pointer; color: var(--aq-ink, #071b66); font-weight: 500; padding: 8px 0; }
+.gaa-workspace :focus-visible { outline: 3px solid var(--aq-primary, #0068ff); outline-offset: 3px; }
+.gaa-chart { margin: 24px 0; min-width: 0; }
+.gaa-chart figcaption { font-weight: 600; margin-bottom: 12px; }
+.gaa-chart-scroll { max-width: 100%; overflow: auto; }
+.gaa-chart svg { display: block; }
+.gaa-axis { stroke: var(--aq-border, #dce8f7); stroke-width: 1; }
+.gaa-axis-label { fill: var(--aq-text, #102552); font: 12px 'Be Vietnam Pro', sans-serif; }
+.gaa-chart-value { color: var(--aq-text, #102552); min-height: 24px; }
+.gaa-legend { display: flex; gap: 16px; padding: 0; list-style: none; flex-wrap: wrap; }
+.gaa-legend span { display: inline-block; width: 12px; height: 12px; margin-right: 8px; }
+.gaa-trace { line-height: 1.8; padding-left: 24px; }
+.gaa-exports { border-top: 1px solid var(--aq-border, #dce8f7); margin-top: 20px; padding-top: 20px; }
+.gaa-exports p { color: var(--aq-secondary, #526582); font-size: 12px; }
+.gaa-loading { min-height: 240px; display: grid; place-content: center; }
+@media (max-width: 767px) { .gaa-workspace { gap: 16px; } .gaa-workspace .ant-card-body { padding: 16px; } .gaa-cell { max-width: 18rem; } }

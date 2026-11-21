@@ -29,6 +29,22 @@ public/webviewer
 # Local tools and project instructions
 /.agents/
 /.runtime.local
-/scripts/
+/scripts/*
+!/scripts/qa/
+/scripts/qa/*
+!/scripts/qa/gaa-browser.cjs
+!/scripts/qa/gaa-live.cjs
+!/scripts/qa/gaa-docker-bridge.cjs
 /AGENTS.md
 /DESIGN.md
+
+# Local integration tooling and generated QA output
+/.codex/
+/.codegraph/
+/.superpowers/
+/.worktrees/
+/playwright-report/
+/test-results/
+.env
+.env.*
+!.env.example
